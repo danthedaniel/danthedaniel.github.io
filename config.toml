@@ -1,0 +1,5 @@
+baseURL = 'https://danangell.com/blog'
+languageCode = 'en-us'
+title = 'danangell.com'
+publishDir = 'docs/blog'
+theme = 'anubis'
