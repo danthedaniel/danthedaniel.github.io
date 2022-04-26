@@ -5,12 +5,9 @@ draft: false
 tags: ["programming"]
 ---
 
-[Check out the code here](https://github.com/danthedaniel/brainfuck).
+What is BrainFuck? [BrainFuck](https://en.wikipedia.org/wiki/Brainfuck) is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:
 
-What is BrainFuck?
-------------------
-
-[BrainFuck](https://en.wikipedia.org/wiki/Brainfuck) is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:
+<!--more-->
 
 *   `+` : Increment the current memory cell by 1 (with wrapping overflow)  
     
@@ -31,6 +28,8 @@ What is BrainFuck?
 
 Implementation
 --------------
+
+[Check out the code here](https://github.com/danthedaniel/brainfuck).
 
 ### Optimization
 

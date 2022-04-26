@@ -10,6 +10,8 @@ Trigonometric functions (`sin()`, `cos()`, etc.) are required knowledge for
 high-school graduates, and they have a close relationship to circles. This means  
 that most students have seen the equation for a unit circle:
 
+<!--more-->
+
 <pre class="math">y = \sqrt{1 - x^2}</pre>
 
 Or put in a more general form:

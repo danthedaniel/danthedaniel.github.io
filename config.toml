@@ -1,18 +1,23 @@
-baseURL = 'https://danangell.com/blog'
-languageCode = 'en-us'
-title = 'danangell.com'
-publishDir = 'docs/blog'
-theme = 'anubis'
+baseURL = "https://danangell.com/blog"
+languageCode = "en-us"
+title = "danangell.com/blog"
+publishDir = "docs/blog"
+theme = "anubis"
 
 [params]
 author = "Daniel Angell"
-description = ""
+description = "My Programming/Math Blog"
+style = "auto"
 customJS = ["js/katex_auto.js"]
 customCSS = []
 
   [[params.social]]
   id = "github"
   name = "danthedaniel"
+
+  [[params.social]]
+  id = "linkedin"
+  name = "daniel-angell"
 
 [markup]
   [markup.goldmark]

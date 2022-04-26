@@ -7,6 +7,8 @@ tags: ["programming", "math"]
 
 A common riddle-like question for programmers asks them to swap the values of two integers _without_ a temporary intermediate value. There are two common solutions that I'm aware of, addition swap and XOR swap. Here's what each looks like in C:
 
+<!--more-->
+
 ```c
 void addSwap (unsigned int *x, unsigned int *y) {  
     if (x != y) {  
