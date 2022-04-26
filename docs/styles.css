@@ -11,6 +11,9 @@ body {
 }
 
 a {
+  font-size: inherit;
+}
+a:hover {
   text-decoration: none;
 }
 
