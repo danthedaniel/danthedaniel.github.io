@@ -10,9 +10,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>404 Page not found - danangell.com</title>
+<title>The N Sphere - danangell.com</title>
 
-<meta name="description" content="">
+<meta name="description" content="It&rsquo;s very common for high-school students to learn the geometry of a circle.
+Trigonometric functions (sin(), cos(), etc.) are required knowledge for
+high-school graduates, and they have a close relationship to circles. This means
+that most students have seen the equation for a unit circle:
+y = \sqrt{1 - x^2} Or put in a more general form:
+x^2 &#43; y^2 = 1 Not as many have taken calculus, but for those that have they&rsquo;ve probably also">
 
 
 
@@ -96,15 +101,27 @@
 
 
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://danangell.com/blog/404.html" />
+<meta property="og:title" content="The N Sphere" />
+<meta property="og:description" content="It&rsquo;s very common for high-school students to learn the geometry of a circle.
+Trigonometric functions (sin(), cos(), etc.) are required knowledge for
+high-school graduates, and they have a close relationship to circles. This means
+that most students have seen the equation for a unit circle:
+y = \sqrt{1 - x^2} Or put in a more general form:
+x^2 &#43; y^2 = 1 Not as many have taken calculus, but for those that have they&rsquo;ve probably also" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://danangell.com/blog/posts/the-n-sphere/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-08-26T00:00:00-04:00" />
+<meta property="article:modified_time" content="2017-08-26T00:00:00-04:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="The N Sphere"/>
+<meta name="twitter:description" content="It&rsquo;s very common for high-school students to learn the geometry of a circle.
+Trigonometric functions (sin(), cos(), etc.) are required knowledge for
+high-school graduates, and they have a close relationship to circles. This means
+that most students have seen the equation for a unit circle:
+y = \sqrt{1 - x^2} Or put in a more general form:
+x^2 &#43; y^2 = 1 Not as many have taken calculus, but for those that have they&rsquo;ve probably also"/>
 
 
 
@@ -165,12 +182,92 @@
         </header>
         <main id="main" tabindex="-1"> 
             
-<main id="main">
-    <div>
-        <h1 id="title"><a href="/blog">Go Home</a></h1>
-        Sorry, this Page is not available.
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">The N Sphere</h1>
+
+                
+            </header>
+        </div>
+        <div class="content e-content">
+            <p>It&rsquo;s very common for high-school students to learn the geometry of a circle.<br>
+Trigonometric functions (<code>sin()</code>, <code>cos()</code>, etc.) are required knowledge for<br>
+high-school graduates, and they have a close relationship to circles. This means<br>
+that most students have seen the equation for a unit circle:</p>
+<pre class="math">y = \sqrt{1 - x^2}</pre>
+<p>Or put in a more general form:</p>
+<pre class="math">x^2 + y^2 = 1</pre>
+<p>Not as many have taken calculus, but for those that have they&rsquo;ve probably also<br>
+seen the equation for a unit sphere:</p>
+<pre class="math">x^2 + y^2 + z^2 = 1</pre>
+<p>Once you&rsquo;ve seen both equations, it&rsquo;s easy to notice the pattern - every dimensional variable is squared, and those squares are summed to equal 1. This means that a hyper-sphere, regardless of how hard is may be to visualize, is no more mathematically complicated than the sum of 4 squares. In fact, any n-dimensional sphere (or n-sphere as they are known) can be calculated as</p>
+<pre class="math">{x_1}^2 + {x_2}^2 + ... + {x_n}^2 = 1</pre>
+<pre class="math">\sum_{i=1}^n {x_i}^2 = 1</pre>
+<p>In summation-notation</p>
+<p>The n-sphere isn&rsquo;t something most people were taught about. That&rsquo;s probably because it&rsquo;s not something that you&rsquo;d run into unless you either learn about it yourself or you&rsquo;ve take a few different calculus courses.</p>
+<p>But there is a simpler form that could be discussed earlier, perhaps as a way to introduce students to multi-variate calculus early on. In the summation form of the n-sphere shown above, <code>i</code> can be less than two. You can have a 1-dimensional sphere.</p>
+<pre class="math">x^2 = 1</pre>
+<p>Also known as a 0-sphere</p>
+<p>The above equation does not produce a shape - since the drawing space for a 1-D function is just a single line. Rather, the 0-sphere looks like two points. For the unit 0-sphere those points are 1 and -1 (as both equal 1 when squared).</p>
+<p><img src="/blog/image/n-sphere/n-sphere-1.svg" alt=""></p>
+<p>The red dots above are the 0-sphere.</p>
+<p>The 0-sphere might seem useless, but it actually shows up much more often than you might think. When two spheres intersect, the shape on their surfaces that intersects each other is a circle. And when two circles (A and B) intersect, their intersection is a 0-sphere C.</p>
+<p><img src="/blog/image/n-sphere/n-sphere-2.svg" alt=""></p>
+<h3 id="references" >References
+<span>
+    <a href="#references">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li><a href="https://en.wikipedia.org/wiki/N-sphere">https://en.wikipedia.org/wiki/N-sphere</a></li>
+</ul>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2017-08-26</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://danangell.com/blog/posts/the-n-sphere/">https://danangell.com/blog/posts/the-n-sphere/</a>
+    <a href="https://danangell.com/blog" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
+
+
+    <div class="post-taxonomies">
+        
+            
+                <ul class="post-tags">
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/math/">#math</a></li>
+                    
+                </ul>
+        
     </div>
-</main>
+</div>
+
+    </article>
+
+    
+
+    
+
+    
+        
+
+
+
+
+
+
+
+    
 
         </main>
         

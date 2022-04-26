@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>BrainFuck Optimizing JIT - danangell.com</title>
+
+<meta name="description" content="Check out the code here.
+What is BrainFuck?     BrainFuck is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:
+  &#43; : Increment the current memory cell by 1 (with wrapping overflow)
+  - : Decrememt the current memory cell by 1 (with wrapping underflow)">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://danangell.com/blog/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://danangell.com/blog/favicon.png">
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.820a97553922b76999323c1290e76e747bd117e7b9fbcb9599350317e2fc4814.css" integrity="sha256-ggqXVTkit2mZMjwSkOdudHvRF&#43;e5&#43;8uVmTUDF&#43;L8SBQ=">
+    
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="https://danangell.com/blog/js/script.min.a65afe903825231554d9b55b073eb144da4ccf2d2823b216dcbc6cc656c9de76.js" type="text/javascript" charset="utf-8" integrity="sha256-plr&#43;kDglIxVU2bVbBz6xRNpMzy0oI7IW3LxsxlbJ3nY="></script>
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1651004451" type="text/javascript" charset="utf-8"></script>
+    
+
+
+
+<meta property="og:title" content="BrainFuck Optimizing JIT" />
+<meta property="og:description" content="Check out the code here.
+What is BrainFuck?     BrainFuck is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:
+  &#43; : Increment the current memory cell by 1 (with wrapping overflow)
+  - : Decrememt the current memory cell by 1 (with wrapping underflow)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://danangell.com/blog/posts/brainfuck-optimizing-jit/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-05-11T00:00:00-04:00" />
+<meta property="article:modified_time" content="2019-05-11T00:00:00-04:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="BrainFuck Optimizing JIT"/>
+<meta name="twitter:description" content="Check out the code here.
+What is BrainFuck?     BrainFuck is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:
+  &#43; : Increment the current memory cell by 1 (with wrapping overflow)
+  - : Decrememt the current memory cell by 1 (with wrapping underflow)"/>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.2/katex.min.css" integrity="sha384-XFgyVzCwumZgSg6F85gbh6ev/BVWgP7QAb1V3GOchWQPifusZTU0ODnQsysBK61F" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.2/katex.min.js" integrity="sha384-RpxfKy6OA0Us+WtIGBbrVlfwW4HuETdB9CD8KbG6qSbYbCanfnyid62sojNvydoB" crossorigin="anonymous"></script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <div class="header-top">
+    <h1 class="site-title">
+    <a href="/blog">danangell.com</a>
+</h1>
+    <ul class="social-icons">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/danthedaniel" title="Github" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+</ul>
+</div>
+
+    <nav></nav>
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">BrainFuck Optimizing JIT</h1>
+
+                
+            </header>
+        </div>
+        <div class="content e-content">
+            <p><a href="https://github.com/danthedaniel/brainfuck">Check out the code here</a>.</p>
+<h2 id="what-is-brainfuck" >What is BrainFuck?
+<span>
+    <a href="#what-is-brainfuck">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p><a href="https://en.wikipedia.org/wiki/Brainfuck">BrainFuck</a> is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:</p>
+<ul>
+<li>
+<p><code>+</code> : Increment the current memory cell by 1 (with wrapping overflow)</p>
+</li>
+<li>
+<p><code>-</code> : Decrememt the current memory cell by 1 (with wrapping underflow)</p>
+</li>
+<li>
+<p><code>&gt;</code> : Shift the data pointer to the next memory cell</p>
+</li>
+<li>
+<p><code>&lt;</code> : Shift the data pointer to the previous memory cell</p>
+</li>
+<li>
+<p><code>.</code> : Output the current memory cell as an ASCII character</p>
+</li>
+<li>
+<p><code>,</code> : Read one ASCII character from stdin</p>
+</li>
+<li>
+<p><code>[</code> : Jump to the matching <code>]</code> if the current memory cell is <code>0</code></p>
+</li>
+<li>
+<p><code>]</code> : Jump to the matching <code>[</code> if the current memory cell is not <code>0</code></p>
+</li>
+</ul>
+<h2 id="implementation" >Implementation
+<span>
+    <a href="#implementation">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="optimization" >Optimization
+<span>
+    <a href="#optimization">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>The lowest hanging fruit here is to perform run-length encoding on the instructions. Sequential <code>+</code>, <code>-</code>, <code>&gt;</code> and <code>&lt;</code> commands can be combined before they are executed. Internally this is done by compiling to an intermediate language - which is stored as a vector of <code>Instr</code>s:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Program</span> {  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pub</span> data: Vec<span style="color:#f92672">&lt;</span>Instr<span style="color:#f92672">&gt;</span>,  
+</span></span><span style="display:flex;"><span>}  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">Instr</span> {  
+</span></span><span style="display:flex;"><span>    Incr(<span style="color:#66d9ef">u8</span>),  
+</span></span><span style="display:flex;"><span>    Decr(<span style="color:#66d9ef">u8</span>),  
+</span></span><span style="display:flex;"><span>    Next(<span style="color:#66d9ef">usize</span>),  
+</span></span><span style="display:flex;"><span>    Prev(<span style="color:#66d9ef">usize</span>),  
+</span></span><span style="display:flex;"><span>    Print,  
+</span></span><span style="display:flex;"><span>    Read,  
+</span></span><span style="display:flex;"><span>    BeginLoop(Option<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">usize</span><span style="color:#f92672">&gt;</span>),  
+</span></span><span style="display:flex;"><span>    EndLoop(Option<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">usize</span><span style="color:#f92672">&gt;</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Without any other optimizations performed (unless you count stripping out comments before execution) this alone results in a ~3x speedup when benchmarked against a BrainFuck Mandelbrot set renderer.</p>
+<p>What&rsquo;s next? The more complicated BrainFuck programs are generated from a high level macro language. Decompiling from BrainFuck back to this language could allow me to do more intelligent code execution.</p>
+<h3 id="jit-compiling" >JIT Compiling
+<span>
+    <a href="#jit-compiling">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>While impossible to read BrainFuck code itself, BrainFuck is probably the simplest turing-complete language. This makes it an ideal candidate for exploring JIT compilation.</p>
+<p>The first six of our instructions defined in <code>Instr</code> are pretty straitforward to implement in x86-64.</p>
+<hr>
+<p><code>+</code>:</p>
+<pre><code>add    BYTE PTR [r10],n
+</code></pre>
+<p>Where:</p>
+<ul>
+<li>
+<p><code>r10</code> is used as the data pointer</p>
+</li>
+<li>
+<p><code>n</code> is the same value that is held by <code>Incr</code> in the <code>Instr</code> enum</p>
+</li>
+</ul>
+<p><code>-</code>, <code>&gt;</code> and <code>&lt;</code> are equally simple.</p>
+<hr>
+<p><code>Print</code> and <code>Read</code> are slightly more complex but don&rsquo;t require us to do any control flow ourselves.</p>
+<hr>
+<p>Where we start to get into trouble is with <code>[</code> and <code>]</code>. To avoid the difficulty of tracking labels and linking them together before execution, all instructions&rsquo; x86-64 machine code is padded with <code>nop</code>s.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> bytes.len() <span style="color:#f92672">&lt;</span> BF_INSTR_SIZE <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">usize</span> {  
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// nop  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    bytes.push(<span style="color:#ae81ff">0x90</span>);  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This means that the jump targets can be easily found as long as you know the target position (in the <code>Program</code> data vector), current position, and unpadded size of the current instruction:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> begin_loop_size: <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">// Bytes  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> offset <span style="color:#f92672">=</span> (<span style="color:#f92672">*</span>pos <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">i32</span> <span style="color:#f92672">-</span> this_pos <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">i32</span>) <span style="color:#f92672">*</span> BF_INSTR_SIZE <span style="color:#f92672">-</span> begin_loop_size;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> offset_bytes: [<span style="color:#66d9ef">u8</span>; mem::size_of::<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>()] <span style="color:#f92672">=</span> <span style="color:#66d9ef">unsafe</span> { mem::transmute(offset) };  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Check if the current memory cell equals zero.  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// cmp    BYTE PTR [r10],0x0  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>bytes.push(<span style="color:#ae81ff">0x41</span>);  
+</span></span><span style="display:flex;"><span>bytes.push(<span style="color:#ae81ff">0x80</span>);  
+</span></span><span style="display:flex;"><span>bytes.push(<span style="color:#ae81ff">0x3a</span>);  
+</span></span><span style="display:flex;"><span>bytes.push(<span style="color:#ae81ff">0x00</span>);  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Jump to the end of the loop if equal.  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// je    offset  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>bytes.push(<span style="color:#ae81ff">0x0f</span>);  
+</span></span><span style="display:flex;"><span>bytes.push(<span style="color:#ae81ff">0x84</span>);  
+</span></span><span style="display:flex;"><span>bytes.push(offset_bytes[<span style="color:#ae81ff">0</span>]);  
+</span></span><span style="display:flex;"><span>bytes.push(offset_bytes[<span style="color:#ae81ff">1</span>]);  
+</span></span><span style="display:flex;"><span>bytes.push(offset_bytes[<span style="color:#ae81ff">2</span>]);  
+</span></span><span style="display:flex;"><span>bytes.push(offset_bytes[<span style="color:#ae81ff">3</span>]);
+</span></span></code></pre></div><h2 id="benchmarks" >Benchmarks
+<span>
+    <a href="#benchmarks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Ran on <a href="https://github.com/erikdubbelboer/brainfuck-jit/blob/919df502dc8a0441572180700de86be405387fcc/mandelbrot.bf">mandelbrot.bf</a></p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naive Interpreter</td>
+<td>56.824s</td>
+</tr>
+<tr>
+<td>Optimized Interpreter</td>
+<td>19.055s</td>
+</tr>
+<tr>
+<td>Optimized JIT</td>
+<td>5.484s</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2019-05-11</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://danangell.com/blog/posts/brainfuck-optimizing-jit/">https://danangell.com/blog/posts/brainfuck-optimizing-jit/</a>
+    <a href="https://danangell.com/blog" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
+
+
+    <div class="post-taxonomies">
+        
+            
+                <ul class="post-tags">
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/programming/">#programming</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+    
+        
+
+
+
+
+
+
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Daniel Angell, 2022<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>  
+        </div> 
+
+        
+
+
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "light-without-switcher"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+    changeButtonText()
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        changeButtonText()
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+  
+    showContent()
+})
+
+function detectCurrentScheme() {
+    if (localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    } 
+    if (defaultTheme) {
+        return defaultTheme
+    } 
+    if (!window.matchMedia) {
+        return 'light'
+    } 
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return 'light'
+}
+
+function changeButtonText()
+{   
+    if (switchButton) {
+        switchButton.textContent = currentTheme == 'dark' ?  "Light theme" : "Dark theme"
+    }
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    changeButtonText()
+}
+
+function showContent() {
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+}
+</script>   
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://danangell.com/blog class="p-name u-url url fn" rel="me">Daniel Angell</a> 
+
+    
+
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>

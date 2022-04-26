@@ -3,3 +3,18 @@ languageCode = 'en-us'
 title = 'danangell.com'
 publishDir = 'docs/blog'
 theme = 'anubis'
+
+[params]
+author = "Daniel Angell"
+description = ""
+customJS = ["js/katex_auto.js"]
+customCSS = []
+
+  [[params.social]]
+  id = "github"
+  name = "danthedaniel"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

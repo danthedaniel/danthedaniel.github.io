@@ -84,6 +84,18 @@
 
 
 
+    
+
+
+
+
+
+    
+        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1651004451" type="text/javascript" charset="utf-8"></script>
+    
+
+
+
 <meta property="og:title" content="The Basics of Anti-Aliasing" />
 <meta property="og:description" content="How images are rendered     Imagine your computer is rendering an image of a tomato on top of a table. In order to render the image each of the 1920 * 1080 pixels on your screen needs to have colors assigned to them. This isn&rsquo;t as easy as viewing a video or an image. The tomato can be viewed from any angle, and the pixels will need to be recalculated many times every second to produce a smooth animation." />
 <meta property="og:type" content="article" />
@@ -104,7 +116,8 @@
 
 
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.2/katex.min.css" integrity="sha384-XFgyVzCwumZgSg6F85gbh6ev/BVWgP7QAb1V3GOchWQPifusZTU0ODnQsysBK61F" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.2/katex.min.js" integrity="sha384-RpxfKy6OA0Us+WtIGBbrVlfwW4HuETdB9CD8KbG6qSbYbCanfnyid62sojNvydoB" crossorigin="anonymous"></script>
 
     
 </head>
@@ -119,6 +132,25 @@
 </h1>
     <ul class="social-icons">
 
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/danthedaniel" title="Github" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
 
 
 
@@ -152,12 +184,12 @@
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p><img src="/static/image/aa/antialiasing-1.png" alt="A tomato on a table"></p>
+</h3><p><img src="/image/aa/antialiasing-1.png" alt="A tomato on a table"></p>
 <p>Imagine your computer is rendering an image of a tomato on top of a table. In order to render the image each of the 1920 * 1080 pixels on your screen needs to have colors assigned to them. This isn&rsquo;t as easy as viewing a video or an image. The tomato can be viewed from any angle, and the pixels will need to be recalculated many times every second to produce a smooth animation.</p>
 <p>A GPU must calculate samples in order to show you an image. A sample is a light/color calculation that can be thought of as an infinitesimally thin ray of light. Imagine that you have a bunch of these rays of light, and pretend these light rays are 1-dimensional objects - lines - that are going straight through your screen. For those familiar with optics this is called normally incident. Most often each pixel will get one ray of light.</p>
-<p><img src="/static/image/aa/antialiasing-2.png" alt="A single sample"></p>
+<p><img src="/image/aa/antialiasing-2.png" alt="A single sample"></p>
 <p>Most often your computer runs a single one of these rays through the middle of a pixel (the surrounding pixels in that image are highlighted to make it easier to see the sample). When one of the rays hits an object in the game, it bounces off and goes back through the same pixel it came from, this time with the color of the object it hit. That ray then determines the color for the whole pixel.</p>
-<p><img src="/static/image/aa/antialiasing-3.png" alt="The sample determines the color of the whole pixel"></p>
+<p><img src="/blog/image/aa/antialiasing-3.png" alt="The sample determines the color of the whole pixel"></p>
 <h3 id="why-aa-is-needed" >Why AA is needed
 <span>
     <a href="#why-aa-is-needed">
@@ -165,10 +197,10 @@
     </a>
 </span>
 </h3><p>Now most of the time this works pretty well. If you have two pixels from the same object that are right next to each other - like two pixels on the inside of our tomato - they&rsquo;ll have pretty similar colors and the image will look smooth. However, when you reach the edge of this tomato, you&rsquo;ll eventually find a pixel is no longer over top of the tomato.</p>
-<p><img src="/static/image/aa/antialiasing-4.png" alt="More rendered pixels"></p>
+<p><img src="/blog/image/aa/antialiasing-4.png" alt="More rendered pixels"></p>
 <p>The pixel on the left will be red like the tomato, but the one to the right of it will be brown like the table it&rsquo;s on. The difference in color is dramatic. The pixels are either on the tomato or not, there is no middle ground.</p>
 <p>The problem here is that the pixels don&rsquo;t accurately represent what&rsquo;s going. If you look at the “pixels” drawn over the image of the tomato you&rsquo;ll see that the area covered by the some of pixel has too much information to be conveyed by a single ray of light. On the right half of the pixel there&rsquo;s the table, and on the left half there&rsquo;s the tomato. Other pixels contain significantly less information. The pixels in the upper left corner of the image have fairly uniform colors throughout them, so when they are reduced to a single sample there is less information loss.</p>
-<p><img src="/static/image/aa/antialiasing-5.png" alt="Multiple samples per pixel"></p>
+<p><img src="/blog/image/aa/antialiasing-5.png" alt="Multiple samples per pixel"></p>
 <p>The solution programmers have come up with this problem is what we call anti-aliasing. The game engine takes more than one sample per pixel (either one in each corner of the pixel, a few different samples in a grid formation, or sometimes even in random locations). Some will hit the tomato and some will hit the table. The colors are then averaged together to give you your final pixel color.</p>
 <h3 id="types-of-anti-aliasing" >Types of Anti-Aliasing
 <span>
@@ -190,12 +222,22 @@
     
 
     <a class="post-hidden-url u-url" href="https://danangell.com/blog/posts/the-basics-of-anti-aliasing/">https://danangell.com/blog/posts/the-basics-of-anti-aliasing/</a>
-    <a href="https://danangell.com/blog" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+    <a href="https://danangell.com/blog" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
 
 
     <div class="post-taxonomies">
         
             
+                <ul class="post-tags">
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/technology/">#technology</a></li>
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/graphics/">#graphics</a></li>
+                    
+                </ul>
+        
     </div>
 </div>
 
@@ -225,7 +267,7 @@
     <div class="common-footer-bottom">
         
         <div class="copyright">
-            <p>© 2022<br>
+            <p>© Daniel Angell, 2022<br>
             Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
             
             </p>  
@@ -314,7 +356,7 @@ function showContent() {
 
     <p class="h-card vcard">
 
-    <a href=https://danangell.com/blog class="p-name u-url url fn" rel="me"></a> 
+    <a href=https://danangell.com/blog class="p-name u-url url fn" rel="me">Daniel Angell</a> 
 
     
 
