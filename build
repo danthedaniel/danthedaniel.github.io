@@ -1,0 +1,11 @@
+#!/bin/bash
+
+rm -rf docs/blog
+
+ENV="$1"
+
+if [[ "$ENV" == "dev" ]]; then
+  hugo -D
+else
+  hugo
+fi
