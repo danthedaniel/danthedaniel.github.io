@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>math on danangell.com</title>
+    <title>math on danangell.com/blog</title>
     <link>https://danangell.com/blog/tags/math/</link>
-    <description>danangell.com (math)</description>
+    <description>danangell.com/blog (math)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Nov 2018 00:00:00 -0400</lastBuildDate>
@@ -195,8 +195,7 @@ seen the equation for a unit sphere:&lt;/p&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/N-sphere&#34;&gt;https://en.wikipedia.org/wiki/N-sphere&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

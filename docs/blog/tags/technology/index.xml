@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>technology on danangell.com</title>
+    <title>technology on danangell.com/blog</title>
     <link>https://danangell.com/blog/tags/technology/</link>
-    <description>danangell.com (technology)</description>
+    <description>danangell.com/blog (technology)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 03 Mar 2014 00:00:00 -0500</lastBuildDate>

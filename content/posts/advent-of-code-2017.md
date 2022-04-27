@@ -1,5 +1,5 @@
 ---
-title: "Commit Language Visualizer"
+title: "Advent of Code 2017"
 date: 2017-12-05T00:00:00-04:00
 draft: false
 tags: ["programming"]
