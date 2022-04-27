@@ -2,28 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://danangell.com/blog/</loc>
-    <lastmod>2022-04-26T14:55:04-07:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/posts/</loc>
-    <lastmod>2022-04-26T14:55:04-07:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/tags/programming/</loc>
-    <lastmod>2022-04-26T14:55:04-07:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/tags/</loc>
-    <lastmod>2022-04-26T14:55:04-07:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/posts/type-level-api-client/</loc>
-    <lastmod>2022-04-26T14:55:04-07:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/tags/typescript/</loc>
-    <lastmod>2022-04-26T14:55:04-07:00</lastmod>
-  </url><url>
     <loc>https://danangell.com/blog/about/</loc>
     <lastmod>2022-04-26T14:43:59-07:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/posts/brainfuck-optimizing-jit/</loc>
+    <lastmod>2019-05-11T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/</loc>
+    <lastmod>2019-05-11T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/posts/</loc>
+    <lastmod>2019-05-11T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/programming/</loc>
+    <lastmod>2019-05-11T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/</loc>
     <lastmod>2019-05-11T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/tags/math/</loc>
