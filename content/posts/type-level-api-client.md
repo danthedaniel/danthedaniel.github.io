@@ -9,7 +9,7 @@ One year ago I looked around for existing tech that would provide me with compil
 
 <!--more-->
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Has anyone made a purely type-level TypeScript API client yet? Seems like full stack TypeScript apps should just allow for a type import into the front end which would validate paths, verbs, body and response. No swagger or intermediary needed.</p>&mdash; Daniel Angell (@dan_the_daniel) <a href="https://twitter.com/dan_the_daniel/status/1387632537061580802?ref_src=twsrc%5Etfw">April 29, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Has anyone made a purely type-level TypeScript API client yet? Seems like full stack TypeScript apps should just allow for a type import into the front end which would validate paths, verbs, body and response. No swagger or intermediary needed.</p>&mdash; Daniel Angell (@dan_the_daniel) <a href="https://twitter.com/dan_the_daniel/status/1387632537061580802">April 29, 2021</a></blockquote>
 
 As a minimalist, I was hoping for a solution that did not involve any extra dependencies. TypeScript alone seemed like a powerful enough tool to get the job done. Maybe I didn't look hard enough but I didn't end up finding prior art that I was happy with. Everything seemed to require either a very opinionated architecture, an intermediary file with its own build step, or a special HTTP client library. I'd already learned not to trust the Node ecosystem and wanted the most unimpressive solution to get the job done. So I built my own.
 
