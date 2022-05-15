@@ -28,4 +28,4 @@ Here's an excerpt from the original Robot Uprising announcement post:
 
 RIP bB. That'll do.
 
-![](/blog/image/bb/bb.gif)
+![An animated rainbow BaconBits logo](/blog/image/bb/bb.gif)

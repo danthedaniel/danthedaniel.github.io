@@ -21,7 +21,44 @@ when writing and changing code. Errors related to faulty API expectations were r
 can get many of the benefits that I achieved by using GraphQL. But for systems that predate GraphQL or
 situations where GraphQL feels inappropriate this can be your fall-back.
 
-## Part 1 - Models
+## What I Ended Up With
+
+So you want to request the data for the current user.
+
+1. First, get out the bespoke `request` function (only a dozen lines of runtime code).
+2. Then get a handle on the API types.
+3. Pass the `CurrentUser` endpoint type into `request`'s type parameter.
+
+```typescript
+import { request } from "@company/webapp/http";
+import * as API from "@company/api/endpoints";
+
+const user = await request<API.CurrentUser>({});
+```
+
+Already you'll be getting compiler errors! `API.CurrentUser`'s method is of type "get" and you haven't
+specified an HTTP method.
+
+```typescript
+const user = await request<API.CurrentUser>({ method: "get" });
+```
+
+Again a compiler error (thanks, TypeScript :D). `API.CurrentUser` has a path type of "/user/me" and
+you haven't provided a path.
+
+```typescript
+const user = await request<API.CurrentUser>({ method: "get", url: "/user/me" });
+```
+
+Success! This is a valid API request. And even better the type of `user` is `ApiResponse<{ id: number, email: string, ...}>`.
+
+Changing anything along the pipeline from the model to the view will automatically adjust the types and should
+give compiler errors where the API has made a breaking change. New fields are automatically shown in your
+front end code. The only parts of the API spec that duplicate information are the HTTP verb and path where we had to re-type them in `@company/api/endpoints`. But those are unlikely to change very often - if ever.
+
+Curious how it all works? Read on!
+
+## Implementation Part 1 - Models
 
 The architecture of the app this was built for has a NextJS/React front-end, with a NestJS/TypeORM back-end.
 
@@ -141,7 +178,7 @@ This solution is generic enough that you should be able to use it with any ORM. 
 
 Thanks to TypeScript's return type inference the type of `this.extractDTOAttrs([...])` becomes `User.toDTO()`'s type as well.
 
-## Part 2 - Controllers
+## Implementation Part 2 - Controllers
 
 The end goal here is to get both the data and type for each model's DTO into the front end code. We have the types written automatically for us. We just need to pipe them through to the client.
 
@@ -266,7 +303,7 @@ export type ResponseDataType<
 > = UnResponsify<UnPromisify<ReturnType<InstanceType<Controller>[Method]>>>;
 ```
 
-## Part 3 - Views
+## Implementation Part 3 - Views
 
 Okay, so we have models that automatically define types for their DTO incarnations. And we also have a
 back-end that preserves these types (and any other types defined in the controllers themselves). So with
@@ -381,38 +418,3 @@ export const request = async <T extends Endpoint<any, any, any, any>>(
   return apiResponse;
 };
 ```
-
-## Part 4 - Bringing it all together
-
-So you want to request the DTO for the current user.
-
-1. First, get out our bespoke `request` function.
-2. Then get a handle on the full API definition.
-3. Pass the `CurrentUser` endpoint type into `request`'s type parameter.
-
-```typescript
-import { request } from "@company/webapp/http";
-import * as API from "@company/api/endpoints";
-
-const user = await request<API.CurrentUser>({});
-```
-
-Already you'll be getting compiler errors! `API.CurrentUser`'s method is of type "get" and you haven't
-specified an HTTP method.
-
-```typescript
-const user = await request<API.CurrentUser>({ method: "get" });
-```
-
-Again a compiler error (thanks, TypeScript :D). `API.CurrentUser` has a path type of "/user/me" and
-you haven't provided a path.
-
-```typescript
-const user = await request<API.CurrentUser>({ method: "get", url: "/user/me" });
-```
-
-Success! This is a valid API request. And even better the type of `user` is `ApiResponse<{ id: number, email: string, ...}>`.
-
-Changing anything along the pipeline from the model to the view will automatically adjust the types and should
-give compiler errors where the API has made a breaking change. New fields are automatically shown in your
-front end code. The only parts of the API spec that duplicate information are the HTTP verb and path where we had to re-type them in `@company/api/endpoints`. But those are unlikely to change very often - if ever.
