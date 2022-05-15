@@ -91,7 +91,7 @@
 
 
     
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652596353" type="text/javascript" charset="utf-8"></script>
+        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652600146" type="text/javascript" charset="utf-8"></script>
     
 
 
@@ -199,21 +199,21 @@
         </div>
         <div class="content e-content">
             <p>A common riddle-like question for programmers asks them to swap the values of two integers <em>without</em> a temporary intermediate value. There are two common solutions that I&rsquo;m aware of, addition swap and XOR swap. Here&rsquo;s what each looks like in C:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addSwap</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>x, <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>y) {  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">!=</span> y) {  
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>x <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>x <span style="color:#f92672">+</span> <span style="color:#f92672">*</span>y;  
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>y <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>x <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>y;  
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>x <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>x <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>y;  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addSwap</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">!=</span> b) {  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>a <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">+</span> <span style="color:#f92672">*</span>b;  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>b <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>b;  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>a <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>b;  
 </span></span><span style="display:flex;"><span>    }  
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">xorSwap</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>x, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>y) {  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">!=</span> y) {  
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>x <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>y;  
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>y <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>x;  
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>x <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>y;  
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">xorSwap</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">!=</span> b) {  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>a <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>b;  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>b <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>a;  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>a <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>b;  
 </span></span><span style="display:flex;"><span>    }  
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Credit: <a href="https://en.wikipedia.org/wiki/XOR_swap_algorithm">https://en.wikipedia.org/wiki/XOR_swap_algorithm</a></p>
+</span></span></code></pre></div><p><sup>Credit: <a href="https://en.wikipedia.org/wiki/XOR_swap_algorithm">https://en.wikipedia.org/wiki/XOR_swap_algorithm</a></sup></p>
 <p>The more interesting of the two is XOR swap. It only uses a single operation, rather than addition <em>and</em> subtraction in addition swap. Wikipedia tries to explain this with bit vectors but I think 1 bit black and white images work better. In the images below, <strong>black</strong> corresponds to <code>0</code> and <strong>white</strong> corresponds to <code>1</code>.</p>
 <hr>
 <p><code>A ^ B = A'</code>:</p>

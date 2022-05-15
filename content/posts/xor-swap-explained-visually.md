@@ -10,26 +10,26 @@ A common riddle-like question for programmers asks them to swap the values of tw
 <!--more-->
 
 ```c
-void addSwap (unsigned int *x, unsigned int *y) {  
-    if (x != y) {  
-        *x = *x + *y;  
-        *y = *x - *y;  
-        *x = *x - *y;  
+void addSwap (unsigned int *a, unsigned int *b) {  
+    if (a != b) {  
+        *a = *a + *b;  
+        *b = *a - *b;  
+        *a = *a - *b;  
     }  
 }
 ```
 
 ```c
-void xorSwap (int *x, int *y) {  
-    if (x != y) {  
-        *x ^= *y;  
-        *y ^= *x;  
-        *x ^= *y;  
+void xorSwap (int *a, int *b) {  
+    if (a != b) {  
+        *a ^= *b;  
+        *b ^= *a;  
+        *a ^= *b;  
     }  
 }
 ```
 
-Credit: [https://en.wikipedia.org/wiki/XOR_swap_algorithm](https://en.wikipedia.org/wiki/XOR_swap_algorithm)
+<sup>Credit: [https://en.wikipedia.org/wiki/XOR_swap_algorithm](https://en.wikipedia.org/wiki/XOR_swap_algorithm)</sup>
 
 The more interesting of the two is XOR swap. It only uses a single operation, rather than addition _and_ subtraction in addition swap. Wikipedia tries to explain this with bit vectors but I think 1 bit black and white images work better. In the images below, **black** corresponds to `0` and **white** corresponds to `1`.
 
