@@ -94,6 +94,7 @@ export abstract class RootEntity {
       const value = this[attr];
 
       if (value instanceof Promise || canBeDTO(value)) {
+        // No recursive calls, please.
         throw new Error(`Attribute ${attr} can not be exported to a DTO`);
       }
 

@@ -91,7 +91,7 @@
 
 
     
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652595924" type="text/javascript" charset="utf-8"></script>
+        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652596353" type="text/javascript" charset="utf-8"></script>
     
 
 
@@ -285,7 +285,8 @@ situations where GraphQL feels inappropriate this can be your fall-back.</p>
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">attr</span>];
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">value</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">Promise</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">canBeDTO</span>(<span style="color:#a6e22e">value</span>)) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">`Attribute </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">attr</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> can not be exported to a DTO`</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// No recursive calls, please.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">`Attribute </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">attr</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> can not be exported to a DTO`</span>);
 </span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;function&#34;</span>) {
