@@ -192,12 +192,6 @@ The end goal here is to get both the data and type for each model's DTO into the
 ```typescript
 @Controller("user")
 export class UserController {
-  constructor(
-    // ...
-  ) {
-    super();
-  }
-
   @Get("me")
   @UseGuards(AuthGuard())
   async me(@Req() req: AuthdRequest) {
