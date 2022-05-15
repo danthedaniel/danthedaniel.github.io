@@ -1,5 +1,5 @@
 ---
-title: "RIP Baconbits"
+title: "RIP BaconBits"
 date: 2022-05-14T21:18:19-07:00
 draft: true
 tags: ["torrents", "trackers"]
