@@ -404,13 +404,13 @@ front end code. The only parts of the API spec that duplicate information are th
       <pubDate>Sat, 11 May 2019 00:00:00 -0400</pubDate>
       
       <guid>https://danangell.com/blog/posts/brainfuck-optimizing-jit/</guid>
-      <description>&lt;p&gt;What is BrainFuck? &lt;a href=&#34;https://en.wikipedia.org/wiki/Brainfuck&#34;&gt;BrainFuck&lt;/a&gt; is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:&lt;/p&gt;
+      <description>&lt;p&gt;What is BrainFuck? &lt;a href=&#34;https://en.wikipedia.org/wiki/Brainfuck&#34;&gt;BrainFuck&lt;/a&gt; is an esoteric programming language designed specifically to be easy to compile. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;+&lt;/code&gt; : Increment the current memory cell by 1 (with wrapping overflow)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;-&lt;/code&gt; : Decrememt the current memory cell by 1 (with wrapping underflow)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-&lt;/code&gt; : Decrement the current memory cell by 1 (with wrapping underflow)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;&amp;gt;&lt;/code&gt; : Shift the data pointer to the next memory cell&lt;/p&gt;
@@ -468,7 +468,7 @@ front end code. The only parts of the API spec that duplicate information are th
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;While impossible to read BrainFuck code itself, BrainFuck is probably the simplest turing-complete language. This makes it an ideal candidate for exploring JIT compilation.&lt;/p&gt;
-&lt;p&gt;The first six of our instructions defined in &lt;code&gt;Instr&lt;/code&gt; are pretty straitforward to implement in x86-64.&lt;/p&gt;
+&lt;p&gt;The first six of our instructions defined in &lt;code&gt;Instr&lt;/code&gt; are pretty straight-forward to implement in x86-64.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;code&gt;+&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;add    BYTE PTR [r10],n

@@ -5,13 +5,13 @@ draft: false
 tags: ["programming"]
 ---
 
-What is BrainFuck? [BrainFuck](https://en.wikipedia.org/wiki/Brainfuck) is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:
+What is BrainFuck? [BrainFuck](https://en.wikipedia.org/wiki/Brainfuck) is an esoteric programming language designed specifically to be easy to compile. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:
 
 <!--more-->
 
 *   `+` : Increment the current memory cell by 1 (with wrapping overflow)  
     
-*   `-` : Decrememt the current memory cell by 1 (with wrapping underflow)  
+*   `-` : Decrement the current memory cell by 1 (with wrapping underflow)  
     
 *   `>` : Shift the data pointer to the next memory cell  
     
@@ -60,7 +60,7 @@ What's next? The more complicated BrainFuck programs are generated from a high l
 
 While impossible to read BrainFuck code itself, BrainFuck is probably the simplest turing-complete language. This makes it an ideal candidate for exploring JIT compilation.
 
-The first six of our instructions defined in `Instr` are pretty straitforward to implement in x86-64.
+The first six of our instructions defined in `Instr` are pretty straight-forward to implement in x86-64.
 
 * * *
 

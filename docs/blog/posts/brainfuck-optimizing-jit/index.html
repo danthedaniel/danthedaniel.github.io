@@ -12,7 +12,7 @@
 
 <title>BrainFuck Optimizing JIT - danangell.com/blog</title>
 
-<meta name="description" content="What is BrainFuck? BrainFuck is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:">
+<meta name="description" content="What is BrainFuck? BrainFuck is an esoteric programming language designed specifically to be easy to compile. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:">
 
 
 
@@ -91,13 +91,13 @@
 
 
     
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652635795" type="text/javascript" charset="utf-8"></script>
+        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652635920" type="text/javascript" charset="utf-8"></script>
     
 
 
 
 <meta property="og:title" content="BrainFuck Optimizing JIT" />
-<meta property="og:description" content="What is BrainFuck? BrainFuck is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:" />
+<meta property="og:description" content="What is BrainFuck? BrainFuck is an esoteric programming language designed specifically to be easy to compile. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://danangell.com/blog/posts/brainfuck-optimizing-jit/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-05-11T00:00:00-04:00" />
@@ -106,7 +106,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="BrainFuck Optimizing JIT"/>
-<meta name="twitter:description" content="What is BrainFuck? BrainFuck is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:"/>
+<meta name="twitter:description" content="What is BrainFuck? BrainFuck is an esoteric programming language designed specifically to be easy to compile. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:"/>
 
 
 
@@ -198,13 +198,13 @@
             </header>
         </div>
         <div class="content e-content">
-            <p>What is BrainFuck? <a href="https://en.wikipedia.org/wiki/Brainfuck">BrainFuck</a> is an esoteric programming language designed as a joke. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:</p>
+            <p>What is BrainFuck? <a href="https://en.wikipedia.org/wiki/Brainfuck">BrainFuck</a> is an esoteric programming language designed specifically to be easy to compile. The environment provides the programmer with an “infinite” array of bytes (traditionally just 30,000) and a data pointer. There are only 8 single character commands:</p>
 <ul>
 <li>
 <p><code>+</code> : Increment the current memory cell by 1 (with wrapping overflow)</p>
 </li>
 <li>
-<p><code>-</code> : Decrememt the current memory cell by 1 (with wrapping underflow)</p>
+<p><code>-</code> : Decrement the current memory cell by 1 (with wrapping underflow)</p>
 </li>
 <li>
 <p><code>&gt;</code> : Shift the data pointer to the next memory cell</p>
@@ -262,7 +262,7 @@
     </a>
 </span>
 </h3><p>While impossible to read BrainFuck code itself, BrainFuck is probably the simplest turing-complete language. This makes it an ideal candidate for exploring JIT compilation.</p>
-<p>The first six of our instructions defined in <code>Instr</code> are pretty straitforward to implement in x86-64.</p>
+<p>The first six of our instructions defined in <code>Instr</code> are pretty straight-forward to implement in x86-64.</p>
 <hr>
 <p><code>+</code>:</p>
 <pre><code>add    BYTE PTR [r10],n
