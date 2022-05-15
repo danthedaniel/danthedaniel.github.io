@@ -3,15 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://danangell.com/blog/</loc>
-    <lastmod>2022-05-14T14:55:04-07:00</lastmod>
+    <lastmod>2022-05-15T10:25:19-07:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/posts/</loc>
-    <lastmod>2022-05-14T14:55:04-07:00</lastmod>
+    <lastmod>2022-05-15T10:25:19-07:00</lastmod>
   </url><url>
-    <loc>https://danangell.com/blog/tags/programming/</loc>
-    <lastmod>2022-05-14T14:55:04-07:00</lastmod>
+    <loc>https://danangell.com/blog/posts/rip-baconbits/</loc>
+    <lastmod>2022-05-15T10:25:19-07:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/tags/</loc>
+    <lastmod>2022-05-15T10:25:19-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/torrents/</loc>
+    <lastmod>2022-05-15T10:25:19-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/trackers/</loc>
+    <lastmod>2022-05-15T10:25:19-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/programming/</loc>
     <lastmod>2022-05-14T14:55:04-07:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/posts/type-level-api-client/</loc>

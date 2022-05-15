@@ -1,7 +1,7 @@
 ---
 title: "RIP BaconBits"
-date: 2022-05-14T21:18:19-07:00
-draft: true
+date: 2022-05-15T10:25:19-07:00
+draft: false
 tags: ["torrents", "trackers"]
 ---
 
@@ -20,8 +20,7 @@ never recovered.
 
 Here's an excerpt from the original Robot Uprising announcement post:
 
-> We've been down for the past week+ due to a hardware fault on our core server. Thankfully we've managed to mitigate that so... we're up. But something nasty happened as we came back.
-Our semi-airgapped database came up with the wrong system time. As in, with a date and time a few years behind... while the appservers were running on the correct time. That means a bunch of torrents were being marked as last having been seeded "a few years ago", while the appservers knew it was 2017.
+> Our semi-airgapped database came up with the wrong system time. As in, with a date and time a few years behind... while the appservers were running on the correct time. That means a bunch of torrents were being marked as last having been seeded "a few years ago", while the appservers knew it was 2017.
 > 
 > That's all fine and dandy except for the fact that we automatically prune torrents that haven't been seeded for "2 weeks". From now. The situation unfortunately went unnoticed for a while (12+h).
 > 
