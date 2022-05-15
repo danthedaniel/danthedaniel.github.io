@@ -6,4 +6,3 @@ draft: false
 
 I'm a [computer man](https://www.youtube.com/watch?v=V51OJr0ee6E).
 
-I currently work for Google developing the Trusty TEE kernel, kernel modules, and security-focused Trusty userspace applications.

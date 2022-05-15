@@ -5,7 +5,7 @@ draft: true
 tags: ["programming", "typescript"]
 ---
 
-Exactly one year ago I looked around for existing tech that would provide me with compile-time guarantees for a RESTful API interface. With full-stack TypeScript web applications reaching a level of maturity where I, a previously die-hard Rails developer, felt comfortable taking the dive - it seemed like the Node ecosystem was lacking in ties between the front end and back end.
+Exactly one year ago I looked around for existing tech that would provide me with compile-time guarantees for a REST-ish API interface. With full-stack TypeScript web applications reaching a level of maturity where I, a previously die-hard Rails developer, felt comfortable taking the dive - it seemed like the Node ecosystem was lacking in ties between the front end and back end.
 
 <!--more-->
 
@@ -15,9 +15,9 @@ As a minimalist, I was hoping for a solution that did not involve any extra depe
 
 ## Part 1 - Models
 
-The architecture of the app this was built for has a NextJS/React front-end, with a NestJS/TypeORM back end (yes, Nest/Next gets very confusing to talk about).
+The architecture of the app this was built for has a NextJS/React front-end, with a NestJS/TypeORM back-end (Nest/Next gets very confusing to talk about).
 
-Most of the data that gets chucked over the wire to the front end originates in the model layer. So if I'm going to use models in the API I want their property's types propogated all the way to the front-end.
+Most of the data that gets chucked to the front end originates in the model layer. So if I'm going to use models in the API I want their property's types propogated all the way to the front-end.
 
 ### Requirements:
 
@@ -26,7 +26,7 @@ Most of the data that gets chucked over the wire to the front end originates in 
 
 ### Solution:
 
-I can leverage TypeScript to allow for extracting a per-model type interface defined by just an array of model properties I want to share with the client. For a `User` that array would include things like `["id", "email", "firstName", "lastName", ...]`. This requires some advanced type-level programming, but I've already done the work for you. The trick is all in the signature of the function used to pluck out the corresponding values for `id`, `email` etc.
+I can leverage TypeScript to allow for extracting a per-model type interface defined by just an array of model properties I want to share with the client. For a `User` that array would include things like `["id", "email", "firstName", "lastName", ...]`. This requires some fancy type-level programming, but I've already done the work for you. The trick is all in the signature of the function used to pluck out the corresponding values for `id`, `email` etc.
 
 ```typescript
 function extractDTOAttrs<This, Attr extends keyof This>(
@@ -132,7 +132,7 @@ export class User extends RootEntity {
 
 This solution is generic enough that you should be able to use it with any ORM. Not just TypeORM.
 
-Thanks to TypeScript's automatic function return type inference the dynamic type of `this.extractDTOAttrs()` becomes `User.toDTO()`'s type as well.
+Thanks to TypeScript's return type inference the type of `this.extractDTOAttrs([...])` becomes `User.toDTO()`'s type as well.
 
 ## Part 2 - Controllers
 
@@ -204,7 +204,7 @@ export interface PutEndpoint<Path extends string, Params, Body, ResponseData>
 
 export type DeleteEndpoint<Path extends string, Params, ResponseData> = Endpoint<"delete", Path, Params, ResponseData>;
 
-type ClassType = new (...args: unknown[]) => any; // eslint-disable-line
+type ClassType = new (...args: unknown[]) => any;
 type UnPromisify<Outer> = Outer extends Promise<infer Inner> ? Inner : Outer;
 type UnResponsify<Outer> = Outer extends SuccessResponse<infer Data> ? Data : never;
 
@@ -224,7 +224,6 @@ import axios, { AxiosRequestConfig } from "axios";
  * Converts a type into its post JSON serialization/deserialization version.
  */
 type JSONSerialized<T> =
-  // prettier-ignore
   T extends number ? T :
   T extends string ? T :
   T extends boolean ? T :
@@ -238,7 +237,6 @@ type JSONSerialized<T> =
 export type VerbType<T> = T extends Endpoint<infer Verb, any, any, any> ? Verb : never;
 export type PathType<T> = T extends Endpoint<any, infer Path, any, any> ? Path : never;
 export type BodyType<T> =
-  // prettier-ignore
   T extends PostEndpoint<any, any, infer Body, any> ? Body :
   T extends PatchEndpoint<any, any, infer Body, any> ? Body :
   T extends PutEndpoint<any, any, infer Body, any> ? Body :
