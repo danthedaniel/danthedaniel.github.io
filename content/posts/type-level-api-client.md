@@ -54,7 +54,7 @@ Success! This is a valid API request. And even better the type of `user` is `Api
 
 Changing anything along the pipeline from the model to the view will automatically adjust the types and should
 give compiler errors where the API has made a breaking change. New fields are automatically shown in your
-front end code. The only parts of the API spec that duplicate information are the HTTP verb and path where we had to re-type them in `@company/api/endpoints`. But those are unlikely to change very often - if ever.
+front end code.
 
 Curious how it all works? Read on!
 
@@ -224,7 +224,7 @@ interface UserControllerMeMethod {
 }
 ```
 
-The wrapper structure is called `SuccessResponse<T>`. So the type is, more succinctly, `SuccessResponse<ReturnType<User["toDTO]>>`.
+The wrapper structure is called `SuccessResponse<T>`. So the type is, more succinctly, `SuccessResponse<ReturnType<User["toDTO"]>>`.
 
 We *could* extract this type from the controller and import it into the front end without any other supporting code. But that would require the front-end to reference specific back-end files which increases coupling. So as an alternative I've defined an endpoints file in the root of the NestJS project. If we only export endpoint definitions in this file we can grab the full API definition with one clean import:
 
@@ -243,6 +243,16 @@ export type CurrentUser = GetEndpoint<"/user/me", never, ResponseDataType<typeof
 
 // ...more endpoints...
 ```
+
+You can even parameterize the paths with templated string types. For example:
+
+```typescript
+export type Widget = GetEndpoint<`/widget/${number}`, never, ResponseDataType<typeof WidgetController, "get">>;
+```
+
+When used you will only be able to specify paths like `/widget/1`. But any non-numeric suffixes - `/widget/foo` - will result in a compiler error. You could also parameterize with a string union or any other primitive union.
+
+The only parts of the API spec that duplicate information are the HTTP verb and path. But those are unlikely to change very often - if ever.
 
 And here are the supporting types:
 

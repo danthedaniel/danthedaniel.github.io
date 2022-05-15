@@ -91,7 +91,7 @@
 
 
     
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652638029" type="text/javascript" charset="utf-8"></script>
+        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652638325" type="text/javascript" charset="utf-8"></script>
     
 
 
@@ -237,7 +237,7 @@ you haven&rsquo;t provided a path.</p>
 </span></span></code></pre></div><p>Success! This is a valid API request. And even better the type of <code>user</code> is <code>ApiResponse&lt;{ id: number, email: string, ...}&gt;</code>.</p>
 <p>Changing anything along the pipeline from the model to the view will automatically adjust the types and should
 give compiler errors where the API has made a breaking change. New fields are automatically shown in your
-front end code. The only parts of the API spec that duplicate information are the HTTP verb and path where we had to re-type them in <code>@company/api/endpoints</code>. But those are unlikely to change very often - if ever.</p>
+front end code.</p>
 <p>Curious how it all works? Read on!</p>
 <h2 id="implementation-part-1---models" >Implementation Part 1 - Models
 <span>
@@ -402,7 +402,7 @@ return type of <code>UserController.me</code>. The full type will be:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The wrapper structure is called <code>SuccessResponse&lt;T&gt;</code>. So the type is, more succinctly, <code>SuccessResponse&lt;ReturnType&lt;User[&quot;toDTO]&gt;&gt;</code>.</p>
+</span></span></code></pre></div><p>The wrapper structure is called <code>SuccessResponse&lt;T&gt;</code>. So the type is, more succinctly, <code>SuccessResponse&lt;ReturnType&lt;User[&quot;toDTO&quot;]&gt;&gt;</code>.</p>
 <p>We <em>could</em> extract this type from the controller and import it into the front end without any other supporting code. But that would require the front-end to reference specific back-end files which increases coupling. So as an alternative I&rsquo;ve defined an endpoints file in the root of the NestJS project. If we only export endpoint definitions in this file we can grab the full API definition with one clean import:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">API</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@company/api/endpoints&#34;</span>;
 </span></span></code></pre></div><p>Here&rsquo;s what the endpoint spec looks like for <code>/user/me</code>:</p>
@@ -413,7 +413,11 @@ return type of <code>UserController.me</code>. The full type will be:</p>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">CurrentUser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">GetEndpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;/user/me&#34;</span>, <span style="color:#66d9ef">never</span>, <span style="color:#a6e22e">ResponseDataType</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">UserController</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">me</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;<span style="color:#f92672">&gt;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// ...more endpoints...
-</span></span></span></code></pre></div><p>And here are the supporting types:</p>
+</span></span></span></code></pre></div><p>You can even parameterize the paths with templated string types. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Widget</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">GetEndpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">`/widget/</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">number</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#66d9ef">never</span>, <span style="color:#a6e22e">ResponseDataType</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">WidgetController</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">get</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;<span style="color:#f92672">&gt;</span>;
+</span></span></code></pre></div><p>When used you will only be able to specify paths like <code>/widget/1</code>. But any non-numeric suffixes - <code>/widget/foo</code> - will result in a compiler error. You could also parameterize with a string union or any other primitive union.</p>
+<p>The only parts of the API spec that duplicate information are the HTTP verb and path. But those are unlikely to change very often - if ever.</p>
+<p>And here are the supporting types:</p>
 <p><code>@company/api/types</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// API response structure
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SuccessResponse</span>&lt;<span style="color:#f92672">T</span>&gt; {
