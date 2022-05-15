@@ -159,7 +159,13 @@ situations where GraphQL feels inappropriate this can be your fall-back.&lt;/p&g
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Get the type of &lt;code&gt;User.toDTO()&lt;/code&gt; to a place where it can be accessed from the front end&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;@company/api/modules/user.controller.ts&lt;/code&gt;:&lt;/p&gt;
+&lt;h3 id=&#34;solution-1&#34; &gt;Solution:
+&lt;span&gt;
+    &lt;a href=&#34;#solution-1&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;@company/api/modules/user.controller.ts&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;@Controller&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;UserController&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;constructor&lt;/span&gt;(
@@ -273,7 +279,13 @@ that all set in place we need to do a few more things.&lt;/p&gt;
 &lt;li&gt;Unpack the Endpoint types in front end code.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;sup&gt;An Endpoint type (such as &lt;code&gt;GetEndpoint&lt;/code&gt;, &lt;code&gt;PostEndpoint&lt;/code&gt;, etc.) wraps up a Verb type, Path type, Response type, and more. Being able to see each of those components one at a time is helpful.&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;Requirement 1 may have surprised you. What conversion needs to be done? Why would a type look different after converting to/from JSON? We&amp;rsquo;re only sending JSON-serializable types over the network, right? Yes - but not all JSON-serializable types deserialize back to their original type.&lt;/p&gt;
+&lt;h3 id=&#34;solution-2&#34; &gt;Solution:
+&lt;span&gt;
+    &lt;a href=&#34;#solution-2&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Requirement 1 may have surprised you. What conversion needs to be done? Why would a type look different after converting to/from JSON? We&amp;rsquo;re only sending JSON-serializable types over the network, right? Yes - but not all JSON-serializable types deserialize back to their original type.&lt;/p&gt;
 &lt;p&gt;Take, for example, a &lt;code&gt;Date&lt;/code&gt;. We will often want to include a &lt;code&gt;createdAt&lt;/code&gt; or &lt;code&gt;updatedAt&lt;/code&gt; timestamp in DTOs.
 You &lt;em&gt;can&lt;/em&gt; serialize a &lt;code&gt;Date&lt;/code&gt;, but &lt;code&gt;JSON.stringify({ date: new Date() })&lt;/code&gt; results in &lt;code&gt;{ &amp;quot;date&amp;quot;: &amp;quot;2022-05-15T05:21:07.324Z&amp;quot; }&lt;/code&gt;. The &lt;code&gt;Date&lt;/code&gt; has become a string! And when de-serializing why would the front-end know that this string in particular should become a &lt;code&gt;Date&lt;/code&gt;? It doesn&amp;rsquo;t.&lt;/p&gt;
 &lt;p&gt;The intention here is not to change this behavior. Only to track it accurately. We don&amp;rsquo;t want a type in the front-end that tells you there&amp;rsquo;s a &lt;code&gt;Date&lt;/code&gt; field in a DTO. And then at run time it&amp;rsquo;s actually a string. That&amp;rsquo;s exactly the kind of error we&amp;rsquo;re using TypeScript to prevent!&lt;/p&gt;

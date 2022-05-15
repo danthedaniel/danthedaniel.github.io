@@ -148,6 +148,8 @@ The end goal here is to get both the data and type for each model's DTO into the
 
 1. Get the type of `User.toDTO()` to a place where it can be accessed from the front end
 
+### Solution:
+
 `@company/api/modules/user.controller.ts`:
 ```typescript
 @Controller("user")
@@ -275,6 +277,8 @@ that all set in place we need to do a few more things.
 2. Unpack the Endpoint types in front end code.
 
 <sup>An Endpoint type (such as `GetEndpoint`, `PostEndpoint`, etc.) wraps up a Verb type, Path type, Response type, and more. Being able to see each of those components one at a time is helpful.</sup>
+
+### Solution:
 
 Requirement 1 may have surprised you. What conversion needs to be done? Why would a type look different after converting to/from JSON? We're only sending JSON-serializable types over the network, right? Yes - but not all JSON-serializable types deserialize back to their original type.
 

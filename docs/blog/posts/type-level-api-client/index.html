@@ -91,7 +91,7 @@
 
 
     
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652595785" type="text/javascript" charset="utf-8"></script>
+        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652595924" type="text/javascript" charset="utf-8"></script>
     
 
 
@@ -340,7 +340,13 @@ situations where GraphQL feels inappropriate this can be your fall-back.</p>
 </h3><ol>
 <li>Get the type of <code>User.toDTO()</code> to a place where it can be accessed from the front end</li>
 </ol>
-<p><code>@company/api/modules/user.controller.ts</code>:</p>
+<h3 id="solution-1" >Solution:
+<span>
+    <a href="#solution-1">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p><code>@company/api/modules/user.controller.ts</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">@Controller</span>(<span style="color:#e6db74">&#34;user&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(
@@ -454,7 +460,13 @@ that all set in place we need to do a few more things.</p>
 <li>Unpack the Endpoint types in front end code.</li>
 </ol>
 <p><sup>An Endpoint type (such as <code>GetEndpoint</code>, <code>PostEndpoint</code>, etc.) wraps up a Verb type, Path type, Response type, and more. Being able to see each of those components one at a time is helpful.</sup></p>
-<p>Requirement 1 may have surprised you. What conversion needs to be done? Why would a type look different after converting to/from JSON? We&rsquo;re only sending JSON-serializable types over the network, right? Yes - but not all JSON-serializable types deserialize back to their original type.</p>
+<h3 id="solution-2" >Solution:
+<span>
+    <a href="#solution-2">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Requirement 1 may have surprised you. What conversion needs to be done? Why would a type look different after converting to/from JSON? We&rsquo;re only sending JSON-serializable types over the network, right? Yes - but not all JSON-serializable types deserialize back to their original type.</p>
 <p>Take, for example, a <code>Date</code>. We will often want to include a <code>createdAt</code> or <code>updatedAt</code> timestamp in DTOs.
 You <em>can</em> serialize a <code>Date</code>, but <code>JSON.stringify({ date: new Date() })</code> results in <code>{ &quot;date&quot;: &quot;2022-05-15T05:21:07.324Z&quot; }</code>. The <code>Date</code> has become a string! And when de-serializing why would the front-end know that this string in particular should become a <code>Date</code>? It doesn&rsquo;t.</p>
 <p>The intention here is not to change this behavior. Only to track it accurately. We don&rsquo;t want a type in the front-end that tells you there&rsquo;s a <code>Date</code> field in a DTO. And then at run time it&rsquo;s actually a string. That&rsquo;s exactly the kind of error we&rsquo;re using TypeScript to prevent!</p>
