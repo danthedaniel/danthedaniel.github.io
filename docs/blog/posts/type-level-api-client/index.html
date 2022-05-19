@@ -91,7 +91,7 @@
 
 
     
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652638372" type="text/javascript" charset="utf-8"></script>
+        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1652932205" type="text/javascript" charset="utf-8"></script>
     
 
 
@@ -235,9 +235,9 @@ specified an HTTP method.</p>
 you haven&rsquo;t provided a path.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">request</span>&lt;<span style="color:#f92672">API.CurrentUser</span>&gt;({ <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/user/me&#34;</span> });
 </span></span></code></pre></div><p>Success! This is a valid API request. And even better the type of <code>user</code> is <code>ApiResponse&lt;{ id: number, email: string, ...}&gt;</code>.</p>
-<p>Changing anything along the pipeline from the model to the view will automatically adjust the types and should
-give compiler errors where the API has made a breaking change. New fields are automatically shown in your
-front end code.</p>
+<p><strong>Changing anything along the pipeline from the model to the view will automatically adjust the types and should
+give compiler errors where the API has made a breaking change</strong>. New (whitelisted) fields on the user are automatically
+shown in your front end code&rsquo;s IntelliSense.</p>
 <p>Curious how it all works? Read on!</p>
 <h2 id="implementation-part-1---models" >Implementation Part 1 - Models
 <span>

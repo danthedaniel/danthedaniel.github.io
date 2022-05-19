@@ -81,9 +81,9 @@ specified an HTTP method.&lt;/p&gt;
 you haven&amp;rsquo;t provided a path.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;user&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;request&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;API.CurrentUser&lt;/span&gt;&amp;gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;method&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;get&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/user/me&amp;#34;&lt;/span&gt; });
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Success! This is a valid API request. And even better the type of &lt;code&gt;user&lt;/code&gt; is &lt;code&gt;ApiResponse&amp;lt;{ id: number, email: string, ...}&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Changing anything along the pipeline from the model to the view will automatically adjust the types and should
-give compiler errors where the API has made a breaking change. New fields are automatically shown in your
-front end code.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Changing anything along the pipeline from the model to the view will automatically adjust the types and should
+give compiler errors where the API has made a breaking change&lt;/strong&gt;. New (whitelisted) fields on the user are automatically
+shown in your front end code&amp;rsquo;s IntelliSense.&lt;/p&gt;
 &lt;p&gt;Curious how it all works? Read on!&lt;/p&gt;
 &lt;h2 id=&#34;implementation-part-1---models&#34; &gt;Implementation Part 1 - Models
 &lt;span&gt;

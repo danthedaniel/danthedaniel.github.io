@@ -52,9 +52,9 @@ const user = await request<API.CurrentUser>({ method: "get", url: "/user/me" });
 
 Success! This is a valid API request. And even better the type of `user` is `ApiResponse<{ id: number, email: string, ...}>`.
 
-Changing anything along the pipeline from the model to the view will automatically adjust the types and should
-give compiler errors where the API has made a breaking change. New fields are automatically shown in your
-front end code.
+**Changing anything along the pipeline from the model to the view will automatically adjust the types and should
+give compiler errors where the API has made a breaking change**. New (whitelisted) fields on the user are automatically
+shown in your front end code's IntelliSense.
 
 Curious how it all works? Read on!
 
