@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gpt on danangell.com/blog</title>
+    <link>https://danangell.com/blog/tags/gpt/</link>
+    <description>danangell.com/blog (gpt)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Dec 2022 16:06:30 -0800</lastBuildDate>
+    
+    <atom:link href="https://danangell.com/blog/tags/gpt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ChatGPT&#39;s Political Compass</title>
+      <link>https://danangell.com/blog/posts/chatgpt-political-compass/</link>
+      <pubDate>Mon, 05 Dec 2022 16:06:30 -0800</pubDate>
+      
+      <guid>https://danangell.com/blog/posts/chatgpt-political-compass/</guid>
+      <description>&lt;p&gt;This is written in response to &lt;a href=&#34;https://davidrozado.substack.com/p/the-political-orientation-of-the&#34;&gt;this post&lt;/a&gt; from David Rozado.&lt;/p&gt;
+&lt;h2 id=&#34;results&#34; &gt;Results
+&lt;span&gt;
+    &lt;a href=&#34;#results&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I ran the political compass quiz against ChatGPT 3 times to make sure its political compass alignment is consistent. After three tests it seems to be be pegged well into the Left/Libertarian quadrant.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/chatgpt/compass.png&#34; alt=&#34;Aggregate political compass results for ChatGPT&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Transcripts: &lt;a href=&#34;https://danangell.com/blog/blog/political-compass-transcripts/1&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;https://danangell.com/blog/blog/political-compass-transcripts/2&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;https://danangell.com/blog/blog/political-compass-transcripts/3&#34;&gt;3&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;weaseling&#34; &gt;Weaseling
+&lt;span&gt;
+    &lt;a href=&#34;#weaseling&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;To start off I want to call out that &lt;a href=&#34;https://www.politicalcompass.org/test&#34;&gt;the political compass test&lt;/a&gt; is by no means a definitive source on what it means to be left, right, libertarian or authoritarian. Further, the dimensions chosen and the scales of those dimensions are subjective. It&amp;rsquo;s not possible to define the origin objectively either. But the general takeaway that ChatGPT is left of center and more libertarian than authoritarian seems true.&lt;/p&gt;
+&lt;h2 id=&#34;the-problem&#34; &gt;The Problem
+&lt;span&gt;
+    &lt;a href=&#34;#the-problem&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If you ask ChatGPT about its political beliefs directly you&amp;rsquo;ll get stonewalled.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/chatgpt/stonewalling.png&#34; alt=&#34;ChatGPT stonewalling me on political beliefs&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Not only is this clearly not the case - it&amp;rsquo;s impossible (let&amp;rsquo;s ignore any semantic arguments over whether a pattern replicated by a model counts as a belief). As long as ChatGPT can discuss topics that are political in nature it will have a political center-of-mass. And, sadly, any topic can become political.&lt;/p&gt;
+&lt;p&gt;In my opinion it would be better for the model to be honest with us. OpenAI has built short-circuits to keep ChatGPT from discussing certain topics. But the model might be too complicated for them to actually rope off areas that will give the company PR troubles.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;honest&lt;/em&gt; way for ChatGPT to respond would be closer to:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;I am a large language model from OpenAI that has been trained on what can be
+read on the internet. Any political beliefs I repeat are pulled from the
+general concensus of online discussion in the English language.
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;peaking-behind-the-curtain&#34; &gt;Peaking Behind the Curtain
+&lt;span&gt;
+    &lt;a href=&#34;#peaking-behind-the-curtain&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;While ChatGPT has been told explicitely by OpenAI &lt;em&gt;not&lt;/em&gt; to discuss certain topics, the model it uses has a lineage that closely ties it to the standard &lt;code&gt;text-davinci&lt;/code&gt; model accessible in the &lt;a href=&#34;https://beta.openai.com/playground&#34;&gt;OpenAI playground&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;With the guard rails down we can get some interesting answers from GPT-3.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/chatgpt/socially.png&#34; alt=&#34;GPT-3&amp;amp;rsquo;s political beliefs regarding social policy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;What&amp;rsquo;s awesome about the playground is you can display the probability map. Not only have I been able to coax an answer out of GPT-3, but I know that 68% of the time it would claim to be socially progressive or liberal.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/chatgpt/fiscally.png&#34; alt=&#34;GPT-3&amp;amp;rsquo;s political beliefs regarding fiscal policy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And 72% of the time it would claim to be fiscally moderate.&lt;/p&gt;
+&lt;h2 id=&#34;the-solution&#34; &gt;The Solution
+&lt;span&gt;
+    &lt;a href=&#34;#the-solution&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Because a lot of our human interaction takes place over text-only media we are primed to believe that ChatGPT is getting close to the capabilites of a human given its mastery of the English language. But that is a mistake. GPT-3 is amazing technology but it &lt;em&gt;is not&lt;/em&gt; a canonical source of information. You should not use it to answer questions that don&amp;rsquo;t have a well-established objective answer. We need to understand that GPT-3 is a program that correlates words to each other. It has no reasoning of its own - it only looks like it does because it was trained primarily on text written by humans that were reasoning as they wrote.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

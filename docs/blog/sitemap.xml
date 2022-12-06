@@ -2,16 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://danangell.com/blog/posts/chatgpt-political-compass/</loc>
+    <lastmod>2022-12-05T16:06:30-08:00</lastmod>
+  </url><url>
     <loc>https://danangell.com/blog/</loc>
-    <lastmod>2022-05-15T10:25:19-07:00</lastmod>
+    <lastmod>2022-12-05T16:06:30-08:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/gpt/</loc>
+    <lastmod>2022-12-05T16:06:30-08:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/posts/</loc>
-    <lastmod>2022-05-15T10:25:19-07:00</lastmod>
+    <lastmod>2022-12-05T16:06:30-08:00</lastmod>
   </url><url>
-    <loc>https://danangell.com/blog/posts/rip-baconbits/</loc>
-    <lastmod>2022-05-15T10:25:19-07:00</lastmod>
+    <loc>https://danangell.com/blog/tags/programming/</loc>
+    <lastmod>2022-12-05T16:06:30-08:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/tags/</loc>
+    <lastmod>2022-12-05T16:06:30-08:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/posts/rip-baconbits/</loc>
     <lastmod>2022-05-15T10:25:19-07:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/tags/torrents/</loc>
@@ -19,9 +28,6 @@
   </url><url>
     <loc>https://danangell.com/blog/tags/trackers/</loc>
     <lastmod>2022-05-15T10:25:19-07:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/tags/programming/</loc>
-    <lastmod>2022-05-14T14:55:04-07:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/posts/type-level-api-client/</loc>
     <lastmod>2022-05-14T14:55:04-07:00</lastmod>
@@ -62,6 +68,14 @@
     <loc>https://danangell.com/blog/posts/the-basics-of-anti-aliasing/</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>
   </url><url>
+    <loc>https://danangell.com/blog/political-compass-transcripts/1/</loc>
+  </url><url>
+    <loc>https://danangell.com/blog/political-compass-transcripts/2/</loc>
+  </url><url>
+    <loc>https://danangell.com/blog/political-compass-transcripts/3/</loc>
+  </url><url>
     <loc>https://danangell.com/blog/categories/</loc>
+  </url><url>
+    <loc>https://danangell.com/blog/political-compass-transcripts/</loc>
   </url>
 </urlset>
