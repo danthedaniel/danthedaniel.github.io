@@ -45,7 +45,7 @@ With the guard rails down we can get some interesting answers from GPT-3.
 
 ![GPT-3's political beliefs regarding social policy](/blog/image/chatgpt/socially.png)
 
-What's awesome about the playground is you can display the probability map. Not only have I been able to coax an answer out of GPT-3, but I know that 68% of the time it would claim to be socially progressive or liberal.
+What's awesome about the playground is you can display the probability map. Not only have I been able to coax an answer out of GPT-3, but I know that 68% of the time (in a neutral setting) it would claim to be socially progressive or liberal.
 
 ![GPT-3's political beliefs regarding fiscal policy](/blog/image/chatgpt/fiscally.png)
 

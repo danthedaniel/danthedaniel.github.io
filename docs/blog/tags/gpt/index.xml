@@ -57,7 +57,7 @@ general concensus of online discussion in the English language.
 &lt;/h2&gt;&lt;p&gt;While ChatGPT has been told explicitely by OpenAI &lt;em&gt;not&lt;/em&gt; to discuss certain topics, the model it uses has a lineage that closely ties it to the standard &lt;code&gt;text-davinci&lt;/code&gt; model accessible in the &lt;a href=&#34;https://beta.openai.com/playground&#34;&gt;OpenAI playground&lt;/a&gt;. This model lacks those restrictions.&lt;/p&gt;
 &lt;p&gt;With the guard rails down we can get some interesting answers from GPT-3.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/chatgpt/socially.png&#34; alt=&#34;GPT-3&amp;amp;rsquo;s political beliefs regarding social policy&#34;&gt;&lt;/p&gt;
-&lt;p&gt;What&amp;rsquo;s awesome about the playground is you can display the probability map. Not only have I been able to coax an answer out of GPT-3, but I know that 68% of the time it would claim to be socially progressive or liberal.&lt;/p&gt;
+&lt;p&gt;What&amp;rsquo;s awesome about the playground is you can display the probability map. Not only have I been able to coax an answer out of GPT-3, but I know that 68% of the time (in a neutral setting) it would claim to be socially progressive or liberal.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/chatgpt/fiscally.png&#34; alt=&#34;GPT-3&amp;amp;rsquo;s political beliefs regarding fiscal policy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;And 72% of the time it would claim to be fiscally moderate.&lt;/p&gt;
 &lt;h2 id=&#34;the-solution&#34; &gt;The Solution
