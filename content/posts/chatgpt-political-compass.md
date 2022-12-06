@@ -39,7 +39,7 @@ general concensus of online discussion in the English language.
 
 ## Peaking Behind the Curtain
 
-While ChatGPT has been told explicitely by OpenAI *not* to discuss certain topics, the model it uses has a lineage that closely ties it to the standard `text-davinci` model accessible in the [OpenAI playground](https://beta.openai.com/playground).
+While ChatGPT has been told explicitely by OpenAI *not* to discuss certain topics, the model it uses has a lineage that closely ties it to the standard `text-davinci` model accessible in the [OpenAI playground](https://beta.openai.com/playground). This model lacks those restrictions.
 
 With the guard rails down we can get some interesting answers from GPT-3.
 
