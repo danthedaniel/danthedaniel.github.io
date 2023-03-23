@@ -91,7 +91,7 @@
 
 
     
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1670310344" type="text/javascript" charset="utf-8"></script>
+        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1679536097" type="text/javascript" charset="utf-8"></script>
     
 
 
@@ -413,7 +413,9 @@ return type of <code>UserController.me</code>. The full type will be:</p>
 <p>The only parts of the API spec that duplicate information are the HTTP verb and path. But those are unlikely to change very often - if ever.</p>
 <p>And here are the supporting types:</p>
 <p><code>@company/api/types</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// API response structure
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ErrorCodeType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NOT_FOUND&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;INTERNAL_SERVER_ERROR&#34;</span>; <span style="color:#75715e">// Add error codes as needed
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// API response structure
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SuccessResponse</span>&lt;<span style="color:#f92672">T</span>&gt; {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;success&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span>: <span style="color:#66d9ef">T</span>;
@@ -458,7 +460,7 @@ return type of <code>UserController.me</code>. The full type will be:</p>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">DeleteEndpoint</span>&lt;<span style="color:#f92672">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;delete&#34;</span>, <span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">Params</span>, <span style="color:#a6e22e">ResponseData</span><span style="color:#f92672">&gt;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Below here is code to cleanly extract the return type from a controller method.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ClassType</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> (...<span style="color:#a6e22e">args</span>: <span style="color:#66d9ef">unknown</span>[]) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">any</span>;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ClassType</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> (...<span style="color:#a6e22e">args</span>: <span style="color:#66d9ef">any</span>[]) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">any</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UnPromisify</span>&lt;<span style="color:#f92672">Outer</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Outer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">infer</span> <span style="color:#a6e22e">Inner</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Inner</span> : <span style="color:#66d9ef">Outer</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UnResponsify</span>&lt;<span style="color:#f92672">Outer</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Outer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">SuccessResponse</span>&lt;<span style="color:#f92672">infer</span> <span style="color:#a6e22e">Data</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Data</span> : <span style="color:#66d9ef">never</span>;
 </span></span><span style="display:flex;"><span>
@@ -632,7 +634,7 @@ only valid API requests can be made. This is done by locking down the <code>meth
     <div class="common-footer-bottom">
         
         <div class="copyright">
-            <p>© Daniel Angell, 2022<br>
+            <p>© Daniel Angell, 2023<br>
             Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
             
             </p>  

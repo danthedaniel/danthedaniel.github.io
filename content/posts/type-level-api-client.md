@@ -252,6 +252,8 @@ And here are the supporting types:
 
 `@company/api/types`:
 ```typescript
+type ErrorCodeType = "NOT_FOUND" | "INTERNAL_SERVER_ERROR"; // Add error codes as needed
+
 // API response structure
 export interface SuccessResponse<T> {
   status: "success";
@@ -297,7 +299,7 @@ export interface PutEndpoint<Path extends string, Params, Body, ResponseData>
 export type DeleteEndpoint<Path extends string, Params, ResponseData> = Endpoint<"delete", Path, Params, ResponseData>;
 
 // Below here is code to cleanly extract the return type from a controller method.
-type ClassType = new (...args: unknown[]) => any;
+type ClassType = new (...args: any[]) => any;
 type UnPromisify<Outer> = Outer extends Promise<infer Inner> ? Inner : Outer;
 type UnResponsify<Outer> = Outer extends SuccessResponse<infer Data> ? Data : never;
 
