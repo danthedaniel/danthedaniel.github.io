@@ -6,10 +6,43 @@
     <description>danangell.com/blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Apr 2023 17:14:55 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 15 Apr 2023 14:58:51 -0700</lastBuildDate>
     
     <atom:link href="https://danangell.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Post Information Scarcity</title>
+      <link>https://danangell.com/blog/posts/post-information-scarcity/</link>
+      <pubDate>Sat, 15 Apr 2023 14:58:51 -0700</pubDate>
+      
+      <guid>https://danangell.com/blog/posts/post-information-scarcity/</guid>
+      <description>&lt;p&gt;In Star Trek humans live in a post-scarcity world. Transporter technology allows for instantaneous and cheap movement of humans and objects anywhere on a planet, and into or out of orbit. The same devices that allow for transportation can also re-organize matter into arbitrary configurations. This means that anything that can be designed can be owned for essentially no cost. What do people do in such a world? As Gene Roddenberry imagined, they explore. If we can get anything that&amp;rsquo;s ever been recorded for free in an instant, then new and undiscovered things are of unparalleled value and interest.&lt;/p&gt;
+&lt;p&gt;Right now a lot of work is put into recycling knowledge. Someone that knows enough to sling some Apex can bridge the gap between someone that does not and a business need. And now your Salesforce workspace pings your customer ops team with a special notification for high value leads. Someone that knows the local building codes can be consulted on new construction projects and identify issues in a design. Someone building Rails CRUD apps recycles Rails-isms until they have satisfied all requirements.&lt;/p&gt;
+&lt;p&gt;GPT-4 has made it clear that with enough training data you can automatically solve small problems with a high level of success.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&amp;hellip; the context to solve the problem is represented in text&lt;/li&gt;
+&lt;li&gt;&amp;hellip; the context fits in the model&amp;rsquo;s context window&lt;/li&gt;
+&lt;li&gt;&amp;hellip; the solution can be represented in text&lt;/li&gt;
+&lt;li&gt;&amp;hellip; the problem is similar to ones solved in its training set&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;then those problems are solved cheaper and faster by an AI than by a human. Human data labelers are already losing their jobs to GPT. People that are paid to write SQL snippets or similar brief incantations will soon follow. And GPT is going to come for my job given enough time.&lt;/p&gt;
+&lt;p&gt;But while GPT can solve &amp;ldquo;novel&amp;rdquo; problems that it&amp;rsquo;s never seen before, it can only do so in the sense that a parameterized function can solve novel problems:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Component&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;label&lt;/span&gt; }) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;span&lt;/span&gt;&amp;gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;label&lt;/span&gt;}&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;span&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;Component&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;label&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Look, ma! Never before seen code!&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Most day-to-day requests have already been satisfied by a programmer before. And at some point solutions for most people&amp;rsquo;s problems have been uploaded to GitHub or Stack Overflow. The same goes for most of the ways people want to compose solutions. And thus we can ask GPT for a brand new solution to a never-before-seen problem.&lt;/p&gt;
+&lt;p&gt;Unlike many vocal critics on the internet, I am not saying this to imply GPT is useless. In fact, &lt;em&gt;GPT may be the most powerful software tool since the unix shell&lt;/em&gt;. But it&amp;rsquo;s only distributing knowledge that programmers have, until now, kept amongst themselves. As the tooling around GPT refines I can see every office worker slinging code without even realizing that&amp;rsquo;s what they&amp;rsquo;re doing.&lt;/p&gt;
+&lt;p&gt;Once OpenAI and its competitors get their hands on enough training data for other domains we&amp;rsquo;ll see those sectors lose a need for knowledge workers. Imagine 1,000 skilled UX designers meticulously annotating their work over the course of a year in a way that a tranformer can train on. The current state-of-the-art in UX will get crystalized. That knowedge will then be the &lt;em&gt;least&lt;/em&gt; someone can know about UX. So to be as blunt as possible, &lt;strong&gt;if it&amp;rsquo;s your job to know things GPT is coming for your paycheck&lt;/strong&gt;. GPT connects a human and a need for knowledge with a solution wrapped up in the context of their problem.&lt;/p&gt;
+&lt;p&gt;But on the other hand, &lt;strong&gt;if it&amp;rsquo;s your job to discover truly novel information, GPT can&amp;rsquo;t compete with you&lt;/strong&gt;. Only so much can be inferred from the Socratic method. Without real-world testing your tower of assumptions will quickly fall over.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re about to find out what it&amp;rsquo;s like to crash into a post information scarcity reality.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Working With GPT</title>
@@ -18,7 +51,7 @@
       
       <guid>https://danangell.com/blog/posts/working-with-gpt/</guid>
       <description>&lt;p&gt;The programmer internet is polarizing over ChatGPT. Some claim that it is nearly AGI, some claim it cannot do anything of value, with plenty of people in between. I&amp;rsquo;ve worked with GPT-3 professionally, used CoPilot for over a year, and recently started programming side-projects with the assistance of ChatGPT (I pay for GPT-4 access). I&amp;rsquo;m considering working with LLMs full time again, so I pay close attention to what the GPT models can actually do.&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s actually not very obvious what ChatGPT is good at for a number of reasons. Because &lt;strong&gt;ChatGPT is multiple things at once&lt;/strong&gt;, and all through the same interface.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s actually not very obvious what ChatGPT is good at for a number of reasons. But the trickiest is that &lt;strong&gt;ChatGPT is multiple things at once&lt;/strong&gt;, and all through the same interface.&lt;/p&gt;
 &lt;h2 id=&#34;chatgpt-as-a-search-engine&#34; &gt;ChatGPT as a Search Engine
 &lt;span&gt;
     &lt;a href=&#34;#chatgpt-as-a-search-engine&#34;&gt;
