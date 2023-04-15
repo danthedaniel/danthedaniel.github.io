@@ -100,13 +100,13 @@ a.google-logo span {
 
 @media (max-width: 50em) {
   .container {
-    width: calc(100vw - 5em);
+    width: calc(100vw - 2em);
   }
 }
 
 @media (min-width: 50em) {
   .container {
-    width: 45em;
+    width: 48em;
   }
 }
 
