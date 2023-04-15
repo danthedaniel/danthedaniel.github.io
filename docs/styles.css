@@ -40,6 +40,37 @@ cite {
   text-align: right;
 }
 
+a.google-logo {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 0;
+  display: inline;
+  white-space: nowrap;
+  line-height: 0;
+  font-size: 0;
+}
+
+a.google-logo span {
+  font-size: 1.3rem;
+}
+
+.google-logo .blue {
+  color: #4285F4;
+}
+
+.google-logo .red {
+  color: #DB4437;
+}
+
+.google-logo .yellow {
+  color: #F4B400;
+}
+
+.google-logo .green {
+  color: #0F9D58;
+}
+
 .container {
   display: flex;
   flex-direction: column;
