@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: #333;
 }
 
@@ -19,13 +19,12 @@ a:hover {
 
 h1 {
   color: #e0e0e0;
-  margin-top: 1rem;
+  margin-top: 2rem;
   font-size: 2rem;
 }
 
 p {
-  text-indent: 2rem;
-  margin-top: 1rem;
+  line-height: 1.5;
 }
 
 blockquote {
@@ -47,7 +46,7 @@ cite {
   align-content: center;
   align-items: center;
   margin: 0 auto;
-  padding-top: 2em;
+  padding-top: 3em;
   height: 100vh;
 }
 
@@ -55,9 +54,9 @@ cite {
   display: block;
   border: 1px solid #444;
   border-radius: 0.3em;
-  padding: 1em;
+  padding: 2em;
   background-color: white;
-  margin: 1em;
+  margin: 2em;
 }
 
 .rounded {
@@ -70,7 +69,7 @@ cite {
 
 @media (max-width: 50em) {
   .container {
-    width: calc(100vw - 2em);
+    width: calc(100vw - 5em);
   }
 }
 
