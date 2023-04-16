@@ -41,7 +41,7 @@ cite {
   text-align: right;
 }
 
-a.google-logo {
+.google-logo {
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -52,7 +52,7 @@ a.google-logo {
   font-size: 0;
 }
 
-a.google-logo span {
+.google-logo span {
   font-size: 1.3rem;
 }
 
