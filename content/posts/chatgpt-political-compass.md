@@ -2,7 +2,7 @@
 title: "ChatGPT's Political Compass"
 date: 2022-12-05T16:06:30-08:00
 draft: false
-tags: ["programming", "gpt"]
+tags: ["gpt"]
 ---
 
 This is written in response to [this post](https://davidrozado.substack.com/p/the-political-orientation-of-the) from David Rozado.

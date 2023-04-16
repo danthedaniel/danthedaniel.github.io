@@ -2,7 +2,7 @@
 title: "Working With GPT"
 date: 2023-04-07T17:14:55-07:00
 draft: false
-tags: ["gpt"]
+tags: ["gpt", "programming"]
 ---
 
 The programmer internet is polarizing over ChatGPT. Some claim that it is nearly AGI, some claim it cannot do anything of value, with plenty of people in between. I've worked with GPT-3 professionally, used CoPilot for over a year, and recently started programming side-projects with the assistance of ChatGPT (I pay for GPT-4 access). I'm considering working with LLMs full time again, so I pay close attention to what the GPT models can actually do.
