@@ -5,13 +5,7 @@ draft: false
 tags: ["programming", "math", "graphics"]
 ---
 
-<center>
-    <video autoplay="" loop="" width="240" height="240">
-        <source src="/blog/image/shaders/hole.frag.mp4" type="video/mp4">
-    </video>
-    <br />
-    <small>You can check out the source for the above shader <a href="https://www.shadertoy.com/view/4dcyzH">here</a>.</small>
-</center>
+<iframe class="rounded" width="100%" height="460px" frameborder="0" src="https://www.shadertoy.com/embed/4dcyzH?gui=true&paused=true&muted=true" allowfullscreen></iframe>
 
 Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
 
@@ -30,18 +24,18 @@ Then I would render lines sequentially connecting each point to the last. But th
 In a shader you'd use a more simplified definition of a circle. If you're inside of the circle's radius you draw the circle. If you're outside of the radius you don't.
 
 ```glsl
-uniform vec2 u_resolution;  
+uniform vec2 u_resolution;
 
-void main() {  
-    float radius = 0.3;  
-    vec2 center = vec2(0.5);  
-    vec2 pos = gl_FragCoord.xy / u_resolution.xy;  
+void main() {
+    float radius = 0.3;
+    vec2 center = vec2(0.5);
+    vec2 pos = gl_FragCoord.xy / u_resolution.xy;
 
-    if (distance(pos, center) > radius) {  
-        gl_FragColor = vec4(1.0);  
-    } else {  
-        gl_FragColor = vec4(vec3(0.0), 1.0);  
-    }  
+    if (distance(pos, center) > radius) {
+        gl_FragColor = vec4(1.0);
+    } else {
+        gl_FragColor = vec4(vec3(0.0), 1.0);
+    }
 }
 ```
 

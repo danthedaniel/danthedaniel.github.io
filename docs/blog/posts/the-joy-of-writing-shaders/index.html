@@ -12,8 +12,8 @@
 
 <title>The Joy of Writing Shaders - danangell.com/blog</title>
 
-<meta name="description" content="You can check out the source for the above shader here. Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
-Say you want to draw a circle in an imperative programming language.">
+<meta name="description" content="Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
+Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the sin and cos of different angles until you have points all around the circumference of a circle.">
 
 
 
@@ -54,7 +54,7 @@ Say you want to draw a circle in an imperative programming language.">
     
 
     
-        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.43108ed32d7f714185cf3a358e00a3f07a0455f41b427125260e34cfde9ba5f4.css" integrity="sha256-QxCO0y1/cUGFzzo1jgCj8HoEVfQbQnElJg40z96bpfQ=">
+        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.2c2f20f5f38faba176d090b2077cd14f4f2423be7b3e5260dc960de31bf5dd5b.css" integrity="sha256-LC8g9fOPq6F20JCyB3zRT08kI757PlJg3JYN4xv13Vs=">
     
 
 
@@ -92,14 +92,14 @@ Say you want to draw a circle in an imperative programming language.">
 
 
     
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1681664230" type="text/javascript" charset="utf-8"></script>
+        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1681676400" type="text/javascript" charset="utf-8"></script>
     
 
 
 
 <meta property="og:title" content="The Joy of Writing Shaders" />
-<meta property="og:description" content="You can check out the source for the above shader here. Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
-Say you want to draw a circle in an imperative programming language." />
+<meta property="og:description" content="Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
+Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the sin and cos of different angles until you have points all around the circumference of a circle." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://danangell.com/blog/posts/the-joy-of-writing-shaders/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-02-04T00:00:00-04:00" />
@@ -108,8 +108,8 @@ Say you want to draw a circle in an imperative programming language." />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The Joy of Writing Shaders"/>
-<meta name="twitter:description" content="You can check out the source for the above shader here. Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
-Say you want to draw a circle in an imperative programming language."/>
+<meta name="twitter:description" content="Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
+Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the sin and cos of different angles until you have points all around the circumference of a circle."/>
 
 
 
@@ -187,7 +187,7 @@ Say you want to draw a circle in an imperative programming language."/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
 
             
         </header>
@@ -204,13 +204,7 @@ Say you want to draw a circle in an imperative programming language."/>
             </header>
         </div>
         <div class="content e-content">
-            <center>
-    <video autoplay="" loop="" width="240" height="240">
-        <source src="/blog/image/shaders/hole.frag.mp4" type="video/mp4">
-    </video>
-    <br />
-    <small>You can check out the source for the above shader <a href="https://www.shadertoy.com/view/4dcyzH">here</a>.</small>
-</center>
+            <iframe class="rounded" width="100%" height="460px" frameborder="0" src="https://www.shadertoy.com/embed/4dcyzH?gui=true&paused=true&muted=true" allowfullscreen></iframe>
 <p>Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.</p>
 <p>Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the <code>sin</code> and <code>cos</code> of different angles until you have points all around the circumference of a circle.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>vertices <span style="color:#f92672">=</span> []  
@@ -220,18 +214,18 @@ Say you want to draw a circle in an imperative programming language."/>
 </span></span><span style="display:flex;"><span>    vertices<span style="color:#f92672">.</span>append((x, y))
 </span></span></code></pre></div><p>Then I would render lines sequentially connecting each point to the last. But this results in a circle that&rsquo;s really just a regular polygon with a large number of sides. You could also try to use Bézier curves, but that feels a bit more removed from the definition of a circle.</p>
 <p>In a shader you&rsquo;d use a more simplified definition of a circle. If you&rsquo;re inside of the circle&rsquo;s radius you draw the circle. If you&rsquo;re outside of the radius you don&rsquo;t.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#66d9ef">uniform</span> <span style="color:#66d9ef">vec2</span> u_resolution;  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#66d9ef">uniform</span> <span style="color:#66d9ef">vec2</span> u_resolution;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> main() {  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> radius <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.3</span>;  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">vec2</span> center <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec2</span>(<span style="color:#ae81ff">0.5</span>);  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">vec2</span> pos <span style="color:#f92672">=</span> gl_FragCoord.xy <span style="color:#f92672">/</span> u_resolution.xy;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> main() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> radius <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">vec2</span> center <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec2</span>(<span style="color:#ae81ff">0.5</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">vec2</span> pos <span style="color:#f92672">=</span> gl_FragCoord.xy <span style="color:#f92672">/</span> u_resolution.xy;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (distance(pos, center) <span style="color:#f92672">&gt;</span> radius) {  
-</span></span><span style="display:flex;"><span>        gl_FragColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec4</span>(<span style="color:#ae81ff">1.0</span>);  
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {  
-</span></span><span style="display:flex;"><span>        gl_FragColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec4</span>(<span style="color:#66d9ef">vec3</span>(<span style="color:#ae81ff">0.0</span>), <span style="color:#ae81ff">1.0</span>);  
-</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (distance(pos, center) <span style="color:#f92672">&gt;</span> radius) {
+</span></span><span style="display:flex;"><span>        gl_FragColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec4</span>(<span style="color:#ae81ff">1.0</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        gl_FragColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec4</span>(<span style="color:#66d9ef">vec3</span>(<span style="color:#ae81ff">0.0</span>), <span style="color:#ae81ff">1.0</span>);
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><img src="/blog/image/shaders/circle_1.png" alt=""></p>
 <p>The most interesting part is that you rarely think about more than one pixel at a time. The shader code above is ran once per pixel. There&rsquo;s no need to worry about how many sides your circle has. You don&rsquo;t refer to other information rendered in the same frame. This is what makes shaders so fast. Each pixel can be rendered simultaneously.</p>
