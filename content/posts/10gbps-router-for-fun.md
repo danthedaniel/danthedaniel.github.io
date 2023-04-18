@@ -78,8 +78,8 @@ I'm running [pfSense](https://www.pfsense.org/) on this computer. It's a FreeBSD
 
 ## Results
 
-![](/blog/image/router/homebrew-speedtest.png)
-
 It's not 10 Gb/s. But my ISP claims they provide "up to" 10 Gb/s. I've only ever seen as much as 2.5 Gb/s when downloading Steam games. That's still pretty cool.
+
+![](/blog/image/router/homebrew-speedtest.png)
 
 Was it worth the effort? For me, definitely. I had a ton of fun and learned a few things along the way. But I think if you're not *really* into computer hardware the consumer products available like the AXE16000 will get you to a similar result for a similar price.

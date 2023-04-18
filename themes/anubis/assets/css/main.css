@@ -748,4 +748,6 @@ ul.language-select > li, ul.footer-menu > li {
 
 article img {
     border-radius: 0.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
