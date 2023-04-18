@@ -22,7 +22,7 @@ It's $500. But the feature set isn't quite what I'm looking for. The WiFi is ove
 ## Building My Own
 
 | Part | Model | Price |
-|---|---|---|
+|:--|:--|:--|
 | PC | Dell Optiplex 7020 | $50 (Craigslist) |
 | Switch | [TEG-S750](https://www.trendnet.com/products/10g-switch/5-port-10g-switch-TEG-S750-v1) | $310 |
 | NIC | [X540-BT2 (Offbrand)](https://www.amazon.com/dp/B01IR7T7PG) | $125 |
@@ -36,7 +36,7 @@ It's $500. But the feature set isn't quite what I'm looking for. The WiFi is ove
 ## PC
 
 | Part | Model |
-|---|---|
+|:--|:--|
 | CPU | i5-4590 @ 3.3 GHz |
 | RAM | 2x4 GiB DDR3 |
 | PCIe Slot | 3.0 x16 |
