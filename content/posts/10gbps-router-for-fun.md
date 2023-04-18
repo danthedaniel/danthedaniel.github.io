@@ -27,7 +27,7 @@ It's $500. But the feature set isn't quite what I'm looking for. The WiFi is ove
 | Switch | [TEG-S750](https://www.trendnet.com/products/10g-switch/5-port-10g-switch-TEG-S750-v1) | $310 |
 | NIC | [X540-BT2 (Offbrand)](https://www.amazon.com/dp/B01IR7T7PG) | $125 |
 | 6 inch Cat6A | N/A | $3 |
-| AP | [R7000](https://www.netgear.com/home/wifi/routers/r7000/) | $0 (My old router) |
+| AP | [R6700](https://www.netgear.com/home/wifi/routers/r6700/) | $0 (My old router) |
 | SATA Y-Splitter | N/A | $0 (From cable bin) |
 | **Total** | | **$488** |
 
@@ -71,6 +71,14 @@ Amazingly each 12V wire (the yellow wires) in a SATA cable can deliver [up to 1.
 What I've got in the end is a single power-cable solution for my router and switch combo. And with a little velcro it all feels like a single unit.
 
 ![](/blog/image/router/homebrew-cable.jpg)
+
+### AP
+
+While I clearly don't prioritize it, I still want good WiFi. For me that means good enough to stream HD video to a couple of devices simultaneously. WiFi 802.11ac can handle that perfectly. My old router has functionality to put it into "AP Mode" where it no longer acts as a firewall or DHCP server. With "AP Mode" enabled the old router is nothing more than a WiFi to ethernet translator.
+
+![](/blog/image/router/homebrew-ap-mode.png)
+
+This router requires 12V at 2.5A. I could pull that out of the spare PCIe slot, but for now it's running off of a separate power supply.
 
 ### Operating System
 
