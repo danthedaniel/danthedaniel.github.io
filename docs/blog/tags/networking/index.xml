@@ -112,9 +112,9 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;I got a nice deal on this old Haswell Dell small-form-factor PC. It&amp;rsquo;s got 4 cores and 8GiB of RAM, which is more than enough for a router. The 3.0 x16 PCIe slot will handle our NIC, which leaves one x4 slot for future expansion needs.&lt;/p&gt;
+&lt;p&gt;I got a nice deal on this old Haswell Dell small-form-factor PC. It&amp;rsquo;s got 4 cores and 8GiB of RAM, which is more than enough for a router. The 3.0 x16 PCIe slot will handle the NIC, which leaves one x4 slot for future expansion needs.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-front.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The only downside is the x16 PCIe slot is right up against the power supply. This means cooling is a bit of an issue for our NIC.&lt;/p&gt;
+&lt;p&gt;The only downside is the x16 PCIe slot is right up against the power supply. This means cooling is a bit of an issue for the NIC.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-open.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;nic&#34; &gt;NIC
 &lt;span&gt;

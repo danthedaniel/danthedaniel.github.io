@@ -42,11 +42,11 @@ It's $500. But the feature set isn't quite what I'm looking for. The WiFi is ove
 | PCIe Slot | 3.0 x16 |
 | PCIe Slot | 2.0 x4 |
 
-I got a nice deal on this old Haswell Dell small-form-factor PC. It's got 4 cores and 8GiB of RAM, which is more than enough for a router. The 3.0 x16 PCIe slot will handle our NIC, which leaves one x4 slot for future expansion needs.
+I got a nice deal on this old Haswell Dell small-form-factor PC. It's got 4 cores and 8GiB of RAM, which is more than enough for a router. The 3.0 x16 PCIe slot will handle the NIC, which leaves one x4 slot for future expansion needs.
 
 ![](/blog/image/router/homebrew-front.jpg)
 
-The only downside is the x16 PCIe slot is right up against the power supply. This means cooling is a bit of an issue for our NIC.
+The only downside is the x16 PCIe slot is right up against the power supply. This means cooling is a bit of an issue for the NIC.
 
 ![](/blog/image/router/homebrew-open.jpg)
 
