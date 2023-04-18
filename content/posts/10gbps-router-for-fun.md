@@ -9,7 +9,7 @@ Last year I was lucky enough to get access to 10 Gb/s home internet for $40/mont
 
 Looking around it's clear there isn't much consumer networking hardware built for 10 Gb/s. Many of the routers advertised as 10 Gb/s only have 2.5 Gb/s WAN ports combined with WiFi 6E. So from your WiFi 6E capable device to the router there is a theoretical best case bandwidth of 10.8 Gb/s. But from your router to the internet you've got a pipe less than a quarter that size.
 
-The consumer hardware than *can* truly deliver 10 Gb/s to a device on your LAN (in my case, a wired device) never has more than one 10 Gb/s LAN port. The AXE16000 for example has:
+The consumer hardware that *can* truly deliver 10 Gb/s to a device on your LAN (in my case, a wired device) never has more than one 10 Gb/s LAN port. The AXE16000 for example has:
 
 * 1x 10 Gb/s LAN
 * 1x 2.5 Gb/s LAN
