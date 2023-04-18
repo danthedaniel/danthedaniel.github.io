@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hardware on danangell.com/blog</title>
+    <link>https://danangell.com/blog/tags/hardware/</link>
+    <description>danangell.com/blog (hardware)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Apr 2023 11:25:48 -0700</lastBuildDate>
+    
+    <atom:link href="https://danangell.com/blog/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>10 Gb/s Router - For fun!</title>
+      <link>https://danangell.com/blog/posts/10gbps-router-for-fun/</link>
+      <pubDate>Tue, 18 Apr 2023 11:25:48 -0700</pubDate>
+      
+      <guid>https://danangell.com/blog/posts/10gbps-router-for-fun/</guid>
+      <description>&lt;p&gt;Last year I was lucky enough to get access to 10 Gb/s home internet for $40/month. Ironically my ISP can not provide me with a router capable of handling more than 1 Gb/s. For $40/month that&amp;rsquo;s acceptable - I&amp;rsquo;m paying less than most people do for Gigabit anyway. But I wanted to experience the full power of 10 Gb/s.&lt;/p&gt;
+&lt;p&gt;Looking around it&amp;rsquo;s clear there isn&amp;rsquo;t much consumer networking hardware built for 10 Gb/s. Many of the routers advertised as 10 Gb/s only have 2.5 Gb/s WAN ports combined with WiFi 6E. So from your WiFi 6E capable device to the router there is a theoretical best case bandwidth of 10.8 Gb/s. But from your router to the internet you&amp;rsquo;ve got a pipe less than a quarter that size.&lt;/p&gt;
+&lt;p&gt;The consumer hardware than &lt;em&gt;can&lt;/em&gt; truly deliver 10 Gb/s to a device on your LAN (in my case, a wired device) never has more than one 10 Gb/s LAN port. The AXE16000 for example has:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1x 10 Gb/s LAN&lt;/li&gt;
+&lt;li&gt;1x 2.5 Gb/s LAN&lt;/li&gt;
+&lt;li&gt;4x 1 Gb/s LAN&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/AXE16000-rear.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s $500. But the feature set isn&amp;rsquo;t quite what I&amp;rsquo;m looking for. The WiFi is over-spec&amp;rsquo;d and switch under-spec&amp;rsquo;d.&lt;/p&gt;
+&lt;h2 id=&#34;building-my-own&#34; &gt;Building My Own
+&lt;span&gt;
+    &lt;a href=&#34;#building-my-own&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Part&lt;/th&gt;
+&lt;th&gt;Model&lt;/th&gt;
+&lt;th&gt;Price&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;PC&lt;/td&gt;
+&lt;td&gt;Dell Optiplex 7020&lt;/td&gt;
+&lt;td&gt;$50 (Craigslist)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Switch&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.trendnet.com/products/10g-switch/5-port-10g-switch-TEG-S750-v1&#34;&gt;TEG-S750&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;$310&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NIC&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.amazon.com/dp/B01IR7T7PG&#34;&gt;X540-BT2 (Offbrand)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;$125&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6 inch Cat6A&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;td&gt;$3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AP&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.netgear.com/home/wifi/routers/r7000/&#34;&gt;R7000&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;$0 (My old router)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SATA Y-Splitter&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;td&gt;$0 (From cable bin)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;$488&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-rear.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pc&#34; &gt;PC
+&lt;span&gt;
+    &lt;a href=&#34;#pc&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Part&lt;/th&gt;
+&lt;th&gt;Model&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CPU&lt;/td&gt;
+&lt;td&gt;i5-4590 @ 3.3 GHz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RAM&lt;/td&gt;
+&lt;td&gt;2x4 GiB DDR3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PCIe Slot&lt;/td&gt;
+&lt;td&gt;3.0 x16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PCIe Slot&lt;/td&gt;
+&lt;td&gt;2.0 x4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;I got a nice deal on this old Haswell Dell small-form-factor PC. It&amp;rsquo;s got 4 cores and 8GiB of RAM, which is more than enough for a router. The 3.0 x16 PCIe slot will handle our NIC, which leaves one x4 slot for future expansion needs.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-front.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The only downside is the x16 PCIe slot is right up against the power supply. This means cooling is a bit of an issue for our NIC.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-open.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;nic&#34; &gt;NIC
+&lt;span&gt;
+    &lt;a href=&#34;#nic&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I needed a network card that was all RJ45. My ISP-provided fiber modem only outputs via an RJ45 and nothing on my LAN uses SFP+. The old Intel X540-BT2 looked like the best solution. I bought an off-brand version (still uses the original silicon) that includes a fan. The original X540 was known for overheating, and given the limited airflow in the Dell I think the fan is necessary.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s a &lt;a href=&#34;https://youtu.be/_IzyJTcnPu8?t=184&#34;&gt;LTT video&lt;/a&gt; that came out a few months after I built this router that recommends almost all of the same parts. They&amp;rsquo;ve modded their X540 to include a Noctua fan and mention it offhand, but that fan is &lt;em&gt;really&lt;/em&gt; necessary because these NICs get &lt;strong&gt;hot&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-nic.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;switch&#34; &gt;Switch
+&lt;span&gt;
+    &lt;a href=&#34;#switch&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;So one thing to keep in mind is that because the NIC is using such an &lt;a href=&#34;https://ark.intel.com/content/www/us/en/ark/products/60021/intel-ethernet-controller-x540bt2.html&#34;&gt;ancient chip&lt;/a&gt; (released Q4 2012) it does not support 2.5 Gb/s or 5 Gb/s ethernet. It can only do 10M/100M/1G/10G. If you decide to save a buck and use a 2.5 Gb/s or 5 Gb/s switch then the NIC will drop down to 1 Gb/s as that will be the highest common speed between the NIC and switch. But because &lt;em&gt;this&lt;/em&gt; switch can communicate with the NIC at 10 Gb/s it works fine. The switch handles translating between 10G-baseT and lower speeds that devices might speak.&lt;/p&gt;
+&lt;p&gt;What I love about this NIC is that it runs on 12V and only consumes 1.5A. That allowed me to very easily wire it right into the PC&amp;rsquo;s internal power supply.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-switch.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Amazingly each 12V wire (the yellow wires) in a SATA cable can deliver &lt;a href=&#34;https://www.playtool.com/pages/psuconnectors/connectors.html#sata&#34;&gt;up to 1.5A&lt;/a&gt;! The Dell PC only expects you to have one SATA powered device, so I needed a Y-splitter cable to power both the switch and the storage device (a low power SSD in my case). Thankfully I already had one lying around. It&amp;rsquo;s definitely within spec, and I&amp;rsquo;ve had this running for almost a year without trouble. Just &lt;strong&gt;make sure&lt;/strong&gt; you&amp;rsquo;ve got the right wires soldered to each other - ground to ground, +V to +V.&lt;/p&gt;
+&lt;p&gt;What I&amp;rsquo;ve got in the end is a single power-cable solution for my router and switch combo. And with a little velcro it all feels like a single unit.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-cable.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;operating-system&#34; &gt;Operating System
+&lt;span&gt;
+    &lt;a href=&#34;#operating-system&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;m running &lt;a href=&#34;https://www.pfsense.org/&#34;&gt;pfSense&lt;/a&gt; on this computer. It&amp;rsquo;s a FreeBSD-based operating system designed specifically for routers and it&amp;rsquo;s got some awesome features. But generally I just want it to do its job and allow me to never think about my router when I just want to use my computers.&lt;/p&gt;
+&lt;h2 id=&#34;results&#34; &gt;Results
+&lt;span&gt;
+    &lt;a href=&#34;#results&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-speedtest.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s not 10 Gb/s. But my ISP claims they provide &amp;ldquo;up to&amp;rdquo; 10 Gb/s. I&amp;rsquo;ve only ever seen as much as 2.5 Gb/s when downloading Steam games. That&amp;rsquo;s still pretty cool.&lt;/p&gt;
+&lt;p&gt;Was it worth the effort? For me, definitely. I had a ton of fun and learned a few things along the way. But I think if you&amp;rsquo;re not &lt;em&gt;really&lt;/em&gt; into computer hardware the consumer products available like the AXE16000 will get you to a similar result for a similar price.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
