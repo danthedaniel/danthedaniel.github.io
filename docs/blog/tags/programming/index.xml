@@ -808,7 +808,9 @@ only valid API requests can be made. This is done by locking down the &lt;code&g
       <pubDate>Sun, 04 Feb 2018 00:00:00 -0400</pubDate>
       
       <guid>https://danangell.com/blog/posts/the-joy-of-writing-shaders/</guid>
-      <description>&lt;iframe class=&#34;rounded&#34; width=&#34;100%&#34; height=&#34;460px&#34; frameborder=&#34;0&#34; src=&#34;https://www.shadertoy.com/embed/4dcyzH?gui=true&amp;paused=true&amp;muted=true&#34; allowfullscreen&gt;&lt;/iframe&gt;
+      <description>&lt;div class=&#34;iframe-wrapper rounded&#34;&gt;
+    &lt;iframe frameborder=&#34;0&#34; src=&#34;https://www.shadertoy.com/embed/4dcyzH?gui=true&amp;paused=true&amp;muted=true&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 &lt;p&gt;Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.&lt;/p&gt;
 &lt;p&gt;Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the &lt;code&gt;sin&lt;/code&gt; and &lt;code&gt;cos&lt;/code&gt; of different angles until you have points all around the circumference of a circle.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vertices &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []  

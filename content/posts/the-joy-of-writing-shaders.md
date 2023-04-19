@@ -5,7 +5,9 @@ draft: false
 tags: ["programming", "math", "graphics"]
 ---
 
-<iframe class="rounded" width="100%" height="460px" frameborder="0" src="https://www.shadertoy.com/embed/4dcyzH?gui=true&paused=true&muted=true" allowfullscreen></iframe>
+<div class="iframe-wrapper rounded">
+    <iframe frameborder="0" src="https://www.shadertoy.com/embed/4dcyzH?gui=true&paused=true&muted=true" allowfullscreen></iframe>
+</div>
 
 Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
 
