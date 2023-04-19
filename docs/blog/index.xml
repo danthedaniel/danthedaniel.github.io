@@ -833,6 +833,7 @@ only valid API requests can be made. This is done by locking down the &lt;code&g
       
       <guid>https://danangell.com/blog/about/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m a &lt;a href=&#34;https://www.youtube.com/watch?v=V51OJr0ee6E&#34;&gt;computer man&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This site is generated with &lt;a target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, using a modified &lt;a target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; href=&#34;https://github.com/mitrichius/hugo-theme-anubis&#34;&gt;Anubis&lt;/a&gt; theme.&lt;/p&gt;
 </description>
     </item>
     

@@ -1,16 +1,20 @@
 <div class="header-top">
-    {{ partial "site-title.html" . }}
-    {{ partial "social.html" . }}
+    <h1 class="site-title">
+        <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a>
+    </h1>
+    <a href="/blog/about">about</a>
+    <div>
+        {{ partial "social.html" . }}
+        {{ partial "theme-switcher.html" . }}
+    </div>
 </div>
 {{ if .Site.Menus.main }}
-    <nav>
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-        <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a>
-        {{ end }}
-    </nav>
-{{ else }}
-    <nav></nav>
+<nav>
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+    <a class="{{if or ($currentPage.IsMenuCurrent " main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
+        href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a>
+    {{ end }}
+</nav>
 {{ end }}
-
 {{ partial "header-extra.html" . }}
