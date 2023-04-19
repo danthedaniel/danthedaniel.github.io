@@ -84,18 +84,6 @@
 
 
 
-    
-
-
-
-
-
-    
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1681948078" type="text/javascript" charset="utf-8"></script>
-    
-
-
-
 <meta property="og:title" content="XOR Swap Explained Visually" />
 <meta property="og:description" content="A common riddle-like question for programmers asks them to swap the values of two integers without a temporary intermediate value. There are two common solutions that I&rsquo;m aware of, addition swap and XOR swap. Here&rsquo;s what each looks like in C:" />
 <meta property="og:type" content="article" />
@@ -124,6 +112,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+
+<script>
+  
+  setTimeout(function () {
+    var math_elements = document.querySelectorAll('pre.math');
+
+    math_elements.forEach(function (e) {
+      e.innerHTML = katex.renderToString(e.innerText);
+    });
+  }, 100);
+</script>
 
     
 </head>

@@ -85,18 +85,6 @@ One hope I have is to complete a problem in GLSL.">
 
 
 
-    
-
-
-
-
-
-    
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1681948078" type="text/javascript" charset="utf-8"></script>
-    
-
-
-
 <meta property="og:title" content="Advent of Code 2017" />
 <meta property="og:description" content="The intention is to force myself to get a small taste of a bunch of new programming languages and programming paradigms. Since I was late to the party I rushed through the first 4 problems in languages I&rsquo;m familiar with. But for day 5 I solved the daily problem with MIPS assembly. I look forward to learning and writing Common Lisp, Haskell, Prolog, and many more languages.
 One hope I have is to complete a problem in GLSL." />
@@ -127,6 +115,17 @@ One hope I have is to complete a problem in GLSL."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+
+<script>
+  
+  setTimeout(function () {
+    var math_elements = document.querySelectorAll('pre.math');
+
+    math_elements.forEach(function (e) {
+      e.innerHTML = katex.renderToString(e.innerText);
+    });
+  }, 100);
+</script>
 
     
 </head>

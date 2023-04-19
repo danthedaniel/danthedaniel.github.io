@@ -85,18 +85,6 @@ After a stroke of inspiration earlier this evening I hacked together this tool. 
 
 
 
-    
-
-
-
-
-
-    
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1681948078" type="text/javascript" charset="utf-8"></script>
-    
-
-
-
 <meta property="og:title" content="Commit Language Visualizer" />
 <meta property="og:description" content="Commit-Language-Visualizer
 After a stroke of inspiration earlier this evening I hacked together this tool. It produces a stacked time-series graph of GitHub commit data. The commit data is organized by language and uses the same colors as GitHub for each corresponding language." />
@@ -127,6 +115,17 @@ After a stroke of inspiration earlier this evening I hacked together this tool. 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+
+<script>
+  
+  setTimeout(function () {
+    var math_elements = document.querySelectorAll('pre.math');
+
+    math_elements.forEach(function (e) {
+      e.innerHTML = katex.renderToString(e.innerText);
+    });
+  }, 100);
+</script>
 
     
 </head>

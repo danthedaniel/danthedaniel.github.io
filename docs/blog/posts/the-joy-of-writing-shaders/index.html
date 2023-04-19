@@ -85,18 +85,6 @@ Say you want to draw a circle in an imperative programming language. You need to
 
 
 
-    
-
-
-
-
-
-    
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1681948078" type="text/javascript" charset="utf-8"></script>
-    
-
-
-
 <meta property="og:title" content="The Joy of Writing Shaders" />
 <meta property="og:description" content="Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
 Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the sin and cos of different angles until you have points all around the circumference of a circle." />
@@ -127,6 +115,17 @@ Say you want to draw a circle in an imperative programming language. You need to
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+
+<script>
+  
+  setTimeout(function () {
+    var math_elements = document.querySelectorAll('pre.math');
+
+    math_elements.forEach(function (e) {
+      e.innerHTML = katex.renderToString(e.innerText);
+    });
+  }, 100);
+</script>
 
     
 </head>

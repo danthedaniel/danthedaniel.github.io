@@ -8,7 +8,7 @@ theme = "anubis"
 author = "Daniel Angell"
 description = "My Programming/Math Blog"
 style = "auto"
-customJS = ["js/katex_auto.js"]
+customJS = []
 customCSS = []
 
   [[params.social]]

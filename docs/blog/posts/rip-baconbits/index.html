@@ -85,18 +85,6 @@ On many torrent trackers users are able to request specific content to be upload
 
 
 
-    
-
-
-
-
-
-    
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1681948078" type="text/javascript" charset="utf-8"></script>
-    
-
-
-
 <meta property="og:title" content="RIP BaconBits" />
 <meta property="og:description" content="After more than 12 years, BaconBits, the unofficial Reddit torrent tracker, has shut down for good. It&rsquo;s terrible to see such a solid community disappear.
 On many torrent trackers users are able to request specific content to be uploaded. As of BaconBits&rsquo; final hours, the request fill ratio stood at 89.28%. A dedicated community member would provide almost anything you could ask for. For a site that never had more than 6000 users, that&rsquo;s quite a feat." />
@@ -127,6 +115,17 @@ On many torrent trackers users are able to request specific content to be upload
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+
+<script>
+  
+  setTimeout(function () {
+    var math_elements = document.querySelectorAll('pre.math');
+
+    math_elements.forEach(function (e) {
+      e.innerHTML = katex.renderToString(e.innerText);
+    });
+  }, 100);
+</script>
 
     
 </head>

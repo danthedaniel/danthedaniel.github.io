@@ -87,18 +87,6 @@ that most students have seen the equation for a unit circle:">
 
 
 
-    
-
-
-
-
-
-    
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1681948078" type="text/javascript" charset="utf-8"></script>
-    
-
-
-
 <meta property="og:title" content="The N Sphere" />
 <meta property="og:description" content="It&rsquo;s very common for high-school students to learn the geometry of a circle.
 Trigonometric functions (sin(), cos(), etc.) are required knowledge for
@@ -133,6 +121,17 @@ that most students have seen the equation for a unit circle:"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+
+<script>
+  
+  setTimeout(function () {
+    var math_elements = document.querySelectorAll('pre.math');
+
+    math_elements.forEach(function (e) {
+      e.innerHTML = katex.renderToString(e.innerText);
+    });
+  }, 100);
+</script>
 
     
 </head>

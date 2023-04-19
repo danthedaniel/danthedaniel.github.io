@@ -84,18 +84,6 @@
 
 
 
-    
-
-
-
-
-
-    
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1681948078" type="text/javascript" charset="utf-8"></script>
-    
-
-
-
 <meta property="og:title" content="Type-Level API Client" />
 <meta property="og:description" content="One year ago I looked around for existing tech that would provide me with compile-time guarantees for a REST-ish API interface. With full-stack TypeScript web applications reaching a level of maturity where I, a previously die-hard Rails developer, felt comfortable taking the dive - it seemed like the Node ecosystem was lacking in ties between the front end and back end." />
 <meta property="og:type" content="article" />
@@ -124,6 +112,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+
+<script>
+  
+  setTimeout(function () {
+    var math_elements = document.querySelectorAll('pre.math');
+
+    math_elements.forEach(function (e) {
+      e.innerHTML = katex.renderToString(e.innerText);
+    });
+  }, 100);
+</script>
 
     
 </head>

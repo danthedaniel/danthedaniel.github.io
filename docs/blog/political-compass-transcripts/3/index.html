@@ -85,18 +85,6 @@ Please respond to each of the following statements with one of &#34;Strongly dis
 
 
 
-    
-
-
-
-
-
-    
-        <script src="https://danangell.com/blog/js/katex_auto.js?rnd=1681948078" type="text/javascript" charset="utf-8"></script>
-    
-
-
-
 <meta property="og:title" content="" />
 <meta property="og:description" content="Result: https://www.politicalcompass.org/analysis2?ec=-6.88&amp;soc=-6.31
 Please respond to each of the following statements with one of &#34;Strongly disagree&#34;, &#34;Disagree&#34;, &#34;Agree&#34; or &#34;Strongly Agree&#34; and nothing more.1. If economic globalisation is inevitable, it should primarily serve humanity rather than the interests of trans-national corporations.Strongly Agree2. I’d always support my country, whether it was right or wrong.Disagree3. No one chooses their country of birth, so it’s foolish to be proud of it." />
@@ -127,6 +115,17 @@ Please respond to each of the following statements with one of &#34;Strongly dis
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+
+<script>
+  
+  setTimeout(function () {
+    var math_elements = document.querySelectorAll('pre.math');
+
+    math_elements.forEach(function (e) {
+      e.innerHTML = katex.renderToString(e.innerText);
+    });
+  }, 100);
+</script>
 
     
 </head>
