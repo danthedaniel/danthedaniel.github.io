@@ -62,7 +62,7 @@ There's a [LTT video](https://youtu.be/_IzyJTcnPu8?t=184) that came out a few mo
 
 So one thing to keep in mind is that because the NIC is using such an [ancient chip](https://ark.intel.com/content/www/us/en/ark/products/60021/intel-ethernet-controller-x540bt2.html) (released Q4 2012) it does not support 2.5 Gb/s or 5 Gb/s ethernet. It can only do 10M/100M/1G/10G. If you decide to save a buck and use a 2.5 Gb/s or 5 Gb/s switch then the NIC will drop down to 1 Gb/s as that will be the highest common speed between the NIC and switch. But because *this* switch can communicate with the NIC at 10 Gb/s it works fine. The switch handles translating between 10G-baseT and lower speeds that devices might speak.
 
-What I love about this NIC is that it runs on 12V and only consumes 1.5A. That allowed me to very easily wire it right into the PC's internal power supply.
+What I love about this switch is that it runs on 12V and only consumes 1.5A. That allowed me to very easily wire it right into the PC's internal power supply.
 
 ![](/blog/image/router/homebrew-switch.jpg)
 
