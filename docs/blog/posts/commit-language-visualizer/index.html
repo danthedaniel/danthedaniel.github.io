@@ -191,7 +191,7 @@ After a stroke of inspiration earlier this evening I hacked together this tool. 
 
 
 <button class="theme-switcher">
-    <img src="/blog/image/dark-mode.svg" />
+    <img src="/blog/image/light-mode.svg" alt="Switch to light mode" />
 </button>
 
 
@@ -246,7 +246,10 @@ After a stroke of inspiration earlier this evening I hacked together this tool. 
 
     function changeButtonImage() {
         if (switchButton) {
-            switchButton.innerHTML = currentTheme == 'dark' ? '<img src="/blog/image/light-mode.svg" />' : '<img src="/blog/image/dark-mode.svg" />';
+            switchButton.innerHTML =
+                currentTheme == 'dark' ?
+                    '<img src="/blog/image/light-mode.svg" alt="Switch to light mode" />' :
+                    '<img src="/blog/image/dark-mode.svg"  alt="Switch to dark mode" />';
         }
     }
 

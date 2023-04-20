@@ -7,13 +7,13 @@ tags: ['technology', 'graphics']
 
 ### How images are rendered
 
-![A tomato on a table](/image/aa/antialiasing-1.png)
+![A tomato on a table](/blog/image/aa/antialiasing-1.png)
 
 Imagine your computer is rendering an image of a tomato on top of a table. In order to render the image each of the 1920 \* 1080 pixels on your screen needs to have colors assigned to them. This isn't as easy as viewing a video or an image. The tomato can be viewed from any angle, and the pixels will need to be recalculated many times every second to produce a smooth animation.
 
 A GPU must calculate samples in order to show you an image. A sample is a light/color calculation that can be thought of as an infinitesimally thin ray of light. Imagine that you have a bunch of these rays of light, and pretend these light rays are 1-dimensional objects - lines - that are going straight through your screen. For those familiar with optics this is called normally incident. Most often each pixel will get one ray of light.
 
-![A single sample](/image/aa/antialiasing-2.png)
+![A single sample](/blog/image/aa/antialiasing-2.png)
 
 Most often your computer runs a single one of these rays through the middle of a pixel (the surrounding pixels in that image are highlighted to make it easier to see the sample). When one of the rays hits an object in the game, it bounces off and goes back through the same pixel it came from, this time with the color of the object it hit. That ray then determines the color for the whole pixel.
 

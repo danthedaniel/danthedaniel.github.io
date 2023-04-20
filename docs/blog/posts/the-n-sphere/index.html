@@ -197,7 +197,7 @@ that most students have seen the equation for a unit circle:"/>
 
 
 <button class="theme-switcher">
-    <img src="/blog/image/dark-mode.svg" />
+    <img src="/blog/image/light-mode.svg" alt="Switch to light mode" />
 </button>
 
 
@@ -252,7 +252,10 @@ that most students have seen the equation for a unit circle:"/>
 
     function changeButtonImage() {
         if (switchButton) {
-            switchButton.innerHTML = currentTheme == 'dark' ? '<img src="/blog/image/light-mode.svg" />' : '<img src="/blog/image/dark-mode.svg" />';
+            switchButton.innerHTML =
+                currentTheme == 'dark' ?
+                    '<img src="/blog/image/light-mode.svg" alt="Switch to light mode" />' :
+                    '<img src="/blog/image/dark-mode.svg"  alt="Switch to dark mode" />';
         }
     }
 
