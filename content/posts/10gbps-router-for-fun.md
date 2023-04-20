@@ -68,9 +68,9 @@ What I love about this switch is that it runs on 12V and only consumes 1.5A. Tha
 
 Amazingly each 12V wire (the yellow wires) in a SATA cable can deliver [up to 1.5A](https://www.playtool.com/pages/psuconnectors/connectors.html#sata)! The Dell PC only expects you to have one SATA powered device, so I needed a Y-splitter cable to power both the switch and the storage device (a low power SSD in my case). Thankfully I already had one lying around. It's definitely within spec, and I've had this running for almost a year without trouble. Just **make sure** you've got the right wires soldered to each other - ground to ground, +V to +V.
 
-What I've got in the end is a single power-cable solution for my router and switch combo. And with a little velcro it all feels like a single unit.
-
 ![](/blog/image/router/homebrew-cable.jpg)
+
+What I've got in the end is a single power outlet solution for my router and switch combo. And with a little velcro it all feels like a single unit.
 
 ### AP
 
