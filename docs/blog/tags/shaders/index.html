@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Tags - danangell.com/blog</title>
+<title>shaders - danangell.com/blog</title>
 
 <meta name="description" content="My Programming/Math Blog">
 
@@ -18,7 +18,7 @@
 
 
 
-<link rel="alternate" type="application/rss+xml" href="https://danangell.com/blog/tags/index.xml" title="danangell.com/blog" />
+<link rel="alternate" type="application/rss+xml" href="https://danangell.com/blog/tags/shaders/index.xml" title="danangell.com/blog" />
 <link rel="icon" type="image/x-icon" href="https://danangell.com/blog/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://danangell.com/blog/favicon.png">
 
@@ -85,14 +85,14 @@
 
 
 
-<meta property="og:title" content="Tags" />
+<meta property="og:title" content="shaders" />
 <meta property="og:description" content="My Programming/Math Blog" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://danangell.com/blog/tags/" />
+<meta property="og:url" content="https://danangell.com/blog/tags/shaders/" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
+<meta name="twitter:title" content="shaders"/>
 <meta name="twitter:description" content="My Programming/Math Blog"/>
 
 
@@ -273,94 +273,119 @@
         </header>
         <main id="main" tabindex="-1"> 
             
-    <div class="index-content">
+    <h1>Tag: shaders</h1>
+    <div class="post-info">
+        <a href="/blog/tags/">To all tags</a>
+    </div>
+    
+    
+        <article class="post-list h-feed">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/blog/posts/ascii-shaders/">ASCII Shaders</a></h1>
+        </header>
         
     </div>
 
-    <h1>Tags</h1>
-    <ul class="terms">
+    
+        <div class="content post-summary p-summary">
+            Shader Output
+Code Editor with Hot Reloading
+import { distance, normalize, rotate3DX, rotate3DY, sub, abs, max, } from "$src/shaderLib.mjs"; import { unionSDF, subtractSDF, rayMarch } from "$src/marchLib.mjs"; let globalTime = 0; /** * Signed-distance-function for a sphere. * @param point {[number, number, number]} * @param center {[number, number, number]} * @param radius {number} * @returns {number} */ const sphereSDF = (point, center, radius) => { return distance(point, center) - radius; }; /** * Signed-distance-function for a box.
+        </div>
+    
+    
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2023-04-21</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://danangell.com/blog/posts/ascii-shaders/">https://danangell.com/blog/posts/ascii-shaders/</a>
+    <a href="https://danangell.com/blog" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
+
+
+    <div class="post-taxonomies">
         
             
-            
-                <li>
-                    <a href="/blog/tags/gpt/">gpt</a>
-                    (3)
-                </li>
-            
+                <ul class="post-tags">
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/programming/">#programming</a></li>
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/math/">#math</a></li>
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/graphics/">#graphics</a></li>
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/shaders/">#shaders</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list h-feed">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/blog/posts/the-joy-of-writing-shaders/">The Joy of Writing Shaders</a></h1>
+        </header>
+        
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
+Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the sin and cos of different angles until you have points all around the circumference of a circle.
+        </div>
+    
+    
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2018-02-04</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://danangell.com/blog/posts/the-joy-of-writing-shaders/">https://danangell.com/blog/posts/the-joy-of-writing-shaders/</a>
+    <a href="https://danangell.com/blog" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
+
+
+    <div class="post-taxonomies">
         
             
-            
-                <li>
-                    <a href="/blog/tags/graphics/">graphics</a>
-                    (3)
-                </li>
-            
+                <ul class="post-tags">
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/programming/">#programming</a></li>
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/math/">#math</a></li>
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/graphics/">#graphics</a></li>
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/shaders/">#shaders</a></li>
+                    
+                </ul>
         
-            
-            
-                <li>
-                    <a href="/blog/tags/hardware/">hardware</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/blog/tags/math/">math</a>
-                    (4)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/blog/tags/networking/">networking</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/blog/tags/programming/">programming</a>
-                    (8)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/blog/tags/shaders/">shaders</a>
-                    (2)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/blog/tags/torrents/">torrents</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/blog/tags/trackers/">trackers</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/blog/tags/typescript/">typescript</a>
-                    (1)
-                </li>
-            
-        
-    </ul>
+    </div>
+</div>
+
+</article>
+    
+    
+
 
 
         </main>

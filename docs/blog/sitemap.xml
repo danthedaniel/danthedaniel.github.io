@@ -2,10 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://danangell.com/blog/posts/10gbps-router-for-fun/</loc>
-    <lastmod>2023-04-18T11:25:48-07:00</lastmod>
+    <loc>https://danangell.com/blog/posts/ascii-shaders/</loc>
+    <lastmod>2023-04-21T11:13:10-07:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/</loc>
+    <lastmod>2023-04-21T11:13:10-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/graphics/</loc>
+    <lastmod>2023-04-21T11:13:10-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/math/</loc>
+    <lastmod>2023-04-21T11:13:10-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/posts/</loc>
+    <lastmod>2023-04-21T11:13:10-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/programming/</loc>
+    <lastmod>2023-04-21T11:13:10-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/shaders/</loc>
+    <lastmod>2023-04-21T11:13:10-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/</loc>
+    <lastmod>2023-04-21T11:13:10-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/posts/10gbps-router-for-fun/</loc>
     <lastmod>2023-04-18T11:25:48-07:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/tags/hardware/</loc>
@@ -14,20 +35,11 @@
     <loc>https://danangell.com/blog/tags/networking/</loc>
     <lastmod>2023-04-18T11:25:48-07:00</lastmod>
   </url><url>
-    <loc>https://danangell.com/blog/posts/</loc>
-    <lastmod>2023-04-18T11:25:48-07:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/tags/</loc>
-    <lastmod>2023-04-18T11:25:48-07:00</lastmod>
-  </url><url>
     <loc>https://danangell.com/blog/tags/gpt/</loc>
     <lastmod>2023-04-15T14:58:51-07:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/posts/post-information-scarcity/</loc>
     <lastmod>2023-04-15T14:58:51-07:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/tags/programming/</loc>
-    <lastmod>2023-04-07T17:14:55-07:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/posts/working-with-gpt/</loc>
     <lastmod>2023-04-07T17:14:55-07:00</lastmod>
@@ -53,14 +65,8 @@
     <loc>https://danangell.com/blog/posts/brainfuck-optimizing-jit/</loc>
     <lastmod>2019-05-11T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>https://danangell.com/blog/tags/math/</loc>
-    <lastmod>2018-11-04T00:00:00-04:00</lastmod>
-  </url><url>
     <loc>https://danangell.com/blog/posts/xor-swap-explained-visually/</loc>
     <lastmod>2018-11-04T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/tags/graphics/</loc>
-    <lastmod>2018-02-04T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/posts/the-joy-of-writing-shaders/</loc>
     <lastmod>2018-02-04T00:00:00-04:00</lastmod>
@@ -73,9 +79,6 @@
   </url><url>
     <loc>https://danangell.com/blog/posts/the-n-sphere/</loc>
     <lastmod>2017-08-26T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/tags/technology/</loc>
-    <lastmod>2014-03-03T00:00:00-05:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/posts/the-basics-of-anti-aliasing/</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>

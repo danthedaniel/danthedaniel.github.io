@@ -2,7 +2,7 @@
 title: "The Basics of Anti-Aliasing"
 date: 2014-03-03T00:00:00-05:00
 draft: false
-tags: ['technology', 'graphics']
+tags: ['graphics']
 ---
 
 ### How images are rendered

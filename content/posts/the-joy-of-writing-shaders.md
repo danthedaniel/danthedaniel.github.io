@@ -2,7 +2,7 @@
 title: "The Joy of Writing Shaders"
 date: 2018-02-04T00:00:00-04:00
 draft: false
-tags: ["programming", "math", "graphics"]
+tags: ["programming", "math", "graphics", "shaders"]
 ---
 
 <div class="iframe-wrapper rounded">
