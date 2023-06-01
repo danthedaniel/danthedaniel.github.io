@@ -81,6 +81,8 @@ async function compileShader(textarea) {
   return module.fragment;
 }
 
+let frameNumber = 0;
+let frameRate = 4;
 let requestAnimationId = null;
 let currentTime = 0;
 let previousTimestamp = null;
@@ -97,8 +99,13 @@ async function runShader(pixelFunc, canvas) {
     }
     previousTimestamp = timestamp;
 
-    const buffer = buildBuffer(columns, rows, currentTime, pixelFunc);
-    canvas.innerText = buffer.map(line => line.join("")).join("\n");
+    if (frameNumber % frameRate === 0) {
+      const buffer = buildBuffer(columns, rows, currentTime, pixelFunc);
+      canvas.innerText = buffer.map(line => line.join("")).join("\n");
+    }
+
+    frameNumber++;
+
     requestAnimationId = requestAnimationFrame(frame);
   };
 
