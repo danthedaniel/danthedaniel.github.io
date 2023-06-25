@@ -10,15 +10,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>trackers - danangell.com/blog</title>
+<title>O(0) - danangell.com/blog</title>
 
-<meta name="description" content="My Programming/Math Blog">
-
-
+<meta name="description" content="A common tool for measuring the efficiency of an algorithm is Big O notation. It has a formal mathematical background and is taught today in university classrooms teaching math and computer science. But software engineers also use it as a pragmatic tool. How long will that web page take to load? Well, if the user is uploading 1 or more files and you want to show the files in a sorted order that&rsquo;s going to be, at best">
 
 
 
-<link rel="alternate" type="application/rss+xml" href="https://danangell.com/blog/tags/trackers/index.xml" title="danangell.com/blog" />
+
+
 <link rel="icon" type="image/x-icon" href="https://danangell.com/blog/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://danangell.com/blog/favicon.png">
 
@@ -85,14 +84,16 @@
 
 
 
-<meta property="og:title" content="trackers" />
-<meta property="og:description" content="My Programming/Math Blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://danangell.com/blog/tags/trackers/" />
+<meta property="og:title" content="O(0)" />
+<meta property="og:description" content="A common tool for measuring the efficiency of an algorithm is Big O notation. It has a formal mathematical background and is taught today in university classrooms teaching math and computer science. But software engineers also use it as a pragmatic tool. How long will that web page take to load? Well, if the user is uploading 1 or more files and you want to show the files in a sorted order that&rsquo;s going to be, at best" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://danangell.com/blog/posts/o_0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-25T13:36:55-07:00" />
+<meta property="article:modified_time" content="2023-06-25T13:36:55-07:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="trackers"/>
-<meta name="twitter:description" content="My Programming/Math Blog"/>
+<meta name="twitter:title" content="O(0)"/>
+<meta name="twitter:description" content="A common tool for measuring the efficiency of an algorithm is Big O notation. It has a formal mathematical background and is taught today in university classrooms teaching math and computer science. But software engineers also use it as a pragmatic tool. How long will that web page take to load? Well, if the user is uploading 1 or more files and you want to show the files in a sorted order that&rsquo;s going to be, at best"/>
 
 
 
@@ -272,37 +273,66 @@
         </header>
         <main id="main" tabindex="-1"> 
             
-    <h1>Tag: trackers</h1>
-    <div class="post-info">
-        <a href="/blog/tags/">To all tags</a>
-    </div>
     
-    
-        <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/blog/posts/rip-baconbits/">RIP BaconBits</a></h1>
-        </header>
-        
-    </div>
 
-    
-        <div class="content post-summary p-summary">
-            After more than 12 years, BaconBits, the unofficial Reddit torrent tracker, has shut down for good. It&rsquo;s terrible to see such a solid community disappear.
-On many torrent trackers users are able to request specific content to be uploaded. As of BaconBits&rsquo; final hours, the request fill ratio stood at 89.28%. A dedicated community member would provide almost anything you could ask for. For a site that never had more than 6000 users, that&rsquo;s quite a feat.
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">O(0)</h1>
+
+                
+            </header>
         </div>
-    
-    
-    
-    
+        <div class="content e-content">
+            <p>A common tool for measuring the efficiency of an algorithm is <a href="https://en.wikipedia.org/wiki/Big_O_notation">Big O notation</a>. It has a formal mathematical background and is taught today in university classrooms teaching math and computer science. But software engineers also use it as a pragmatic tool. How long will that web page take to load? Well, if the user is uploading 1 or more files and you want to show the files in a sorted order that&rsquo;s going to be, at best</p>
+<pre class="math">O(n \log(n))</pre>
+<p>So for a given number of files <code>n</code>, your load time will be proportional to <code>n*log(n)</code>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Number of Files</th>
+<th style="text-align:right">Sorting Time (ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:right">33</td>
+</tr>
+<tr>
+<td style="text-align:right">100</td>
+<td style="text-align:right">664</td>
+</tr>
+<tr>
+<td style="text-align:right">1000</td>
+<td style="text-align:right">9966</td>
+</tr>
+</tbody>
+</table>
+<p>This really matters in the real world. It&rsquo;s not just something for tech interviews. I&rsquo;ve blown up a Rails app before because I recklessly added a <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a> (<code>O(n*n)</code> runtime) calculation inside of the page rendering logic.</p>
+<p>So given the new breed of users of Big O - the pragmatic engineers - I think we need a new class of time complexity to add to <a href="https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities">the table</a>, <code>O(0)</code>.</p>
+<p>The perfect code is the code with no bugs. And the easiest way to guarantee no bugs is to have <strong>no code</strong>. If you can take a sort out of a webpage entirely you&rsquo;ve cut that functionality not to <code>O(1)</code>, but rather <code>O(0)</code>.</p>
+<p>This fits in neatly with a software engineer&rsquo;s golden rules:</p>
+<ol>
+<li>Thou shalt not prematurely optimize</li>
+<li>Thou shalt not add features that are not needed</li>
+</ol>
+<p>And when I think about this, you can never improve Big O runtime without the existence of <code>O(0)</code>. How can sorting go from <code>O(n*n)</code> to <code>O(n*log(n))</code> when switching from insertion sort to quick sort? You&rsquo;ve taken a proportion of the operations and replaced them with a <code>0</code>.</p>
+
+        </div>
+        
 
 
 <div class="post-info">
     
-        <div class="post-date dt-published">2022-05-15</div>
+        <div class="post-date dt-published">2023-06-25</div>
     
 
-    <a class="post-hidden-url u-url" href="https://danangell.com/blog/posts/rip-baconbits/">https://danangell.com/blog/posts/rip-baconbits/</a>
+    <a class="post-hidden-url u-url" href="https://danangell.com/blog/posts/o_0/">https://danangell.com/blog/posts/o_0/</a>
     <a href="https://danangell.com/blog" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
 
 
@@ -312,21 +342,32 @@ On many torrent trackers users are able to request specific content to be upload
                 <ul class="post-tags">
                     
                         
-                        <li><a href="https://danangell.com/blog/tags/torrents/">#torrents</a></li>
+                        <li><a href="https://danangell.com/blog/tags/programming/">#programming</a></li>
                     
                         
-                        <li><a href="https://danangell.com/blog/tags/trackers/">#trackers</a></li>
+                        <li><a href="https://danangell.com/blog/tags/math/">#math</a></li>
                     
                 </ul>
         
     </div>
 </div>
 
-</article>
-    
+    </article>
+
     
 
+    
 
+    
+        
+
+
+
+
+
+
+
+    
 
         </main>
         
