@@ -181,6 +181,20 @@
             background-color: white;
         }
 
+        .calendly-inline-widget[data-processed="true"] .calendly-placeholder {
+            animation: hide-placeholder 0s linear 3s forwards;
+        }
+
+        @keyframes hide-placeholder {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
         .calendly-inline-widget {
             min-width: 100%;
             min-height: 750px;
