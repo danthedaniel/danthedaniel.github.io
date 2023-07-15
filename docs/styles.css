@@ -13,6 +13,7 @@ body {
 a {
   font-size: inherit;
 }
+
 a:hover {
   text-decoration: none;
 }
@@ -20,11 +21,32 @@ a:hover {
 h1 {
   color: #e0e0e0;
   margin-top: 2rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  color: #e0e0e0;
+  margin-top: 2rem;
   font-size: 1.5rem;
+  margin-bottom: -3.25rem;
+}
+
+h1 a,
+h2 a {
+  color: inherit;
 }
 
 p {
   line-height: 1.5;
+  margin-top: 1rem;
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 blockquote {
@@ -85,10 +107,10 @@ cite {
 .card {
   display: block;
   border: 1px solid #444;
-  border-radius: 0.3em;
+  border-radius: 0.5em;
   padding: 2em;
   background-color: white;
-  margin: 2em;
+  width: 95%;
 }
 
 .rounded {
@@ -101,12 +123,73 @@ cite {
 
 @media (max-width: 50em) {
   .container {
-    width: calc(100vw - 2em);
+    width: calc(95vw - 2em);
   }
 }
 
 @media (min-width: 50em) {
   .container {
-    width: 48em;
+    width: 680px;
+  }
+}
+
+.calendly-placeholder {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.calendly-inline-widget {
+  min-width: 100%;
+  min-height: 750px;
+}
+
+/* Why this many px? Not totally sure but it works for now. */
+@media (max-width: 718px) {
+  .calendly-inline-widget iframe {
+    border-radius: 0.5em;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    background-color: white;
+  }
+}
+
+/* Loader from https://loading.io/css/ */
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-left: calc(50% - 40px);
+  margin-top: calc(50% - 40px);
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  100% {
+    transform: rotate(1800deg);
   }
 }

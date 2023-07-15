@@ -6,57 +6,10 @@
     <description>danangell.com/blog (math)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Jun 2023 13:36:55 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 -0400</lastBuildDate>
     
     <atom:link href="https://danangell.com/blog/tags/math/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>O(0)</title>
-      <link>https://danangell.com/blog/posts/o_0/</link>
-      <pubDate>Sun, 25 Jun 2023 13:36:55 -0700</pubDate>
-      
-      <guid>https://danangell.com/blog/posts/o_0/</guid>
-      <description>&lt;p&gt;A common tool for measuring the efficiency of an algorithm is &lt;a href=&#34;https://en.wikipedia.org/wiki/Big_O_notation&#34;&gt;Big O notation&lt;/a&gt;. It has a formal mathematical background and is taught today in university classrooms teaching math and computer science. But software engineers also use it as a pragmatic tool. How long will that web page take to load? Well, if the user is uploading 1 or more files and you want to show the files in a sorted order that&amp;rsquo;s going to be, at best&lt;/p&gt;
-&lt;pre class=&#34;math&#34;&gt;O(n \log(n))&lt;/pre&gt;
-&lt;p&gt;So for a given number of files &lt;code&gt;n&lt;/code&gt;, your load time will be proportional to &lt;code&gt;n*log(n)&lt;/code&gt;:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Number of Files&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Sorting Time (ms)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;1&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;33&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;100&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;664&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;1000&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;9966&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;This really matters in the real world. It&amp;rsquo;s not just something for tech interviews. I&amp;rsquo;ve blown up a Rails app before because I recklessly added a &lt;a href=&#34;https://en.wikipedia.org/wiki/Levenshtein_distance&#34;&gt;Levenshtein distance&lt;/a&gt; (&lt;code&gt;O(n*n)&lt;/code&gt; runtime) calculation inside of the page rendering logic.&lt;/p&gt;
-&lt;p&gt;So given the new breed of users of Big O - the pragmatic engineers - I think we need a new class of time complexity to add to &lt;a href=&#34;https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities&#34;&gt;the table&lt;/a&gt;, &lt;code&gt;O(0)&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The perfect code is the code with no bugs. And the easiest way to guarantee no bugs is to have &lt;strong&gt;no code&lt;/strong&gt;. If you can take a sort out of a webpage entirely you&amp;rsquo;ve cut that functionality not to &lt;code&gt;O(1)&lt;/code&gt;, but rather &lt;code&gt;O(0)&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;This fits in neatly with a software engineer&amp;rsquo;s golden rules:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Thou shalt not prematurely optimize&lt;/li&gt;
-&lt;li&gt;Thou shalt not add features that are not needed&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;And when I think about this, you can never improve Big O runtime without the existence of &lt;code&gt;O(0)&lt;/code&gt;. How can sorting go from &lt;code&gt;O(n*n)&lt;/code&gt; to &lt;code&gt;O(n*log(n))&lt;/code&gt; when switching from insertion sort to quick sort? You&amp;rsquo;ve taken a proportion of the operations and replaced them with a &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>XOR Swap Explained Visually</title>
