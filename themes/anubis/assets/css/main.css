@@ -1,7 +1,9 @@
 {{ $light := resources.Get "css/light.css" }}
 {{ $dark := resources.Get "css/dark.css" }}
 
-{{ $light.Content }}
+:root {
+    {{ $light.Content }}
+}
 
 {{ if eq site.Params.style "dark-without-switcher" }}
 :root {
