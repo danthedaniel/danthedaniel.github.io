@@ -25,22 +25,6 @@ Valve has a tool called `steamcmd`. It's a command line tool that can be used to
 
 2. Extract the contents of the `steamcmd.zip` file to a folder. Pick somewhere you'd like to have it permanently as we will be referencing the absolute path to it later.
 
-
-Now you should have something like this:
-
-```
-C:\Users\Daniel\steamcmd-tutorial>dir
- Volume in drive C is NVME
-
- Directory of C:\Users\Daniel\steamcmd-tutorial
-
-07/21/2023  04:52 PM    <DIR>          .
-07/21/2023  04:52 PM    <DIR>          ..
-07/21/2023  04:52 PM         1,687,464 steamcmd.exe
-               1 File(s)      1,687,464 bytes
-               2 Dir(s)  972,791,877,632 bytes free
-```
-
 Now we need to create a small script that will tell steamcmd to update DayZ and its mods.
 
 3. Create a file called `update_dayz.txt` in the same folder as `steamcmd.exe`. Open it in a text editor and paste the following:
@@ -66,6 +50,19 @@ quit
 ```
 
 * Again, replace the paths with the absolute paths to your `steamcmd.exe` and `update_dayz.txt` files.
+
+Your final folder layout should look like this:
+
+<div class="card">
+  <ul>
+    <li><code>steamcmd-tutorial\</code></li>
+    <ul>
+        <li><code>steamcmd.exe</code></li>
+        <li><code>update_dayz.txt</code></li>
+        <li><code>update.bat</code></li>
+      </ul>
+  </ul>
+</div>
 
 ### Pre-authenticating with Steam
 

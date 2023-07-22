@@ -785,6 +785,17 @@ ul.language-select > li, ul.footer-menu > li {
   }
 {{ end }}
 
+/* Custom CSS */
+.card {
+    width: calc(100% - 8rem);
+    border: 1px solid var(--card-border-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 3rem auto;
+    background-color: var(--card-bg-color);
+    color: var(--card-color);
+}
+
 .rounded {
     border-radius: 0.5rem;
 }

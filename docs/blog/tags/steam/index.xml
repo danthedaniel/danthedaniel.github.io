@@ -43,18 +43,7 @@
 &lt;p&gt;Extract the contents of the &lt;code&gt;steamcmd.zip&lt;/code&gt; file to a folder. Pick somewhere you&amp;rsquo;d like to have it permanently as we will be referencing the absolute path to it later.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Now you should have something like this:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;C:\Users\Daniel\steamcmd-tutorial&amp;gt;dir
- Volume in drive C is NVME
-
- Directory of C:\Users\Daniel\steamcmd-tutorial
-
-07/21/2023  04:52 PM    &amp;lt;DIR&amp;gt;          .
-07/21/2023  04:52 PM    &amp;lt;DIR&amp;gt;          ..
-07/21/2023  04:52 PM         1,687,464 steamcmd.exe
-               1 File(s)      1,687,464 bytes
-               2 Dir(s)  972,791,877,632 bytes free
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now we need to create a small script that will tell steamcmd to update DayZ and its mods.&lt;/p&gt;
+&lt;p&gt;Now we need to create a small script that will tell steamcmd to update DayZ and its mods.&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Create a file called &lt;code&gt;update_dayz.txt&lt;/code&gt; in the same folder as &lt;code&gt;steamcmd.exe&lt;/code&gt;. Open it in a text editor and paste the following:&lt;/li&gt;
 &lt;/ol&gt;
@@ -77,6 +66,17 @@ quit
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;Again, replace the paths with the absolute paths to your &lt;code&gt;steamcmd.exe&lt;/code&gt; and &lt;code&gt;update_dayz.txt&lt;/code&gt; files.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Your final folder layout should look like this:&lt;/p&gt;
+&lt;div class=&#34;card&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code&gt;steamcmd-tutorial\&lt;/code&gt;&lt;/li&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;code&gt;steamcmd.exe&lt;/code&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;code&gt;update_dayz.txt&lt;/code&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;code&gt;update.bat&lt;/code&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
 &lt;h3 id=&#34;pre-authenticating-with-steam&#34; &gt;Pre-authenticating with Steam
 &lt;span&gt;
     &lt;a href=&#34;#pre-authenticating-with-steam&#34;&gt;

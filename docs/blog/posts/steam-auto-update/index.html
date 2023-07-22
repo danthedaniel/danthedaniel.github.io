@@ -53,7 +53,7 @@
     
 
     
-        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.dca5a7ba71fd6edaf2fac17bbc9f0bdc327db8550618df032885b334343f9846.css" integrity="sha256-3KWnunH9btry&#43;sF7vJ8L3DJ9uFUGGN8DKIWzNDQ/mEY=">
+        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.4ee91fd1a4a4f4b268a29219b63080e5e06231dc622f429a9e0f3a6c0789ef49.css" integrity="sha256-Tukf0aSk9LJoopIZtjCA5eBiMdxiL0Kang86bAeJ70k=">
     
 
 
@@ -311,18 +311,7 @@
 <p>Extract the contents of the <code>steamcmd.zip</code> file to a folder. Pick somewhere you&rsquo;d like to have it permanently as we will be referencing the absolute path to it later.</p>
 </li>
 </ol>
-<p>Now you should have something like this:</p>
-<pre tabindex="0"><code>C:\Users\Daniel\steamcmd-tutorial&gt;dir
- Volume in drive C is NVME
-
- Directory of C:\Users\Daniel\steamcmd-tutorial
-
-07/21/2023  04:52 PM    &lt;DIR&gt;          .
-07/21/2023  04:52 PM    &lt;DIR&gt;          ..
-07/21/2023  04:52 PM         1,687,464 steamcmd.exe
-               1 File(s)      1,687,464 bytes
-               2 Dir(s)  972,791,877,632 bytes free
-</code></pre><p>Now we need to create a small script that will tell steamcmd to update DayZ and its mods.</p>
+<p>Now we need to create a small script that will tell steamcmd to update DayZ and its mods.</p>
 <ol start="3">
 <li>Create a file called <code>update_dayz.txt</code> in the same folder as <code>steamcmd.exe</code>. Open it in a text editor and paste the following:</li>
 </ol>
@@ -345,6 +334,17 @@ quit
 </span></span></code></pre></div><ul>
 <li>Again, replace the paths with the absolute paths to your <code>steamcmd.exe</code> and <code>update_dayz.txt</code> files.</li>
 </ul>
+<p>Your final folder layout should look like this:</p>
+<div class="card">
+  <ul>
+    <li><code>steamcmd-tutorial\</code></li>
+    <ul>
+        <li><code>steamcmd.exe</code></li>
+        <li><code>update_dayz.txt</code></li>
+        <li><code>update.bat</code></li>
+      </ul>
+  </ul>
+</div>
 <h3 id="pre-authenticating-with-steam" >Pre-authenticating with Steam
 <span>
     <a href="#pre-authenticating-with-steam">
