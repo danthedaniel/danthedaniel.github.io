@@ -188,6 +188,8 @@ pre {
     padding: 1em;
     max-width: 100%;
     overflow: auto;
+    margin: 3rem auto;
+    border-radius: 0.5rem;
 }
 
 code,
@@ -787,7 +789,7 @@ ul.language-select > li, ul.footer-menu > li {
 
 /* Custom CSS */
 .card {
-    width: calc(100% - 8rem);
+    max-width: calc(100% - 8rem);
     border: 1px solid var(--card-border-color);
     border-radius: 0.5rem;
     padding: 1rem;
