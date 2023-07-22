@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>How to Force Daily Updates to a Steam Game and its Mods - danangell.com/blog</title>
+
+<meta name="description" content="I play a lot of DayZ. The game is amazing but I&rsquo;ve found out that it has a critical flaw. You can end up waiting in a queue to join a server for 30 minutes, only to learn upon finally entering the server that one of your mods is out of date. This gets you kicked and you&rsquo;re once again at the back of the line. Most games would check this upon putting you in the queue.">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://danangell.com/blog/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://danangell.com/blog/favicon.png">
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.dca5a7ba71fd6edaf2fac17bbc9f0bdc327db8550618df032885b334343f9846.css" integrity="sha256-3KWnunH9btry&#43;sF7vJ8L3DJ9uFUGGN8DKIWzNDQ/mEY=">
+    
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="https://danangell.com/blog/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+    
+
+
+
+
+
+
+
+<meta property="og:title" content="How to Force Daily Updates to a Steam Game and its Mods" />
+<meta property="og:description" content="I play a lot of DayZ. The game is amazing but I&rsquo;ve found out that it has a critical flaw. You can end up waiting in a queue to join a server for 30 minutes, only to learn upon finally entering the server that one of your mods is out of date. This gets you kicked and you&rsquo;re once again at the back of the line. Most games would check this upon putting you in the queue." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://danangell.com/blog/posts/steam-auto-update/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-21T16:33:25-07:00" />
+<meta property="article:modified_time" content="2023-07-21T16:33:25-07:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to Force Daily Updates to a Steam Game and its Mods"/>
+<meta name="twitter:description" content="I play a lot of DayZ. The game is amazing but I&rsquo;ve found out that it has a critical flaw. You can end up waiting in a queue to join a server for 30 minutes, only to learn upon finally entering the server that one of your mods is out of date. This gets you kicked and you&rsquo;re once again at the back of the line. Most games would check this upon putting you in the queue."/>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.2/katex.min.css"
+  integrity="sha384-XFgyVzCwumZgSg6F85gbh6ev/BVWgP7QAb1V3GOchWQPifusZTU0ODnQsysBK61F" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.2/katex.min.js"
+  integrity="sha384-RpxfKy6OA0Us+WtIGBbrVlfwW4HuETdB9CD8KbG6qSbYbCanfnyid62sojNvydoB" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+
+<script>
+  
+  setTimeout(function () {
+    var math_elements = document.querySelectorAll('pre.math');
+
+    math_elements.forEach(function (e) {
+      e.innerHTML = katex.renderToString(e.innerText);
+    });
+  }, 100);
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <div class="header-top">
+    <a class="site-title" href="/blog">danangell.com/blog</a>
+    <a href="/blog/about">about</a>
+    <div>
+        <ul class="social-icons">
+
+    
+    
+    
+    
+    <li>
+        <a href="https://github.com/danthedaniel" title="Github" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+</span>
+
+        </a>
+    </li>
+    
+    
+    
+    
+    
+    <li>
+        <a href="https://www.linkedin.com/in/daniel-angell" title="Linkedin" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+</span>
+
+        </a>
+    </li>
+    
+    
+
+    
+</ul>
+        
+
+
+
+
+
+<button class="theme-switcher">
+    <img src="/blog/image/light-mode.svg" alt="Switch to light mode" />
+</button>
+
+
+<script>
+    const STORAGE_KEY = 'user-color-scheme'
+    const defaultTheme = "auto"
+
+    let currentTheme
+    let switchButton
+    let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+    const autoChangeScheme = e => {
+        currentTheme = e.matches ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', currentTheme)
+        changeButtonImage()
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        switchButton = document.querySelector('.theme-switcher')
+        currentTheme = detectCurrentScheme()
+        if (currentTheme == 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark')
+        }
+        if (currentTheme == 'auto') {
+            autoChangeScheme(autoDefinedScheme);
+            autoDefinedScheme.addListener(autoChangeScheme);
+        }
+
+        if (switchButton) {
+            changeButtonImage()
+            switchButton.addEventListener('click', switchTheme, false)
+        }
+
+        showContent()
+    })
+
+    function detectCurrentScheme() {
+        if (localStorage.getItem(STORAGE_KEY)) {
+            return localStorage.getItem(STORAGE_KEY)
+        }
+        if (defaultTheme) {
+            return defaultTheme
+        }
+        if (!window.matchMedia) {
+            return 'light'
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'
+        }
+        return 'light'
+    }
+
+    function changeButtonImage() {
+        if (switchButton) {
+            switchButton.innerHTML =
+                currentTheme == 'dark' ?
+                    '<img src="/blog/image/light-mode.svg" alt="Switch to light mode" />' :
+                    '<img src="/blog/image/dark-mode.svg"  alt="Switch to dark mode" />';
+        }
+    }
+
+    function switchTheme(e) {
+        if (currentTheme == 'dark') {
+            localStorage.setItem(STORAGE_KEY, 'light')
+            document.documentElement.setAttribute('data-theme', 'light')
+            currentTheme = 'light'
+        } else {
+            localStorage.setItem(STORAGE_KEY, 'dark')
+            document.documentElement.setAttribute('data-theme', 'dark')
+            currentTheme = 'dark'
+        }
+        changeButtonImage()
+    }
+
+    function showContent() {
+        document.body.style.visibility = 'visible';
+        document.body.style.opacity = 1;
+    }
+</script>
+    </div>
+</div>
+
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">How to Force Daily Updates to a Steam Game and its Mods</h1>
+
+                
+            </header>
+        </div>
+        <div class="content e-content">
+            <p>I play a lot of DayZ. The game is amazing but I&rsquo;ve found out that it has a critical flaw. You can end up waiting in a queue to join a server for 30 minutes, only to learn upon finally entering the server that one of your mods is out of date. This gets you kicked and you&rsquo;re once again at the back of the line. Most games would check this upon putting you in the queue. I can&rsquo;t fix DayZ but I can fix Steam.</p>
+<p>Steam is supposed to auto-update all of your games and all of their workshop mods. But it doesn&rsquo;t seem to do this immediately after an update is available. So I needed to find a way to reliably force updates to DayZ and its mods.</p>
+<p>One option is to consistently run the &ldquo;Verify integrity of game files&rdquo; operation in the Steam client before playing.</p>
+<p><img src="/blog/image/steam/verify-files.png" alt="Steam window that shows a &amp;ldquo;Verify integrity of game files&amp;rdquo; button"></p>
+<p>But computers are here to take care of repetitive tasks for us.</p>
+<h2 id="the-solution" >The solution
+<span>
+    <a href="#the-solution">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Valve has a tool called <code>steamcmd</code>. It&rsquo;s a command line tool that can be used to install, update, and run Steam games. It&rsquo;s mostly for use on something like a CS:GO server. But it also runs just fine for normal Windows games.</p>
+<h3 id="getting-the-files-in-order" >Getting the files in order
+<span>
+    <a href="#getting-the-files-in-order">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ol>
+<li>
+<p>Download steamcmd <a href="https://developer.valvesoftware.com/wiki/SteamCMD#Downloading_SteamCMD">here</a>.</p>
+</li>
+<li>
+<p>Extract the contents of the <code>steamcmd.zip</code> file to a folder. Pick somewhere you&rsquo;d like to have it permanently as we will be referencing the absolute path to it later.</p>
+</li>
+</ol>
+<p>Now you should have something like this:</p>
+<pre tabindex="0"><code>C:\Users\Daniel\steamcmd-tutorial&gt;dir
+ Volume in drive C is NVME
+
+ Directory of C:\Users\Daniel\steamcmd-tutorial
+
+07/21/2023  04:52 PM    &lt;DIR&gt;          .
+07/21/2023  04:52 PM    &lt;DIR&gt;          ..
+07/21/2023  04:52 PM         1,687,464 steamcmd.exe
+               1 File(s)      1,687,464 bytes
+               2 Dir(s)  972,791,877,632 bytes free
+</code></pre><p>Now we need to create a small script that will tell steamcmd to update DayZ and its mods.</p>
+<ol start="3">
+<li>Create a file called <code>update_dayz.txt</code> in the same folder as <code>steamcmd.exe</code>. Open it in a text editor and paste the following:</li>
+</ol>
+<pre tabindex="0"><code>@ShutdownOnFailedCommand 1
+@NoPromptForPassword 1
+force_install_dir &#34;C:\Program Files (x86)\Steam\steamapps\common\DayZ&#34;
+login &lt;your username&gt; &lt;your password&gt;
+app_update 221100 validate
+quit
+</code></pre><ul>
+<li>Replace <code>&lt;your username&gt;</code> and <code>&lt;your password&gt;</code> with your Steam username and password. Be careful - the password is getting stored in plain sight.</li>
+<li>If you&rsquo;re using this script for a game other than DayZ, replace <code>221100</code> with the <a href="https://steamdb.info/app/221100/">AppID</a> of your game and replace the path in <code>force_install_dir</code> with the path to your game&rsquo;s folder.</li>
+</ul>
+<ol start="4">
+<li>Create a file called <code>update.bat</code> in the same folder as <code>steamcmd.exe</code>. Open it in a text editor and paste the following:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-batch" data-lang="batch"><span style="display:flex;"><span>@<span style="color:#66d9ef">echo</span> off
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;C:\Users\Daniel\steamcmd-tutorial\steamcmd.exe&#34;</span> +runscript <span style="color:#e6db74">&#34;C:\Users\Daniel\steamcmd-tutorial\update_dayz.txt&#34;</span>
+</span></span></code></pre></div><ul>
+<li>Again, replace the paths with the absolute paths to your <code>steamcmd.exe</code> and <code>update_dayz.txt</code> files.</li>
+</ul>
+<h3 id="pre-authenticating-with-steam" >Pre-authenticating with Steam
+<span>
+    <a href="#pre-authenticating-with-steam">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>If you <em>don&rsquo;t</em> have Steam Guard enabled, you can skip this section.</p>
+<p>For those that do, if you tried to run this script now you&rsquo;ll most likely see this:</p>
+<pre tabindex="0"><code>Logging in user &#39;&lt;your username&gt;&#39; to Steam Public...
+This computer has not been authenticated for your account using Steam Guard.
+Please check your email for the message from Steam, and use
+the command &#39;set_steam_guard_code&#39; to enter the code here.
+</code></pre><p>You&rsquo;ll need to manually authenticate just one time to get this working.</p>
+<ol>
+<li>Open a command prompt and navigate to the folder with <code>steamcmd.exe</code> in it so you can run it.</li>
+</ol>
+<pre tabindex="0"><code>C:\Users\Daniel&gt;cd steamcmd-tutorial
+
+C:\Users\Daniel\steamcmd-tutorial&gt;steamcmd.exe
+Redirecting stderr to &#39;C:\Users\Daniel\steamcmd-tutorial\logs\stderr.txt&#39;
+[  0%] Checking for available updates...
+[----] Verifying installation...
+Steam Console Client (c) Valve Corporation - version 1689642531
+-- type &#39;quit&#39; to exit --
+Loading Steam API...OK
+
+Steam&gt;
+</code></pre><ol start="2">
+<li>Then log in using the <code>login &lt;your username&gt; &lt;your password&gt;</code> command. You&rsquo;ll be prompted for your Steam Guard code which you can get from your email inbox or the Steam mobile app.</li>
+</ol>
+<pre tabindex="0"><code>Steam&gt;login &lt;your username&gt; &lt;your password&gt;
+Logging in user &#39;&lt;your username&gt;&#39; to Steam Public...
+This computer has not been authenticated for your account using Steam Guard.
+Please check your email for the message from Steam, and enter the Steam Guard
+ code from that message.
+You can also enter this code at any time using &#39;set_steam_guard_code&#39;
+ at the console.
+Steam Guard code:ABCDE
+OK
+Waiting for client config...OK
+Waiting for user info...OK
+</code></pre><p>Hooray! You&rsquo;re almost done.</p>
+<h3 id="setting-up-the-windows-task-scheduler" >Setting up the Windows Task Scheduler
+<span>
+    <a href="#setting-up-the-windows-task-scheduler">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ol>
+<li>
+<p>Open the Windows Task Scheduler (search for &ldquo;Task Scheduler&rdquo; in the Start menu)</p>
+</li>
+<li>
+<p>Select &ldquo;Create Basic Task&rdquo; from the right sidebar. Give it a simple name like &ldquo;Update DayZ&rdquo;. Click &ldquo;Next&rdquo;.</p>
+</li>
+</ol>
+<p><img src="/blog/image/steam/basic-task-name.png" alt="Task Scheduler&amp;rsquo;s &amp;ldquo;Create Basic Task Wizard&amp;rdquo; window"></p>
+<ol start="3">
+<li>
+<p>On the &ldquo;Trigger&rdquo; setup screen, I would recommend setting the trigger to &ldquo;Daily&rdquo;. But you can do what works for you. Click &ldquo;Next&rdquo;.</p>
+</li>
+<li>
+<p>On the time input screen I set the start time to be 4:30 PM because I play in the evenings. That way everything will be updated by the time I&rsquo;m gaming. Click &ldquo;Next&rdquo;.</p>
+</li>
+<li>
+<p>Select &ldquo;Start a program&rdquo; as the action. Click &ldquo;Next&rdquo;.</p>
+</li>
+<li>
+<p>For the &ldquo;Program/script&rdquo; field, click on &ldquo;Browse&hellip;&rdquo; and find your way to <code>update.bat</code> and select it. Click &ldquo;Next&rdquo; then &ldquo;Finish&rdquo;.</p>
+</li>
+</ol>
+<p><img src="/blog/image/steam/basic-task-program.png" alt="Task Scheduler&amp;rsquo;s &amp;ldquo;Create Basic Task Wizard&amp;rdquo; window"></p>
+<p>Now every day at your set time you&rsquo;ll see one of these pop up. Don&rsquo;t worry! It&rsquo;s just the script updating your game.</p>
+<p><img src="/blog/image/steam/steamcmd-script.png" alt="Command prompt window of the steamcmd script"></p>
+<p>You can run the new task manually just to see what happens by right clicking on it (in the list of tasks in the middle of the Task Scheduler window) and selecting &ldquo;Run&rdquo;.</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2023-07-21</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://danangell.com/blog/posts/steam-auto-update/">https://danangell.com/blog/posts/steam-auto-update/</a>
+    <a href="https://danangell.com/blog" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
+
+
+    <div class="post-taxonomies">
+        
+            
+                <ul class="post-tags">
+                    
+                        
+                        <li><a href="">#video games</a></li>
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/steam/">#steam</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+    
+        
+
+
+
+
+
+
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Daniel Angell, 2023<br>
+                
+            </p>
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://danangell.com/blog class="p-name u-url url fn" rel="me">Daniel Angell</a> 
+
+    
+
+    
+</p> 
+</footer>
+        
+    </div>
+</body>
+</html>

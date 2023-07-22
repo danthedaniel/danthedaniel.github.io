@@ -6,10 +6,154 @@
     <description>danangell.com/blog (Posts)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Apr 2023 11:25:48 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 21 Jul 2023 16:33:25 -0700</lastBuildDate>
     
     <atom:link href="https://danangell.com/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to Force Daily Updates to a Steam Game and its Mods</title>
+      <link>https://danangell.com/blog/posts/steam-auto-update/</link>
+      <pubDate>Fri, 21 Jul 2023 16:33:25 -0700</pubDate>
+      
+      <guid>https://danangell.com/blog/posts/steam-auto-update/</guid>
+      <description>&lt;p&gt;I play a lot of DayZ. The game is amazing but I&amp;rsquo;ve found out that it has a critical flaw. You can end up waiting in a queue to join a server for 30 minutes, only to learn upon finally entering the server that one of your mods is out of date. This gets you kicked and you&amp;rsquo;re once again at the back of the line. Most games would check this upon putting you in the queue. I can&amp;rsquo;t fix DayZ but I can fix Steam.&lt;/p&gt;
+&lt;p&gt;Steam is supposed to auto-update all of your games and all of their workshop mods. But it doesn&amp;rsquo;t seem to do this immediately after an update is available. So I needed to find a way to reliably force updates to DayZ and its mods.&lt;/p&gt;
+&lt;p&gt;One option is to consistently run the &amp;ldquo;Verify integrity of game files&amp;rdquo; operation in the Steam client before playing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/steam/verify-files.png&#34; alt=&#34;Steam window that shows a &amp;amp;ldquo;Verify integrity of game files&amp;amp;rdquo; button&#34;&gt;&lt;/p&gt;
+&lt;p&gt;But computers are here to take care of repetitive tasks for us.&lt;/p&gt;
+&lt;h2 id=&#34;the-solution&#34; &gt;The solution
+&lt;span&gt;
+    &lt;a href=&#34;#the-solution&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Valve has a tool called &lt;code&gt;steamcmd&lt;/code&gt;. It&amp;rsquo;s a command line tool that can be used to install, update, and run Steam games. It&amp;rsquo;s mostly for use on something like a CS:GO server. But it also runs just fine for normal Windows games.&lt;/p&gt;
+&lt;h3 id=&#34;getting-the-files-in-order&#34; &gt;Getting the files in order
+&lt;span&gt;
+    &lt;a href=&#34;#getting-the-files-in-order&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Download steamcmd &lt;a href=&#34;https://developer.valvesoftware.com/wiki/SteamCMD#Downloading_SteamCMD&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Extract the contents of the &lt;code&gt;steamcmd.zip&lt;/code&gt; file to a folder. Pick somewhere you&amp;rsquo;d like to have it permanently as we will be referencing the absolute path to it later.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now you should have something like this:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;C:\Users\Daniel\steamcmd-tutorial&amp;gt;dir
+ Volume in drive C is NVME
+
+ Directory of C:\Users\Daniel\steamcmd-tutorial
+
+07/21/2023  04:52 PM    &amp;lt;DIR&amp;gt;          .
+07/21/2023  04:52 PM    &amp;lt;DIR&amp;gt;          ..
+07/21/2023  04:52 PM         1,687,464 steamcmd.exe
+               1 File(s)      1,687,464 bytes
+               2 Dir(s)  972,791,877,632 bytes free
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now we need to create a small script that will tell steamcmd to update DayZ and its mods.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Create a file called &lt;code&gt;update_dayz.txt&lt;/code&gt; in the same folder as &lt;code&gt;steamcmd.exe&lt;/code&gt;. Open it in a text editor and paste the following:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@ShutdownOnFailedCommand 1
+@NoPromptForPassword 1
+force_install_dir &amp;#34;C:\Program Files (x86)\Steam\steamapps\common\DayZ&amp;#34;
+login &amp;lt;your username&amp;gt; &amp;lt;your password&amp;gt;
+app_update 221100 validate
+quit
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Replace &lt;code&gt;&amp;lt;your username&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;your password&amp;gt;&lt;/code&gt; with your Steam username and password. Be careful - the password is getting stored in plain sight.&lt;/li&gt;
+&lt;li&gt;If you&amp;rsquo;re using this script for a game other than DayZ, replace &lt;code&gt;221100&lt;/code&gt; with the &lt;a href=&#34;https://steamdb.info/app/221100/&#34;&gt;AppID&lt;/a&gt; of your game and replace the path in &lt;code&gt;force_install_dir&lt;/code&gt; with the path to your game&amp;rsquo;s folder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Create a file called &lt;code&gt;update.bat&lt;/code&gt; in the same folder as &lt;code&gt;steamcmd.exe&lt;/code&gt;. Open it in a text editor and paste the following:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-batch&#34; data-lang=&#34;batch&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#66d9ef&#34;&gt;echo&lt;/span&gt; off
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Daniel\steamcmd-tutorial\steamcmd.exe&amp;#34;&lt;/span&gt; +runscript &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Daniel\steamcmd-tutorial\update_dayz.txt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Again, replace the paths with the absolute paths to your &lt;code&gt;steamcmd.exe&lt;/code&gt; and &lt;code&gt;update_dayz.txt&lt;/code&gt; files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pre-authenticating-with-steam&#34; &gt;Pre-authenticating with Steam
+&lt;span&gt;
+    &lt;a href=&#34;#pre-authenticating-with-steam&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;If you &lt;em&gt;don&amp;rsquo;t&lt;/em&gt; have Steam Guard enabled, you can skip this section.&lt;/p&gt;
+&lt;p&gt;For those that do, if you tried to run this script now you&amp;rsquo;ll most likely see this:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Logging in user &amp;#39;&amp;lt;your username&amp;gt;&amp;#39; to Steam Public...
+This computer has not been authenticated for your account using Steam Guard.
+Please check your email for the message from Steam, and use
+the command &amp;#39;set_steam_guard_code&amp;#39; to enter the code here.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You&amp;rsquo;ll need to manually authenticate just one time to get this working.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open a command prompt and navigate to the folder with &lt;code&gt;steamcmd.exe&lt;/code&gt; in it so you can run it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;C:\Users\Daniel&amp;gt;cd steamcmd-tutorial
+
+C:\Users\Daniel\steamcmd-tutorial&amp;gt;steamcmd.exe
+Redirecting stderr to &amp;#39;C:\Users\Daniel\steamcmd-tutorial\logs\stderr.txt&amp;#39;
+[  0%] Checking for available updates...
+[----] Verifying installation...
+Steam Console Client (c) Valve Corporation - version 1689642531
+-- type &amp;#39;quit&amp;#39; to exit --
+Loading Steam API...OK
+
+Steam&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Then log in using the &lt;code&gt;login &amp;lt;your username&amp;gt; &amp;lt;your password&amp;gt;&lt;/code&gt; command. You&amp;rsquo;ll be prompted for your Steam Guard code which you can get from your email inbox or the Steam mobile app.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Steam&amp;gt;login &amp;lt;your username&amp;gt; &amp;lt;your password&amp;gt;
+Logging in user &amp;#39;&amp;lt;your username&amp;gt;&amp;#39; to Steam Public...
+This computer has not been authenticated for your account using Steam Guard.
+Please check your email for the message from Steam, and enter the Steam Guard
+ code from that message.
+You can also enter this code at any time using &amp;#39;set_steam_guard_code&amp;#39;
+ at the console.
+Steam Guard code:ABCDE
+OK
+Waiting for client config...OK
+Waiting for user info...OK
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Hooray! You&amp;rsquo;re almost done.&lt;/p&gt;
+&lt;h3 id=&#34;setting-up-the-windows-task-scheduler&#34; &gt;Setting up the Windows Task Scheduler
+&lt;span&gt;
+    &lt;a href=&#34;#setting-up-the-windows-task-scheduler&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Open the Windows Task Scheduler (search for &amp;ldquo;Task Scheduler&amp;rdquo; in the Start menu)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select &amp;ldquo;Create Basic Task&amp;rdquo; from the right sidebar. Give it a simple name like &amp;ldquo;Update DayZ&amp;rdquo;. Click &amp;ldquo;Next&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/steam/basic-task-name.png&#34; alt=&#34;Task Scheduler&amp;amp;rsquo;s &amp;amp;ldquo;Create Basic Task Wizard&amp;amp;rdquo; window&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;On the &amp;ldquo;Trigger&amp;rdquo; setup screen, I would recommend setting the trigger to &amp;ldquo;Daily&amp;rdquo;. But you can do what works for you. Click &amp;ldquo;Next&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;On the time input screen I set the start time to be 4:30 PM because I play in the evenings. That way everything will be updated by the time I&amp;rsquo;m gaming. Click &amp;ldquo;Next&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select &amp;ldquo;Start a program&amp;rdquo; as the action. Click &amp;ldquo;Next&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For the &amp;ldquo;Program/script&amp;rdquo; field, click on &amp;ldquo;Browse&amp;hellip;&amp;rdquo; and find your way to &lt;code&gt;update.bat&lt;/code&gt; and select it. Click &amp;ldquo;Next&amp;rdquo; then &amp;ldquo;Finish&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/steam/basic-task-program.png&#34; alt=&#34;Task Scheduler&amp;amp;rsquo;s &amp;amp;ldquo;Create Basic Task Wizard&amp;amp;rdquo; window&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now every day at your set time you&amp;rsquo;ll see one of these pop up. Don&amp;rsquo;t worry! It&amp;rsquo;s just the script updating your game.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/steam/steamcmd-script.png&#34; alt=&#34;Command prompt window of the steamcmd script&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You can run the new task manually just to see what happens by right clicking on it (in the list of tasks in the middle of the Task Scheduler window) and selecting &amp;ldquo;Run&amp;rdquo;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>10 Gb/s Router - For fun!</title>
