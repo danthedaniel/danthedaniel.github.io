@@ -6,10 +6,61 @@
     <description>danangell.com/blog (Posts)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Jul 2023 16:33:25 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 13 Oct 2023 13:37:59 -0700</lastBuildDate>
     
     <atom:link href="https://danangell.com/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GPT-4 Understands</title>
+      <link>https://danangell.com/blog/posts/gpt-understands/</link>
+      <pubDate>Fri, 13 Oct 2023 13:37:59 -0700</pubDate>
+      
+      <guid>https://danangell.com/blog/posts/gpt-understands/</guid>
+      <description>&lt;p&gt;A prevailing sentiment online is that GPT-4 still does not understand what it talks about. We can argue semantics over what &amp;ldquo;understanding&amp;rdquo; truly means. I think it&amp;rsquo;s useful, at least today, to draw the line at whether GPT-4 has succesfully modeled parts of the world. Is it just picking words and connecting them with correct grammar? Or does the token selection actually reflect parts of the physical world?&lt;/p&gt;
+&lt;p&gt;One of the most remarkable things I&amp;rsquo;ve heard about GPT-4 comes from &lt;a href=&#34;https://www.thisamericanlife.org/803/transcript&#34;&gt;an episode of &lt;em&gt;This American Life&lt;/em&gt;&lt;/a&gt; titled &amp;ldquo;Greetings, People of Earth&amp;rdquo;. One of the segments covers the experience of Microsoft researchers that gained access to GPT-4 before its general release.&lt;/p&gt;
+&lt;p&gt;I want to highlight the most profound part.&lt;/p&gt;
+&lt;h2 id=&#34;transcript-excerpt&#34; &gt;Transcript Excerpt
+&lt;span&gt;
+    &lt;a href=&#34;#transcript-excerpt&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&amp;ldquo;[GPT-4] is fed, like, a line of text from some source, but with the last word missing. It guesses what the last word might be, and then it gets told whether or not it got it right so it can adjust its internal math. The fact that it&amp;rsquo;s been fed so much material makes it hard to run tests on it. Like, you don&amp;rsquo;t want to ask it something that it&amp;rsquo;s already seen in the text it&amp;rsquo;s been trained on. So they decided the only way to really test what this thing could do was to try to come up with things to ask it that it would not have encountered before, new original tasks.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It&amp;rsquo;s gonna sound a little bit weird. - We said, &amp;ldquo;I have a book, nine eggs, a laptop, a bottle, and a nail. Please tell me how to stack them onto each other in a stable manner&amp;rdquo;. That&amp;rsquo;s the question that we asked. And before I give you the GPT-4 answer, let me tell you what ChatGPT answered. So ChatGPT said, &amp;ldquo;Here is one possible way to stack the objects. Place the bottle on a flat surface. Carefully balance the nail on top of the bottle. Place the eggs on top of the nail.&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sebastian Bubeck (Microsoft)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;ldquo;You look at that and you think it really knows nothing. It is just sort of continuing the sentence in some way.&amp;rdquo;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;That&amp;rsquo;s right. It&amp;rsquo;s just cont&amp;ndash; Exactly right. It&amp;rsquo;s just continuing the sentence. But now comes GPT-4. And GPT-4 is a different beast. So here is GPT-4&amp;rsquo;s answer.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sebastian Bubeck&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;One possible way to stack the objects onto each other in a stable manner is place the book flat on the level surface, such as a table or floor. The book will serve as the base of the stack and provide a large and sturdy support. Arrange the nine eggs in a 3-by-3 square on top of the book, leaving some space between them. The eggs will form a second layer and distribute the weight evenly. Laptop goes on the eggs, then the bottle, then the nail on the bottle cap, pointy end of the nail facing up.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GPT-4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;ldquo;It&amp;rsquo;s shocking to think about all the things it seemed to be understanding here. It felt like more than just typing out the next likely word. It seemed to have formed an independent idea about what these words actually meant&amp;ndash; the physical shape of the objects, that eggs are kind of round and fragile, that a book is flat and you can put things on top of it.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;The idea is that back when GPT-4 was being trained for it to really consistently get the next word correct, to do that reliably, &lt;strong&gt;it had to do more than just bullshit&lt;/strong&gt;. It had to do more than guess based on patterns. To get the next word right, &lt;strong&gt;it had to truly understand the words coming before it.&lt;/strong&gt;&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;&lt;strong&gt;It had to build, in its internal wirings and all its software neurons, some understanding of what an egg is&lt;/strong&gt; - In other words, to get the next word right, it had to become intelligent. It&amp;rsquo;s quite a thought. It started with nothing. We jammed huge oceans of text through it, and it just wired itself into intelligence, just by being trained to do this one stupid thing.&amp;rdquo;&lt;/p&gt;
+&lt;h2 id=&#34;my-thoughts&#34; &gt;My Thoughts
+&lt;span&gt;
+    &lt;a href=&#34;#my-thoughts&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;This is crazy to me. You can read in a stream of meaningless numbers (tokens) and incidentally build a reasonably accruate model of the real things those tokens represent.&lt;/p&gt;
+&lt;p&gt;The implications are vast. We may be able to translate between languages that have never had a &amp;ldquo;Rosetta Stone&amp;rdquo;. Any animals that have a true language could have it decoded. And while an LLM that&amp;rsquo;s gotten an 8 year old&amp;rsquo;s understanding of balancing assorted items isn&amp;rsquo;t that useful, an LLM that&amp;rsquo;s got a baby whale&amp;rsquo;s grasp on whale language would be revolutionary.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to Force Daily Updates to a Steam Game and its Mods</title>

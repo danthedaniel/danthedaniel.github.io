@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>GPT-4 Understands - danangell.com/blog</title>
+
+<meta name="description" content="A prevailing sentiment online is that GPT-4 still does not understand what it talks about. We can argue semantics over what &ldquo;understanding&rdquo; truly means. I think it&rsquo;s useful, at least today, to draw the line at whether GPT-4 has succesfully modeled parts of the world. Is it just picking words and connecting them with correct grammar? Or does the token selection actually reflect parts of the physical world?
+One of the most remarkable things I&rsquo;ve heard about GPT-4 comes from an episode of This American Life titled &ldquo;Greetings, People of Earth&rdquo;.">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://danangell.com/blog/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://danangell.com/blog/favicon.png">
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.34ffddc6b7893fe893c7f82eb9e9c4ff581b4a1371974c04e0ddbe1a89760fe1.css" integrity="sha256-NP/dxreJP&#43;iTx/guuenE/1gbShNxl0wE4N2&#43;Gol2D&#43;E=">
+    
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="https://danangell.com/blog/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+    
+
+
+
+
+
+
+
+<meta property="og:title" content="GPT-4 Understands" />
+<meta property="og:description" content="A prevailing sentiment online is that GPT-4 still does not understand what it talks about. We can argue semantics over what &ldquo;understanding&rdquo; truly means. I think it&rsquo;s useful, at least today, to draw the line at whether GPT-4 has succesfully modeled parts of the world. Is it just picking words and connecting them with correct grammar? Or does the token selection actually reflect parts of the physical world?
+One of the most remarkable things I&rsquo;ve heard about GPT-4 comes from an episode of This American Life titled &ldquo;Greetings, People of Earth&rdquo;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://danangell.com/blog/posts/gpt-understands/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-10-13T13:37:59-07:00" />
+<meta property="article:modified_time" content="2023-10-13T13:37:59-07:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GPT-4 Understands"/>
+<meta name="twitter:description" content="A prevailing sentiment online is that GPT-4 still does not understand what it talks about. We can argue semantics over what &ldquo;understanding&rdquo; truly means. I think it&rsquo;s useful, at least today, to draw the line at whether GPT-4 has succesfully modeled parts of the world. Is it just picking words and connecting them with correct grammar? Or does the token selection actually reflect parts of the physical world?
+One of the most remarkable things I&rsquo;ve heard about GPT-4 comes from an episode of This American Life titled &ldquo;Greetings, People of Earth&rdquo;."/>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.2/katex.min.css"
+  integrity="sha384-XFgyVzCwumZgSg6F85gbh6ev/BVWgP7QAb1V3GOchWQPifusZTU0ODnQsysBK61F" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.2/katex.min.js"
+  integrity="sha384-RpxfKy6OA0Us+WtIGBbrVlfwW4HuETdB9CD8KbG6qSbYbCanfnyid62sojNvydoB" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+
+<script>
+  
+  setTimeout(function () {
+    var math_elements = document.querySelectorAll('pre.math');
+
+    math_elements.forEach(function (e) {
+      e.innerHTML = katex.renderToString(e.innerText);
+    });
+  }, 100);
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <div class="header-top">
+    <a class="site-title" href="/blog">danangell.com/blog</a>
+    <a href="/blog/about">about</a>
+    <div>
+        <ul class="social-icons">
+
+    
+    
+    
+    
+    <li>
+        <a href="https://github.com/danthedaniel" title="Github" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+</span>
+
+        </a>
+    </li>
+    
+    
+    
+    
+    
+    <li>
+        <a href="https://www.linkedin.com/in/daniel-angell" title="Linkedin" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+</span>
+
+        </a>
+    </li>
+    
+    
+
+    
+</ul>
+        
+
+
+
+
+
+<button class="theme-switcher">
+    <img src="/blog/image/light-mode.svg" alt="Switch to light mode" />
+</button>
+
+
+<script>
+    const STORAGE_KEY = 'user-color-scheme'
+    const defaultTheme = "auto"
+
+    let currentTheme
+    let switchButton
+    let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+    const autoChangeScheme = e => {
+        currentTheme = e.matches ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', currentTheme)
+        changeButtonImage()
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        switchButton = document.querySelector('.theme-switcher')
+        currentTheme = detectCurrentScheme()
+        if (currentTheme == 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark')
+        }
+        if (currentTheme == 'auto') {
+            autoChangeScheme(autoDefinedScheme);
+            autoDefinedScheme.addListener(autoChangeScheme);
+        }
+
+        if (switchButton) {
+            changeButtonImage()
+            switchButton.addEventListener('click', switchTheme, false)
+        }
+
+        showContent()
+    })
+
+    function detectCurrentScheme() {
+        if (localStorage.getItem(STORAGE_KEY)) {
+            return localStorage.getItem(STORAGE_KEY)
+        }
+        if (defaultTheme) {
+            return defaultTheme
+        }
+        if (!window.matchMedia) {
+            return 'light'
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'
+        }
+        return 'light'
+    }
+
+    function changeButtonImage() {
+        if (switchButton) {
+            switchButton.innerHTML =
+                currentTheme == 'dark' ?
+                    '<img src="/blog/image/light-mode.svg" alt="Switch to light mode" />' :
+                    '<img src="/blog/image/dark-mode.svg"  alt="Switch to dark mode" />';
+        }
+    }
+
+    function switchTheme(e) {
+        if (currentTheme == 'dark') {
+            localStorage.setItem(STORAGE_KEY, 'light')
+            document.documentElement.setAttribute('data-theme', 'light')
+            currentTheme = 'light'
+        } else {
+            localStorage.setItem(STORAGE_KEY, 'dark')
+            document.documentElement.setAttribute('data-theme', 'dark')
+            currentTheme = 'dark'
+        }
+        changeButtonImage()
+    }
+
+    function showContent() {
+        document.body.style.visibility = 'visible';
+        document.body.style.opacity = 1;
+    }
+</script>
+    </div>
+</div>
+
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">GPT-4 Understands</h1>
+
+                
+            </header>
+        </div>
+        <div class="content e-content">
+            <p>A prevailing sentiment online is that GPT-4 still does not understand what it talks about. We can argue semantics over what &ldquo;understanding&rdquo; truly means. I think it&rsquo;s useful, at least today, to draw the line at whether GPT-4 has succesfully modeled parts of the world. Is it just picking words and connecting them with correct grammar? Or does the token selection actually reflect parts of the physical world?</p>
+<p>One of the most remarkable things I&rsquo;ve heard about GPT-4 comes from <a href="https://www.thisamericanlife.org/803/transcript">an episode of <em>This American Life</em></a> titled &ldquo;Greetings, People of Earth&rdquo;. One of the segments covers the experience of Microsoft researchers that gained access to GPT-4 before its general release.</p>
+<p>I want to highlight the most profound part.</p>
+<h2 id="transcript-excerpt" >Transcript Excerpt
+<span>
+    <a href="#transcript-excerpt">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>&ldquo;[GPT-4] is fed, like, a line of text from some source, but with the last word missing. It guesses what the last word might be, and then it gets told whether or not it got it right so it can adjust its internal math. The fact that it&rsquo;s been fed so much material makes it hard to run tests on it. Like, you don&rsquo;t want to ask it something that it&rsquo;s already seen in the text it&rsquo;s been trained on. So they decided the only way to really test what this thing could do was to try to come up with things to ask it that it would not have encountered before, new original tasks.&rdquo;</p>
+<p>&hellip;</p>
+<blockquote>
+<p>It&rsquo;s gonna sound a little bit weird. - We said, &ldquo;I have a book, nine eggs, a laptop, a bottle, and a nail. Please tell me how to stack them onto each other in a stable manner&rdquo;. That&rsquo;s the question that we asked. And before I give you the GPT-4 answer, let me tell you what ChatGPT answered. So ChatGPT said, &ldquo;Here is one possible way to stack the objects. Place the bottle on a flat surface. Carefully balance the nail on top of the bottle. Place the eggs on top of the nail.&rdquo;</p>
+<ul>
+<li>Sebastian Bubeck (Microsoft)</li>
+</ul>
+</blockquote>
+<p>&ldquo;You look at that and you think it really knows nothing. It is just sort of continuing the sentence in some way.&rdquo;</p>
+<blockquote>
+<p>That&rsquo;s right. It&rsquo;s just cont&ndash; Exactly right. It&rsquo;s just continuing the sentence. But now comes GPT-4. And GPT-4 is a different beast. So here is GPT-4&rsquo;s answer.</p>
+<ul>
+<li>Sebastian Bubeck</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>One possible way to stack the objects onto each other in a stable manner is place the book flat on the level surface, such as a table or floor. The book will serve as the base of the stack and provide a large and sturdy support. Arrange the nine eggs in a 3-by-3 square on top of the book, leaving some space between them. The eggs will form a second layer and distribute the weight evenly. Laptop goes on the eggs, then the bottle, then the nail on the bottle cap, pointy end of the nail facing up.</p>
+<ul>
+<li>GPT-4</li>
+</ul>
+</blockquote>
+<p>&ldquo;It&rsquo;s shocking to think about all the things it seemed to be understanding here. It felt like more than just typing out the next likely word. It seemed to have formed an independent idea about what these words actually meant&ndash; the physical shape of the objects, that eggs are kind of round and fragile, that a book is flat and you can put things on top of it.&rdquo;</p>
+<p>&hellip;</p>
+<p>&ldquo;The idea is that back when GPT-4 was being trained for it to really consistently get the next word correct, to do that reliably, <strong>it had to do more than just bullshit</strong>. It had to do more than guess based on patterns. To get the next word right, <strong>it had to truly understand the words coming before it.</strong>&rdquo;</p>
+<p>&ldquo;<strong>It had to build, in its internal wirings and all its software neurons, some understanding of what an egg is</strong> - In other words, to get the next word right, it had to become intelligent. It&rsquo;s quite a thought. It started with nothing. We jammed huge oceans of text through it, and it just wired itself into intelligence, just by being trained to do this one stupid thing.&rdquo;</p>
+<h2 id="my-thoughts" >My Thoughts
+<span>
+    <a href="#my-thoughts">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>This is crazy to me. You can read in a stream of meaningless numbers (tokens) and incidentally build a reasonably accruate model of the real things those tokens represent.</p>
+<p>The implications are vast. We may be able to translate between languages that have never had a &ldquo;Rosetta Stone&rdquo;. Any animals that have a true language could have it decoded. And while an LLM that&rsquo;s gotten an 8 year old&rsquo;s understanding of balancing assorted items isn&rsquo;t that useful, an LLM that&rsquo;s got a baby whale&rsquo;s grasp on whale language would be revolutionary.</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2023-10-13</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://danangell.com/blog/posts/gpt-understands/">https://danangell.com/blog/posts/gpt-understands/</a>
+    <a href="https://danangell.com/blog" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
+
+
+    <div class="post-taxonomies">
+        
+            
+                <ul class="post-tags">
+                    
+                        
+                        <li><a href="https://danangell.com/blog/tags/gpt/">#gpt</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+    
+        
+
+
+
+
+
+
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Daniel Angell, 2023<br>
+                
+            </p>
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://danangell.com/blog class="p-name u-url url fn" rel="me">Daniel Angell</a> 
+
+    
+
+    
+</p> 
+</footer>
+        
+    </div>
+</body>
+</html>
