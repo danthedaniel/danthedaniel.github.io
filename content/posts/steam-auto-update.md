@@ -5,6 +5,10 @@ draft: false
 tags: ["video games", "steam"]
 ---
 
+**Update** - *DayZ now checks mod integrity before putting you in the queue. This is no longer as important as before. But maybe this will help someone with another game some day.*
+
+<br />
+
 I play a lot of DayZ. The game is amazing but I've found out that it has a critical flaw. You can end up waiting in a queue to join a server for 30 minutes, only to learn upon finally entering the server that one of your mods is out of date. This gets you kicked and you're once again at the back of the line. Most games would check this upon putting you in the queue. I can't fix DayZ but I can fix Steam.
 
 Steam is supposed to auto-update all of your games and all of their workshop mods. But it doesn't seem to do this immediately after an update is available. So I needed to find a way to reliably force updates to DayZ and its mods.
