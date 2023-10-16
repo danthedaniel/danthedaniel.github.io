@@ -38,6 +38,6 @@ I want to highlight the most profound part.
 
 ## My Thoughts
 
-This is crazy to me. You can read in a stream of meaningless numbers (tokens) and incidentally build a reasonably accruate model of the real things those tokens represent.
+This is crazy to me. You can read in a stream of meaningless numbers (tokens) and incidentally build a reasonably accurate model of the real things those tokens represent.
 
 The implications are vast. We may be able to translate between languages that have never had a "Rosetta Stone". Any animals that have a true language could have it decoded. And while an LLM that's gotten an 8 year old's understanding of balancing assorted items isn't that useful, an LLM that's got a baby whale's grasp on whale language would be revolutionary.
