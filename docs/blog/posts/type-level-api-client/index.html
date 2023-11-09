@@ -75,7 +75,7 @@
     
 
     
-        <script src="https://danangell.com/blog/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+        <script src="https://danangell.com/blog/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
     
 
 
@@ -311,17 +311,17 @@ situations where GraphQL feels inappropriate this can be your fall-back.</p>
 <li>Then get a handle on the API types.</li>
 <li>Pass the <code>CurrentUser</code> endpoint type into <code>request</code>&rsquo;s type parameter.</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">request</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@company/webapp/http&#34;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">API</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@company/api/endpoints&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">request</span>&lt;<span style="color:#f92672">API.CurrentUser</span>&gt;({});
-</span></span></code></pre></div><p>Already you&rsquo;ll be getting compiler errors! <code>API.CurrentUser</code>&rsquo;s method is of type &ldquo;get&rdquo; and you haven&rsquo;t
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">request</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@company/webapp/http&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">API</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@company/api/endpoints&#34;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">request</span>&lt;<span style="color:#f92672">API.CurrentUser</span>&gt;({});
+</code></pre></div><p>Already you&rsquo;ll be getting compiler errors! <code>API.CurrentUser</code>&rsquo;s method is of type &ldquo;get&rdquo; and you haven&rsquo;t
 specified an HTTP method.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">request</span>&lt;<span style="color:#f92672">API.CurrentUser</span>&gt;({ <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;get&#34;</span> });
-</span></span></code></pre></div><p>Again a compiler error (thanks, TypeScript :D). <code>API.CurrentUser</code> has a path type of &ldquo;/user/me&rdquo; and
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">request</span>&lt;<span style="color:#f92672">API.CurrentUser</span>&gt;({ <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;get&#34;</span> });
+</code></pre></div><p>Again a compiler error (thanks, TypeScript :D). <code>API.CurrentUser</code> has a path type of &ldquo;/user/me&rdquo; and
 you haven&rsquo;t provided a path.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">request</span>&lt;<span style="color:#f92672">API.CurrentUser</span>&gt;({ <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/user/me&#34;</span> });
-</span></span></code></pre></div><p>Success! This is a valid API request. And even better the type of <code>user</code> is <code>ApiResponse&lt;{ id: number, email: string, ...}&gt;</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">request</span>&lt;<span style="color:#f92672">API.CurrentUser</span>&gt;({ <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/user/me&#34;</span> });
+</code></pre></div><p>Success! This is a valid API request. And even better the type of <code>user</code> is <code>ApiResponse&lt;{ id: number, email: string, ...}&gt;</code>.</p>
 <p><strong>Changing anything along the pipeline from the model to the view will automatically adjust the types and should
 give compiler errors where the API has made a breaking change</strong>. New (whitelisted) fields on the user are automatically
 shown in your front end code&rsquo;s IntelliSense.</p>
@@ -351,93 +351,93 @@ shown in your front end code&rsquo;s IntelliSense.</p>
     </a>
 </span>
 </h3><p>I can leverage TypeScript to allow for extracting a per-model type interface defined by just an array of model properties I want to share with the client. For a <code>User</code> that array would include things like <code>[&quot;id&quot;, &quot;email&quot;, &quot;firstName&quot;, &quot;lastName&quot;, ...]</code>. This requires some fancy type-level programming, but I&rsquo;ve already done the hard work for you. The trick is all in the signature of the function used to pluck out the corresponding values for <code>id</code>, <code>email</code> etc.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">extractDTOAttrs</span>&lt;<span style="color:#f92672">This</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Attr</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">keyof</span> <span style="color:#a6e22e">This</span>&gt;(
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">This</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">attrs</span>: <span style="color:#66d9ef">Attr</span>[]
-</span></span><span style="display:flex;"><span>)<span style="color:#f92672">:</span> { [<span style="color:#a6e22e">P</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Attr</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">This</span>[<span style="color:#a6e22e">P</span>] <span style="color:#66d9ef">extends</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">Return</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">Return</span> : <span style="color:#66d9ef">This</span>[<span style="color:#a6e22e">P</span>] } {
-</span></span></code></pre></div><p><sup>DTO here is jargon that means &ldquo;data-transfer-object&rdquo;. It&rsquo;s how the database record looks in JSON format.</sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">extractDTOAttrs</span>&lt;<span style="color:#f92672">This</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Attr</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">keyof</span> <span style="color:#a6e22e">This</span>&gt;(
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">This</span>,
+    <span style="color:#a6e22e">attrs</span>: <span style="color:#66d9ef">Attr</span>[]
+)<span style="color:#f92672">:</span> { [<span style="color:#a6e22e">P</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Attr</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">This</span>[<span style="color:#a6e22e">P</span>] <span style="color:#66d9ef">extends</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">Return</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">Return</span> : <span style="color:#66d9ef">This</span>[<span style="color:#a6e22e">P</span>] } {
+</code></pre></div><p><sup>DTO here is jargon that means &ldquo;data-transfer-object&rdquo;. It&rsquo;s how the database record looks in JSON format.</sup></p>
 <p>A call to this function looks like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">extractDTOAttrs</span>([
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;id&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;email&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;firstName&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;lastName&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>])
-</span></span></code></pre></div><p>TypeScript has allowed us to lock down a lot of things here.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">extractDTOAttrs</span>([
+    <span style="color:#e6db74">&#34;id&#34;</span>,
+    <span style="color:#e6db74">&#34;email&#34;</span>,
+    <span style="color:#e6db74">&#34;firstName&#34;</span>,
+    <span style="color:#e6db74">&#34;lastName&#34;</span>,
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>])
+</code></pre></div><p>TypeScript has allowed us to lock down a lot of things here.</p>
 <ul>
 <li>The array of strings can only contain valid keys to <code>This</code> (the type of our model&rsquo;s <code>this</code> pointer)</li>
 <li>The return type of <em>this specific <code>extractDTOAttrs</code> invokation</em> will be an interface with the keys as elements from the array, and each key&rsquo;s matching type pulled from the model&rsquo;s existing type definition.</li>
 </ul>
 <p>Here&rsquo;s a more complete excerpt from two TypeORM files:</p>
 <p><code>@company/models/root.entity.ts</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">CanBeDTO</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">toDTO</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">unknown</span> };
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">canBeDTO</span>(<span style="color:#a6e22e">value</span>: <span style="color:#66d9ef">unknown</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">value</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">CanBeDTO</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">value</span>[<span style="color:#e6db74">&#34;toDTO&#34;</span>] <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;function&#34;</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootEntity</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@PrimaryGeneratedColumn</span>()
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">id?</span>: <span style="color:#66d9ef">number</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">abstract</span> <span style="color:#a6e22e">toDTO</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">unknown</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * Pick only certain attributes from `this`.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * @param this Model instance
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * @param attrs Whitelist of attributes
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * @returns DTO object.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">extractDTOAttrs</span>&lt;<span style="color:#f92672">This</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Attr</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">keyof</span> <span style="color:#a6e22e">This</span>&gt;(
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">This</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">attrs</span>: <span style="color:#66d9ef">Attr</span>[]
-</span></span><span style="display:flex;"><span>  )<span style="color:#f92672">:</span> { [<span style="color:#a6e22e">P</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Attr</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">This</span>[<span style="color:#a6e22e">P</span>] <span style="color:#66d9ef">extends</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">Return</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">Return</span> : <span style="color:#66d9ef">This</span>[<span style="color:#a6e22e">P</span>] } {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">DTO</span>: <span style="color:#66d9ef">any</span> <span style="color:#f92672">=</span> {};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">attr</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">attrs</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">attr</span>];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">value</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">Promise</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">canBeDTO</span>(<span style="color:#a6e22e">value</span>)) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// No recursive calls, please.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">`Attribute </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">attr</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> can not be exported to a DTO`</span>);
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;function&#34;</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">DTO</span>[<span style="color:#a6e22e">attr</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>)();
-</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">DTO</span>[<span style="color:#a6e22e">attr</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">DTO</span>;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><code>@company/models/user.entity.ts</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">@Entity</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;user&#34;</span> })
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">RootEntity</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@Column</span>({ <span style="color:#66d9ef">unique</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;citext&#34;</span> })
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">email</span>: <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@Column</span>({ <span style="color:#a6e22e">nullable</span>: <span style="color:#66d9ef">true</span> })
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">firstName?</span>: <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@Column</span>({ <span style="color:#a6e22e">nullable</span>: <span style="color:#66d9ef">true</span> })
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lastName?</span>: <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">toDTO() {</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">extractDTOAttrs</span>([
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;id&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;email&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;firstName&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;lastName&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// ...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ]);
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This solution is generic enough that you should be able to use it with any ORM. Not just TypeORM.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">CanBeDTO</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">toDTO</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">unknown</span> };
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">canBeDTO</span>(<span style="color:#a6e22e">value</span>: <span style="color:#66d9ef">unknown</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">value</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">CanBeDTO</span> {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">value</span>[<span style="color:#e6db74">&#34;toDTO&#34;</span>] <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;function&#34;</span>;
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootEntity</span> {
+  <span style="color:#66d9ef">@PrimaryGeneratedColumn</span>()
+  <span style="color:#a6e22e">id?</span>: <span style="color:#66d9ef">number</span>;
+
+  <span style="color:#66d9ef">abstract</span> <span style="color:#a6e22e">toDTO</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">unknown</span>;
+
+  <span style="color:#75715e">/**
+</span><span style="color:#75715e">   * Pick only certain attributes from `this`.
+</span><span style="color:#75715e">   * @param this Model instance
+</span><span style="color:#75715e">   * @param attrs Whitelist of attributes
+</span><span style="color:#75715e">   * @returns DTO object.
+</span><span style="color:#75715e">   */</span>
+  <span style="color:#a6e22e">extractDTOAttrs</span>&lt;<span style="color:#f92672">This</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Attr</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">keyof</span> <span style="color:#a6e22e">This</span>&gt;(
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">This</span>,
+    <span style="color:#a6e22e">attrs</span>: <span style="color:#66d9ef">Attr</span>[]
+  )<span style="color:#f92672">:</span> { [<span style="color:#a6e22e">P</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Attr</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">This</span>[<span style="color:#a6e22e">P</span>] <span style="color:#66d9ef">extends</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">Return</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">Return</span> : <span style="color:#66d9ef">This</span>[<span style="color:#a6e22e">P</span>] } {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">DTO</span>: <span style="color:#66d9ef">any</span> <span style="color:#f92672">=</span> {};
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">attr</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">attrs</span>) {
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">attr</span>];
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">value</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">Promise</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">canBeDTO</span>(<span style="color:#a6e22e">value</span>)) {
+        <span style="color:#75715e">// No recursive calls, please.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">`Attribute </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">attr</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> can not be exported to a DTO`</span>);
+      }
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;function&#34;</span>) {
+        <span style="color:#a6e22e">DTO</span>[<span style="color:#a6e22e">attr</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>)();
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">DTO</span>[<span style="color:#a6e22e">attr</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
+      }
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">DTO</span>;
+  }
+}
+</code></pre></div><p><code>@company/models/user.entity.ts</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">@Entity</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;user&#34;</span> })
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">RootEntity</span> {
+  <span style="color:#66d9ef">@Column</span>({ <span style="color:#66d9ef">unique</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;citext&#34;</span> })
+  <span style="color:#a6e22e">email</span>: <span style="color:#66d9ef">string</span>;
+
+  <span style="color:#66d9ef">@Column</span>({ <span style="color:#a6e22e">nullable</span>: <span style="color:#66d9ef">true</span> })
+  <span style="color:#a6e22e">firstName?</span>: <span style="color:#66d9ef">string</span>;
+
+  <span style="color:#66d9ef">@Column</span>({ <span style="color:#a6e22e">nullable</span>: <span style="color:#66d9ef">true</span> })
+  <span style="color:#a6e22e">lastName?</span>: <span style="color:#66d9ef">string</span>;
+
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>
+  <span style="color:#a6e22e">toDTO() {</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">extractDTOAttrs</span>([
+      <span style="color:#e6db74">&#34;id&#34;</span>,
+      <span style="color:#e6db74">&#34;email&#34;</span>,
+      <span style="color:#e6db74">&#34;firstName&#34;</span>,
+      <span style="color:#e6db74">&#34;lastName&#34;</span>,
+      <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>    ]);
+  }
+}
+</code></pre></div><p>This solution is generic enough that you should be able to use it with any ORM. Not just TypeORM.</p>
 <p>Thanks to TypeScript&rsquo;s return type inference the type of <code>this.extractDTOAttrs([...])</code> becomes <code>User.toDTO()</code>&rsquo;s type as well.</p>
 <h2 id="implementation-part-2---controllers" >Implementation Part 2 - Controllers
 <span>
@@ -462,100 +462,100 @@ shown in your front end code&rsquo;s IntelliSense.</p>
     </a>
 </span>
 </h3><p><code>@company/api/modules/user.controller.ts</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">@Controller</span>(<span style="color:#e6db74">&#34;user&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@Get</span>(<span style="color:#e6db74">&#34;me&#34;</span>)
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@UseGuards</span>(<span style="color:#a6e22e">AuthGuard</span>())
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">me</span>(<span style="color:#66d9ef">@Req</span>() <span style="color:#a6e22e">req</span>: <span style="color:#66d9ef">AuthdRequest</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;success&#34;</span>, <span style="color:#a6e22e">data</span>: <span style="color:#66d9ef">req.user.toDTO</span>() };
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><sup>The above code is from a NestJS back-end.</sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">@Controller</span>(<span style="color:#e6db74">&#34;user&#34;</span>)
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> {
+  <span style="color:#66d9ef">@Get</span>(<span style="color:#e6db74">&#34;me&#34;</span>)
+  <span style="color:#66d9ef">@UseGuards</span>(<span style="color:#a6e22e">AuthGuard</span>())
+  <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">me</span>(<span style="color:#66d9ef">@Req</span>() <span style="color:#a6e22e">req</span>: <span style="color:#66d9ef">AuthdRequest</span>) {
+    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;success&#34;</span>, <span style="color:#a6e22e">data</span>: <span style="color:#66d9ef">req.user.toDTO</span>() };
+  }
+}
+</code></pre></div><p><sup>The above code is from a NestJS back-end.</sup></p>
 <p>Just with the code above TypeScript will automatically pipe through the type of <code>User.toDTO()</code> into the
 return type of <code>UserController.me</code>. The full type will be:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UserControllerMeMethod</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;success&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">number</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">email</span>: <span style="color:#66d9ef">string</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">firstName</span>: <span style="color:#66d9ef">string</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lastName</span>: <span style="color:#66d9ef">string</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The wrapper structure is called <code>SuccessResponse&lt;T&gt;</code>. So the type is, more succinctly, <code>SuccessResponse&lt;ReturnType&lt;User[&quot;toDTO&quot;]&gt;&gt;</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UserControllerMeMethod</span> {
+  <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;success&#34;</span>,
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">number</span>,
+    <span style="color:#a6e22e">email</span>: <span style="color:#66d9ef">string</span>,
+    <span style="color:#a6e22e">firstName</span>: <span style="color:#66d9ef">string</span>,
+    <span style="color:#a6e22e">lastName</span>: <span style="color:#66d9ef">string</span>,
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>  }
+}
+</code></pre></div><p>The wrapper structure is called <code>SuccessResponse&lt;T&gt;</code>. So the type is, more succinctly, <code>SuccessResponse&lt;ReturnType&lt;User[&quot;toDTO&quot;]&gt;&gt;</code>.</p>
 <p>We <em>could</em> extract this type from the controller and import it into the front end without any other supporting code. But that would require the front-end to reference specific back-end files which increases coupling. So as an alternative I&rsquo;ve defined an endpoints file in the root of the NestJS project. If we only export endpoint definitions in this file we can grab the full API definition with one clean import:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">API</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@company/api/endpoints&#34;</span>;
-</span></span></code></pre></div><p>Here&rsquo;s what the endpoint spec looks like for <code>/user/me</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">API</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@company/api/endpoints&#34;</span>;
+</code></pre></div><p>Here&rsquo;s what the endpoint spec looks like for <code>/user/me</code>:</p>
 <p><code>@company/api/endpoints</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Get attributes on currently logged in user.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">CurrentUser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">GetEndpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;/user/me&#34;</span>, <span style="color:#66d9ef">never</span>, <span style="color:#a6e22e">ResponseDataType</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">UserController</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">me</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;<span style="color:#f92672">&gt;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...more endpoints...
-</span></span></span></code></pre></div><p>You can even parameterize the paths with templated string types. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Widget</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">GetEndpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">`/widget/</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">number</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#66d9ef">never</span>, <span style="color:#a6e22e">ResponseDataType</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">WidgetController</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">get</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;<span style="color:#f92672">&gt;</span>;
-</span></span></code></pre></div><p>When used you will only be able to specify paths like <code>/widget/1</code>. But any non-numeric suffixes - <code>/widget/foo</code> - will result in a compiler error. You could also parameterize with a string union or any other primitive union.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Get attributes on currently logged in user.
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">CurrentUser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">GetEndpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;/user/me&#34;</span>, <span style="color:#66d9ef">never</span>, <span style="color:#a6e22e">ResponseDataType</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">UserController</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">me</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;<span style="color:#f92672">&gt;</span>;
+
+<span style="color:#75715e">// ...more endpoints...
+</span></code></pre></div><p>You can even parameterize the paths with templated string types. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Widget</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">GetEndpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">`/widget/</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">number</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#66d9ef">never</span>, <span style="color:#a6e22e">ResponseDataType</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">WidgetController</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">get</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;<span style="color:#f92672">&gt;</span>;
+</code></pre></div><p>When used you will only be able to specify paths like <code>/widget/1</code>. But any non-numeric suffixes - <code>/widget/foo</code> - will result in a compiler error. You could also parameterize with a string union or any other primitive union.</p>
 <p>The only parts of the API spec that duplicate information are the HTTP verb and path. But those are unlikely to change very often - if ever.</p>
 <p>And here are the supporting types:</p>
 <p><code>@company/api/types</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ErrorCodeType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NOT_FOUND&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;INTERNAL_SERVER_ERROR&#34;</span>; <span style="color:#75715e">// Add error codes as needed
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// API response structure
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SuccessResponse</span>&lt;<span style="color:#f92672">T</span>&gt; {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;success&#34;</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span>: <span style="color:#66d9ef">T</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ErrorResponse</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;error&#34;</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">errorCode</span>: <span style="color:#66d9ef">ErrorCodeType</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">message?</span>: <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">details</span><span style="color:#f92672">?:</span> { [<span style="color:#a6e22e">key</span>: <span style="color:#66d9ef">string</span>]<span style="color:#f92672">:</span> <span style="color:#66d9ef">unknown</span> };
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ApiResponse</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">SuccessResponse</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">|</span> <span style="color:#a6e22e">ErrorResponse</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Endpoint types
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">HttpVerb</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;get&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;patch&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;put&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;delete&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;options&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Endpoint</span>&lt;<span style="color:#f92672">Verb</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">HttpVerb</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt; {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">verb</span>: <span style="color:#66d9ef">Verb</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">path</span>: <span style="color:#66d9ef">Path</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">params</span>: <span style="color:#66d9ef">Params</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">responseData</span>: <span style="color:#66d9ef">ResponseData</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">GetEndpoint</span>&lt;<span style="color:#f92672">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">Params</span>, <span style="color:#a6e22e">ResponseData</span><span style="color:#f92672">&gt;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">PostEndpoint</span>&lt;<span style="color:#f92672">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;post&#34;</span>, <span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">Params</span>, <span style="color:#a6e22e">ResponseData</span><span style="color:#f92672">&gt;</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">body</span>: <span style="color:#66d9ef">Body</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">PatchEndpoint</span>&lt;<span style="color:#f92672">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;patch&#34;</span>, <span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">Params</span>, <span style="color:#a6e22e">ResponseData</span><span style="color:#f92672">&gt;</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">body</span>: <span style="color:#66d9ef">Body</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">PutEndpoint</span>&lt;<span style="color:#f92672">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;put&#34;</span>, <span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">Params</span>, <span style="color:#a6e22e">ResponseData</span><span style="color:#f92672">&gt;</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">body</span>: <span style="color:#66d9ef">Body</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">DeleteEndpoint</span>&lt;<span style="color:#f92672">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;delete&#34;</span>, <span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">Params</span>, <span style="color:#a6e22e">ResponseData</span><span style="color:#f92672">&gt;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Below here is code to cleanly extract the return type from a controller method.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ClassType</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> (...<span style="color:#a6e22e">args</span>: <span style="color:#66d9ef">any</span>[]) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">any</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UnPromisify</span>&lt;<span style="color:#f92672">Outer</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Outer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">infer</span> <span style="color:#a6e22e">Inner</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Inner</span> : <span style="color:#66d9ef">Outer</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UnResponsify</span>&lt;<span style="color:#f92672">Outer</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Outer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">SuccessResponse</span>&lt;<span style="color:#f92672">infer</span> <span style="color:#a6e22e">Data</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Data</span> : <span style="color:#66d9ef">never</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ResponseDataType</span><span style="color:#f92672">&lt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Controller</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ClassType</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Method</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">InstanceType</span>&lt;<span style="color:#f92672">Controller</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">UnResponsify</span>&lt;<span style="color:#f92672">UnPromisify</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">ReturnType</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">InstanceType</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">Controller</span>&gt;[<span style="color:#a6e22e">Method</span>]<span style="color:#f92672">&gt;&gt;&gt;</span>;
-</span></span></code></pre></div><h2 id="implementation-part-3---views" >Implementation Part 3 - Views
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ErrorCodeType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NOT_FOUND&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;INTERNAL_SERVER_ERROR&#34;</span>; <span style="color:#75715e">// Add error codes as needed
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// API response structure
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SuccessResponse</span>&lt;<span style="color:#f92672">T</span>&gt; {
+  <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;success&#34;</span>;
+  <span style="color:#a6e22e">data</span>: <span style="color:#66d9ef">T</span>;
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ErrorResponse</span> {
+  <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;error&#34;</span>;
+  <span style="color:#a6e22e">errorCode</span>: <span style="color:#66d9ef">ErrorCodeType</span>;
+  <span style="color:#a6e22e">message?</span>: <span style="color:#66d9ef">string</span>;
+  <span style="color:#a6e22e">details</span><span style="color:#f92672">?:</span> { [<span style="color:#a6e22e">key</span>: <span style="color:#66d9ef">string</span>]<span style="color:#f92672">:</span> <span style="color:#66d9ef">unknown</span> };
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ApiResponse</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">SuccessResponse</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">|</span> <span style="color:#a6e22e">ErrorResponse</span>;
+
+<span style="color:#75715e">// Endpoint types
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">HttpVerb</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;get&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;patch&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;put&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;delete&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;options&#34;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Endpoint</span>&lt;<span style="color:#f92672">Verb</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">HttpVerb</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt; {
+  <span style="color:#a6e22e">verb</span>: <span style="color:#66d9ef">Verb</span>;
+  <span style="color:#a6e22e">path</span>: <span style="color:#66d9ef">Path</span>;
+  <span style="color:#a6e22e">params</span>: <span style="color:#66d9ef">Params</span>;
+  <span style="color:#a6e22e">responseData</span>: <span style="color:#66d9ef">ResponseData</span>;
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">GetEndpoint</span>&lt;<span style="color:#f92672">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">Params</span>, <span style="color:#a6e22e">ResponseData</span><span style="color:#f92672">&gt;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">PostEndpoint</span>&lt;<span style="color:#f92672">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt;
+  <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;post&#34;</span>, <span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">Params</span>, <span style="color:#a6e22e">ResponseData</span><span style="color:#f92672">&gt;</span> {
+  <span style="color:#a6e22e">body</span>: <span style="color:#66d9ef">Body</span>;
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">PatchEndpoint</span>&lt;<span style="color:#f92672">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt;
+  <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;patch&#34;</span>, <span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">Params</span>, <span style="color:#a6e22e">ResponseData</span><span style="color:#f92672">&gt;</span> {
+  <span style="color:#a6e22e">body</span>: <span style="color:#66d9ef">Body</span>;
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">PutEndpoint</span>&lt;<span style="color:#f92672">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt;
+  <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;put&#34;</span>, <span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">Params</span>, <span style="color:#a6e22e">ResponseData</span><span style="color:#f92672">&gt;</span> {
+  <span style="color:#a6e22e">body</span>: <span style="color:#66d9ef">Body</span>;
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">DeleteEndpoint</span>&lt;<span style="color:#f92672">Path</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">ResponseData</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;delete&#34;</span>, <span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">Params</span>, <span style="color:#a6e22e">ResponseData</span><span style="color:#f92672">&gt;</span>;
+
+<span style="color:#75715e">// Below here is code to cleanly extract the return type from a controller method.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ClassType</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> (...<span style="color:#a6e22e">args</span>: <span style="color:#66d9ef">any</span>[]) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">any</span>;
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UnPromisify</span>&lt;<span style="color:#f92672">Outer</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Outer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">infer</span> <span style="color:#a6e22e">Inner</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Inner</span> : <span style="color:#66d9ef">Outer</span>;
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UnResponsify</span>&lt;<span style="color:#f92672">Outer</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Outer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">SuccessResponse</span>&lt;<span style="color:#f92672">infer</span> <span style="color:#a6e22e">Data</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Data</span> : <span style="color:#66d9ef">never</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ResponseDataType</span><span style="color:#f92672">&lt;</span>
+  <span style="color:#a6e22e">Controller</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ClassType</span>,
+  <span style="color:#a6e22e">Method</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">InstanceType</span>&lt;<span style="color:#f92672">Controller</span>&gt;
+<span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">UnResponsify</span>&lt;<span style="color:#f92672">UnPromisify</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">ReturnType</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">InstanceType</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">Controller</span>&gt;[<span style="color:#a6e22e">Method</span>]<span style="color:#f92672">&gt;&gt;&gt;</span>;
+</code></pre></div><h2 id="implementation-part-3---views" >Implementation Part 3 - Views
 <span>
     <a href="#implementation-part-3---views">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
@@ -586,86 +586,86 @@ that all set in place we need to do a few more things.</p>
 You <em>can</em> serialize a <code>Date</code>, but <code>JSON.stringify({ date: new Date() })</code> results in <code>{ &quot;date&quot;: &quot;2022-05-15T05:21:07.324Z&quot; }</code>. The <code>Date</code> has become a string! And when de-serializing why would the front-end know that this string in particular should become a <code>Date</code>? It doesn&rsquo;t.</p>
 <p>The intention here is not to change this behavior. Only to track it accurately. We don&rsquo;t want a type in the front-end that tells you there&rsquo;s a <code>Date</code> field in a DTO. And then at run time it&rsquo;s actually a string. That&rsquo;s exactly the kind of error we&rsquo;re using TypeScript to prevent!</p>
 <p>The solution is to define a recursive type, <code>JSONSerialized</code>, that walks through an object or array. The context here is front-end code reading back-end types.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Converts a type into its post JSON serialization/de-serialization version.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">JSONSerialized</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// We first check if we&#39;re looking at a primitive type. Primitives will be passed
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// through untouched by `JSON.parse(JSON.stringify(...))`, so `JSONSerialized` replicates
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// that behavior. The exact `T` type is output instead of `number` or `string` in case
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// the type is actually a union (ex: &#34;foo&#34; | &#34;bar&#34;). This way the union is preserved.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">number</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">T</span> :
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">string</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">T</span> :
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">boolean</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">T</span> :
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// If we aren&#39;t looking at a primitive, then we&#39;ll next check if we&#39;re working with an
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// array. If so we convert the array&#39;s element type using a recursive type call.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> (<span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">Elem</span>)[] <span style="color:#f92672">?</span> <span style="color:#a6e22e">JSONSerialized</span>&lt;<span style="color:#f92672">Elem</span>&gt;[] <span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Here&#39;s the magic that takes care of `Date`s. Some types have a `toJSON` function.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// `JSON.stringify` will call this function if it doesn&#39;t already know what to do with
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// a value. By using `infer` we can dynamically extract the return type of a `toJSON()`
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// as defined on ANY type - including `Date.toJSON`.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> { <span style="color:#a6e22e">toJSON</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">Return</span> } <span style="color:#f92672">?</span> <span style="color:#a6e22e">Return</span> <span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Lastly, check if we&#39;re working with an Object and if so, iterate through its
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// key/value pairs - sending each value into a recursive call to `JSONSerialized`.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> { [<span style="color:#a6e22e">Key</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span>[<span style="color:#a6e22e">Key</span>] } <span style="color:#f92672">?</span> { [<span style="color:#a6e22e">Key</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">JSONSerialized</span>&lt;<span style="color:#f92672">T</span><span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">Key</span><span style="color:#960050;background-color:#1e0010">]</span>&gt; } <span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">never</span>;
-</span></span></code></pre></div><p>We can take care of requirement 2 with the following types. Each extractor type uses the generic endpoint type, <code>Endpoint</code>, along with TypeScript&rsquo;s <code>infer</code> keyword to extract just one of the type parameters.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Converts a type into its post JSON serialization/de-serialization version.
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">JSONSerialized</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span>
+  <span style="color:#75715e">// We first check if we&#39;re looking at a primitive type. Primitives will be passed
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// through untouched by `JSON.parse(JSON.stringify(...))`, so `JSONSerialized` replicates
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// that behavior. The exact `T` type is output instead of `number` or `string` in case
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// the type is actually a union (ex: &#34;foo&#34; | &#34;bar&#34;). This way the union is preserved.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">number</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">T</span> :
+  <span style="color:#66d9ef">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">string</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">T</span> :
+  <span style="color:#66d9ef">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">boolean</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">T</span> :
+  <span style="color:#66d9ef">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">:</span>
+  <span style="color:#75715e">// If we aren&#39;t looking at a primitive, then we&#39;ll next check if we&#39;re working with an
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// array. If so we convert the array&#39;s element type using a recursive type call.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> (<span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">Elem</span>)[] <span style="color:#f92672">?</span> <span style="color:#a6e22e">JSONSerialized</span>&lt;<span style="color:#f92672">Elem</span>&gt;[] <span style="color:#f92672">:</span>
+  <span style="color:#75715e">// Here&#39;s the magic that takes care of `Date`s. Some types have a `toJSON` function.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// `JSON.stringify` will call this function if it doesn&#39;t already know what to do with
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// a value. By using `infer` we can dynamically extract the return type of a `toJSON()`
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// as defined on ANY type - including `Date.toJSON`.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> { <span style="color:#a6e22e">toJSON</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">Return</span> } <span style="color:#f92672">?</span> <span style="color:#a6e22e">Return</span> <span style="color:#f92672">:</span>
+  <span style="color:#75715e">// Lastly, check if we&#39;re working with an Object and if so, iterate through its
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// key/value pairs - sending each value into a recursive call to `JSONSerialized`.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> { [<span style="color:#a6e22e">Key</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span>[<span style="color:#a6e22e">Key</span>] } <span style="color:#f92672">?</span> { [<span style="color:#a6e22e">Key</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">JSONSerialized</span>&lt;<span style="color:#f92672">T</span><span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">Key</span><span style="color:#960050;background-color:#1e0010">]</span>&gt; } <span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">never</span>;
+</code></pre></div><p>We can take care of requirement 2 with the following types. Each extractor type uses the generic endpoint type, <code>Endpoint</code>, along with TypeScript&rsquo;s <code>infer</code> keyword to extract just one of the type parameters.</p>
 <p><code>ResponseDataType</code> uses our buddy <code>JSONSerialized</code> to revise the back-end type for use in the front-end.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">ApiResponse</span>, <span style="color:#a6e22e">Endpoint</span>, <span style="color:#a6e22e">PatchEndpoint</span>, <span style="color:#a6e22e">PostEndpoint</span>, <span style="color:#a6e22e">PutEndpoint</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@company/api/types&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Types for pulling apart an endpoint definition
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">VerbType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span>&lt;<span style="color:#f92672">infer</span> <span style="color:#a6e22e">Verb</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Verb</span> : <span style="color:#66d9ef">never</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PathType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Path</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Path</span> : <span style="color:#66d9ef">never</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">BodyType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">PostEndpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Body</span> :
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">PatchEndpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Body</span> :
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">PutEndpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Body</span> :
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">never</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ParamsType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Params</span> : <span style="color:#66d9ef">never</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ResponseDataType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Data</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">JSONSerialized</span>&lt;<span style="color:#f92672">Data</span>&gt; <span style="color:#f92672">:</span> <span style="color:#66d9ef">never</span>;
-</span></span></code></pre></div><p>Now we just need a nice function that makes use of these types. Below we define <code>request&lt;T&gt;()</code> such that
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">ApiResponse</span>, <span style="color:#a6e22e">Endpoint</span>, <span style="color:#a6e22e">PatchEndpoint</span>, <span style="color:#a6e22e">PostEndpoint</span>, <span style="color:#a6e22e">PutEndpoint</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@company/api/types&#34;</span>;
+
+<span style="color:#75715e">// Types for pulling apart an endpoint definition
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">VerbType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span>&lt;<span style="color:#f92672">infer</span> <span style="color:#a6e22e">Verb</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Verb</span> : <span style="color:#66d9ef">never</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PathType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Path</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Path</span> : <span style="color:#66d9ef">never</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">BodyType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span>
+  <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">PostEndpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Body</span> :
+  <span style="color:#66d9ef">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">PatchEndpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Body</span> :
+  <span style="color:#66d9ef">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">PutEndpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Body</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Body</span> :
+  <span style="color:#66d9ef">never</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ParamsType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">Params</span> : <span style="color:#66d9ef">never</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ResponseDataType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Endpoint</span>&lt;<span style="color:#f92672">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">Data</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">JSONSerialized</span>&lt;<span style="color:#f92672">Data</span>&gt; <span style="color:#f92672">:</span> <span style="color:#66d9ef">never</span>;
+</code></pre></div><p>Now we just need a nice function that makes use of these types. Below we define <code>request&lt;T&gt;()</code> such that
 only valid API requests can be made. This is done by locking down the <code>method</code>, <code>url</code>, <code>params</code> and
 <code>data</code> fields in the <code>RequestOptions</code> type.</p>
 <p><code>@company/webapp/http.ts</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span>, { <span style="color:#a6e22e">AxiosRequestConfig</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;axios&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">create</span>({
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">timeout</span>: <span style="color:#66d9ef">30000</span>,
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">RequestOptions</span>&lt;<span style="color:#f92672">T</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt;<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">AxiosRequestConfig</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">method</span>: <span style="color:#66d9ef">VerbType</span>&lt;<span style="color:#f92672">T</span>&gt;;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">url</span>: <span style="color:#66d9ef">PathType</span>&lt;<span style="color:#f92672">T</span>&gt;;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">params?</span>: <span style="color:#66d9ef">ParamsType</span>&lt;<span style="color:#f92672">T</span>&gt;;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data?</span>: <span style="color:#66d9ef">BodyType</span>&lt;<span style="color:#f92672">T</span>&gt;;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Make a type-checked api request.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param options Request options
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @returns Response payload
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">request</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> &lt;<span style="color:#f92672">T</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt;<span style="color:#f92672">&gt;</span>(
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">options</span>: <span style="color:#66d9ef">RequestOptions</span>&lt;<span style="color:#f92672">T</span>&gt;
-</span></span><span style="display:flex;"><span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">ApiResponse</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">ResponseDataType</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">T</span>&gt;<span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">=&gt;</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">request</span>({
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">withCredentials</span>: <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">options</span>,
-</span></span><span style="display:flex;"><span>  });
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiResponse</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">ApiResponse</span>&lt;<span style="color:#f92672">ResponseDataType</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">T</span>&gt;<span style="color:#f92672">&gt;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">apiResponse</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;error&#34;</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error();
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">apiResponse</span>;
-</span></span><span style="display:flex;"><span>};
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span>, { <span style="color:#a6e22e">AxiosRequestConfig</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;axios&#34;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">create</span>({
+  <span style="color:#a6e22e">timeout</span>: <span style="color:#66d9ef">30000</span>,
+});
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">RequestOptions</span>&lt;<span style="color:#f92672">T</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt;<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">AxiosRequestConfig</span> {
+  <span style="color:#a6e22e">method</span>: <span style="color:#66d9ef">VerbType</span>&lt;<span style="color:#f92672">T</span>&gt;;
+  <span style="color:#a6e22e">url</span>: <span style="color:#66d9ef">PathType</span>&lt;<span style="color:#f92672">T</span>&gt;;
+  <span style="color:#a6e22e">params?</span>: <span style="color:#66d9ef">ParamsType</span>&lt;<span style="color:#f92672">T</span>&gt;;
+  <span style="color:#a6e22e">data?</span>: <span style="color:#66d9ef">BodyType</span>&lt;<span style="color:#f92672">T</span>&gt;;
+}
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Make a type-checked api request.
+</span><span style="color:#75715e"> * @param options Request options
+</span><span style="color:#75715e"> * @returns Response payload
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">request</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> &lt;<span style="color:#f92672">T</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">Endpoint</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt;<span style="color:#f92672">&gt;</span>(
+  <span style="color:#a6e22e">options</span>: <span style="color:#66d9ef">RequestOptions</span>&lt;<span style="color:#f92672">T</span>&gt;
+)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">ApiResponse</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">ResponseDataType</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">T</span>&gt;<span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">request</span>({
+    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+      <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
+    },
+    <span style="color:#a6e22e">withCredentials</span>: <span style="color:#66d9ef">true</span>,
+    ...<span style="color:#a6e22e">options</span>,
+  });
+
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiResponse</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">ApiResponse</span>&lt;<span style="color:#f92672">ResponseDataType</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">T</span>&gt;<span style="color:#f92672">&gt;</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">apiResponse</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;error&#34;</span>) {
+    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error();
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">apiResponse</span>;
+};
+</code></pre></div>
         </div>
         
 

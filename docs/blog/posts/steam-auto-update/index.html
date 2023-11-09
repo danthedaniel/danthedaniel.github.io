@@ -76,7 +76,7 @@ I play a lot of DayZ. The game is amazing but I&rsquo;ve found out that it has a
     
 
     
-        <script src="https://danangell.com/blog/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+        <script src="https://danangell.com/blog/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
     
 
 
@@ -293,7 +293,7 @@ I play a lot of DayZ. The game is amazing but I&rsquo;ve found out that it has a
 <p>I play a lot of DayZ. The game is amazing but I&rsquo;ve found out that it has a critical flaw. You can end up waiting in a queue to join a server for 30 minutes, only to learn upon finally entering the server that one of your mods is out of date. This gets you kicked and you&rsquo;re once again at the back of the line. Most games would check this upon putting you in the queue. I can&rsquo;t fix DayZ but I can fix Steam.</p>
 <p>Steam is supposed to auto-update all of your games and all of their workshop mods. But it doesn&rsquo;t seem to do this immediately after an update is available. So I needed to find a way to reliably force updates to DayZ and its mods.</p>
 <p>One option is to consistently run the &ldquo;Verify integrity of game files&rdquo; operation in the Steam client before playing.</p>
-<p><img src="/blog/image/steam/verify-files.png" alt="Steam window that shows a &amp;ldquo;Verify integrity of game files&amp;rdquo; button"></p>
+<p><img src="/blog/image/steam/verify-files.png" alt="Steam window that shows a &ldquo;Verify integrity of game files&rdquo; button"></p>
 <p>But computers are here to take care of repetitive tasks for us.</p>
 <h2 id="the-solution" >The solution
 <span>
@@ -322,7 +322,7 @@ I play a lot of DayZ. The game is amazing but I&rsquo;ve found out that it has a
 </ol>
 <pre tabindex="0"><code>@ShutdownOnFailedCommand 1
 @NoPromptForPassword 1
-force_install_dir &#34;C:\Program Files (x86)\Steam\steamapps\common\DayZ&#34;
+force_install_dir &quot;C:\Program Files (x86)\Steam\steamapps\common\DayZ&quot;
 login &lt;your username&gt; &lt;your password&gt;
 app_update 221100 validate
 quit
@@ -333,10 +333,10 @@ quit
 <ol start="4">
 <li>Create a file called <code>update.bat</code> in the same folder as <code>steamcmd.exe</code>. Open it in a text editor and paste the following:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-batch" data-lang="batch"><span style="display:flex;"><span>@<span style="color:#66d9ef">echo</span> off
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;C:\Users\Daniel\steamcmd-tutorial\steamcmd.exe&#34;</span> +runscript <span style="color:#e6db74">&#34;C:\Users\Daniel\steamcmd-tutorial\update_dayz.txt&#34;</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batch" data-lang="batch">@<span style="color:#66d9ef">echo</span> off
+
+<span style="color:#e6db74">&#34;C:\Users\Daniel\steamcmd-tutorial\steamcmd.exe&#34;</span> +runscript <span style="color:#e6db74">&#34;C:\Users\Daniel\steamcmd-tutorial\update_dayz.txt&#34;</span>
+</code></pre></div><ul>
 <li>Again, replace the paths with the absolute paths to your <code>steamcmd.exe</code> and <code>update_dayz.txt</code> files.</li>
 </ul>
 <p>Your final folder layout should look like this:</p>
@@ -358,10 +358,10 @@ quit
 </span>
 </h3><p>If you <em>don&rsquo;t</em> have Steam Guard enabled, you can skip this section.</p>
 <p>For those that do, if you tried to run this script now you&rsquo;ll most likely see this:</p>
-<pre tabindex="0"><code>Logging in user &#39;&lt;your username&gt;&#39; to Steam Public...
+<pre tabindex="0"><code>Logging in user '&lt;your username&gt;' to Steam Public...
 This computer has not been authenticated for your account using Steam Guard.
 Please check your email for the message from Steam, and use
-the command &#39;set_steam_guard_code&#39; to enter the code here.
+the command 'set_steam_guard_code' to enter the code here.
 </code></pre><p>You&rsquo;ll need to manually authenticate just one time to get this working.</p>
 <ol>
 <li>Open a command prompt and navigate to the folder with <code>steamcmd.exe</code> in it so you can run it.</li>
@@ -369,11 +369,11 @@ the command &#39;set_steam_guard_code&#39; to enter the code here.
 <pre tabindex="0"><code>C:\Users\Daniel&gt;cd steamcmd-tutorial
 
 C:\Users\Daniel\steamcmd-tutorial&gt;steamcmd.exe
-Redirecting stderr to &#39;C:\Users\Daniel\steamcmd-tutorial\logs\stderr.txt&#39;
+Redirecting stderr to 'C:\Users\Daniel\steamcmd-tutorial\logs\stderr.txt'
 [  0%] Checking for available updates...
 [----] Verifying installation...
 Steam Console Client (c) Valve Corporation - version 1689642531
--- type &#39;quit&#39; to exit --
+-- type 'quit' to exit --
 Loading Steam API...OK
 
 Steam&gt;
@@ -381,11 +381,11 @@ Steam&gt;
 <li>Then log in using the <code>login &lt;your username&gt; &lt;your password&gt;</code> command. You&rsquo;ll be prompted for your Steam Guard code which you can get from your email inbox or the Steam mobile app.</li>
 </ol>
 <pre tabindex="0"><code>Steam&gt;login &lt;your username&gt; &lt;your password&gt;
-Logging in user &#39;&lt;your username&gt;&#39; to Steam Public...
+Logging in user '&lt;your username&gt;' to Steam Public...
 This computer has not been authenticated for your account using Steam Guard.
 Please check your email for the message from Steam, and enter the Steam Guard
  code from that message.
-You can also enter this code at any time using &#39;set_steam_guard_code&#39;
+You can also enter this code at any time using 'set_steam_guard_code'
  at the console.
 Steam Guard code:ABCDE
 OK
@@ -406,7 +406,7 @@ Waiting for user info...OK
 <p>Select &ldquo;Create Basic Task&rdquo; from the right sidebar. Give it a simple name like &ldquo;Update DayZ&rdquo;. Click &ldquo;Next&rdquo;.</p>
 </li>
 </ol>
-<p><img src="/blog/image/steam/basic-task-name.png" alt="Task Scheduler&amp;rsquo;s &amp;ldquo;Create Basic Task Wizard&amp;rdquo; window"></p>
+<p><img src="/blog/image/steam/basic-task-name.png" alt="Task Scheduler&rsquo;s &ldquo;Create Basic Task Wizard&rdquo; window"></p>
 <ol start="3">
 <li>
 <p>On the &ldquo;Trigger&rdquo; setup screen, I would recommend setting the trigger to &ldquo;Daily&rdquo;. But you can do what works for you. Click &ldquo;Next&rdquo;.</p>
@@ -421,7 +421,7 @@ Waiting for user info...OK
 <p>For the &ldquo;Program/script&rdquo; field, click on &ldquo;Browse&hellip;&rdquo; and find your way to <code>update.bat</code> and select it. Click &ldquo;Next&rdquo; then &ldquo;Finish&rdquo;.</p>
 </li>
 </ol>
-<p><img src="/blog/image/steam/basic-task-program.png" alt="Task Scheduler&amp;rsquo;s &amp;ldquo;Create Basic Task Wizard&amp;rdquo; window"></p>
+<p><img src="/blog/image/steam/basic-task-program.png" alt="Task Scheduler&rsquo;s &ldquo;Create Basic Task Wizard&rdquo; window"></p>
 <p>Now every day at your set time you&rsquo;ll see one of these pop up. Don&rsquo;t worry! It&rsquo;s just the script updating your game.</p>
 <p><img src="/blog/image/steam/steamcmd-script.png" alt="Command prompt window of the steamcmd script"></p>
 <p>You can run the new task manually just to see what happens by right clicking on it (in the list of tasks in the middle of the Task Scheduler window) and selecting &ldquo;Run&rdquo;.</p>
