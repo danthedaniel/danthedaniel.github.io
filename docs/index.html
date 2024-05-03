@@ -133,23 +133,6 @@
             width: 10rem;
         }
 
-        .calendly-placeholder {
-            position: absolute;
-            top: 66px;
-            left: 2.5%;
-            z-index: -1;
-            width: 95%;
-            min-height: 618px;
-            padding-top: 28px;
-            border: 1px solid rgba(26, 26, 26, 0.1);
-            border-radius: 0.5em;
-            background-color: white;
-        }
-
-        .calendly-inline-widget[data-processed="true"] .calendly-placeholder {
-            animation: hide-placeholder 0s linear 3s forwards;
-        }
-
         @keyframes hide-placeholder {
             0% {
                 opacity: 1;
@@ -157,34 +140,6 @@
 
             100% {
                 opacity: 0;
-            }
-        }
-
-        .calendly-inline-widget {
-            min-width: 100%;
-            min-height: 750px;
-            position: relative;
-            overflow-y: hidden;
-            margin-top: -3.25em;
-        }
-
-        /* Why this many px? Not totally sure but it works for now. */
-        @media (max-width: 718px) {
-            .calendly-inline-widget {
-                margin-top: 1em;
-            }
-
-            .calendly-inline-widget iframe {
-                border-radius: 0.5em;
-                width: 95%;
-                margin-left: 2.5%;
-                background-color: white;
-            }
-
-            .calendly-placeholder {
-                margin-top: 0;
-                top: 0;
-                min-height: 100%;
             }
         }
 
@@ -227,8 +182,6 @@
     </style>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 
 <body>
