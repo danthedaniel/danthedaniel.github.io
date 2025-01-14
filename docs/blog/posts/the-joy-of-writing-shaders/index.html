@@ -12,7 +12,10 @@
 
 <title>The Joy of Writing Shaders - danangell.com/blog</title>
 
-<meta name="description" content="Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
+<meta name="description" content="
+    
+
+Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
 Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the sin and cos of different angles until you have points all around the circumference of a circle.">
 
 
@@ -76,7 +79,7 @@ Say you want to draw a circle in an imperative programming language. You need to
     
 
     
-        <script src="https://danangell.com/blog/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
+        <script src="https://danangell.com/blog/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
     
 
 
@@ -85,21 +88,26 @@ Say you want to draw a circle in an imperative programming language. You need to
 
 
 
-<meta property="og:title" content="The Joy of Writing Shaders" />
-<meta property="og:description" content="Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
-Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the sin and cos of different angles until you have points all around the circumference of a circle." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://danangell.com/blog/posts/the-joy-of-writing-shaders/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2018-02-04T00:00:00-04:00" />
-<meta property="article:modified_time" content="2018-02-04T00:00:00-04:00" />
+<meta property="og:url" content="https://danangell.com/blog/posts/the-joy-of-writing-shaders/">
+  <meta property="og:site_name" content="danangell.com/blog">
+  <meta property="og:title" content="The Joy of Writing Shaders">
+  <meta property="og:description" content="Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
+Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the sin and cos of different angles until you have points all around the circumference of a circle.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2018-02-04T00:00:00-04:00">
+    <meta property="article:modified_time" content="2018-02-04T00:00:00-04:00">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Math">
+    <meta property="article:tag" content="Graphics">
+    <meta property="article:tag" content="Shaders">
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Joy of Writing Shaders"/>
-<meta name="twitter:description" content="Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
-Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the sin and cos of different angles until you have points all around the circumference of a circle."/>
-
-
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Joy of Writing Shaders">
+  <meta name="twitter:description" content="Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
+Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the sin and cos of different angles until you have points all around the circumference of a circle.">
 
 
 
@@ -293,27 +301,27 @@ Say you want to draw a circle in an imperative programming language. You need to
 </div>
 <p>Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.</p>
 <p>Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the <code>sin</code> and <code>cos</code> of different angles until you have points all around the circumference of a circle.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">vertices <span style="color:#f92672">=</span> []  
-<span style="color:#66d9ef">for</span> angle <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">360</span>, <span style="color:#ae81ff">6</span>):  
-    x <span style="color:#f92672">=</span> cos(angle) <span style="color:#f92672">/</span> radius  
-    y <span style="color:#f92672">=</span> sin(angle) <span style="color:#f92672">/</span> radius  
-    vertices<span style="color:#f92672">.</span>append((x, y))
-</code></pre></div><p>Then I would render lines sequentially connecting each point to the last. But this results in a circle that&rsquo;s really just a regular polygon with a large number of sides. You could also try to use Bézier curves, but that feels a bit more removed from the definition of a circle.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>vertices <span style="color:#f92672">=</span> []  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> angle <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">360</span>, <span style="color:#ae81ff">6</span>):  
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> cos(angle) <span style="color:#f92672">/</span> radius  
+</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> sin(angle) <span style="color:#f92672">/</span> radius  
+</span></span><span style="display:flex;"><span>    vertices<span style="color:#f92672">.</span>append((x, y))
+</span></span></code></pre></div><p>Then I would render lines sequentially connecting each point to the last. But this results in a circle that&rsquo;s really just a regular polygon with a large number of sides. You could also try to use Bézier curves, but that feels a bit more removed from the definition of a circle.</p>
 <p>In a shader you&rsquo;d use a more simplified definition of a circle. If you&rsquo;re inside of the circle&rsquo;s radius you draw the circle. If you&rsquo;re outside of the radius you don&rsquo;t.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#66d9ef">uniform</span> <span style="color:#66d9ef">vec2</span> u_resolution;
-
-<span style="color:#66d9ef">void</span> main() {
-    <span style="color:#66d9ef">float</span> radius <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.3</span>;
-    <span style="color:#66d9ef">vec2</span> center <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec2</span>(<span style="color:#ae81ff">0.5</span>);
-    <span style="color:#66d9ef">vec2</span> pos <span style="color:#f92672">=</span> gl_FragCoord.xy <span style="color:#f92672">/</span> u_resolution.xy;
-
-    <span style="color:#66d9ef">if</span> (distance(pos, center) <span style="color:#f92672">&gt;</span> radius) {
-        gl_FragColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec4</span>(<span style="color:#ae81ff">1.0</span>);
-    } <span style="color:#66d9ef">else</span> {
-        gl_FragColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec4</span>(<span style="color:#66d9ef">vec3</span>(<span style="color:#ae81ff">0.0</span>), <span style="color:#ae81ff">1.0</span>);
-    }
-}
-</code></pre></div><p><img src="/blog/image/shaders/circle_1.png" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#66d9ef">uniform</span> <span style="color:#66d9ef">vec2</span> u_resolution;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> main() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> radius <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">vec2</span> center <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec2</span>(<span style="color:#ae81ff">0.5</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">vec2</span> pos <span style="color:#f92672">=</span> gl_FragCoord.xy <span style="color:#f92672">/</span> u_resolution.xy;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (distance(pos, center) <span style="color:#f92672">&gt;</span> radius) {
+</span></span><span style="display:flex;"><span>        gl_FragColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec4</span>(<span style="color:#ae81ff">1.0</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        gl_FragColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec4</span>(<span style="color:#66d9ef">vec3</span>(<span style="color:#ae81ff">0.0</span>), <span style="color:#ae81ff">1.0</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/blog/image/shaders/circle_1.png" alt=""></p>
 <p>The most interesting part is that you rarely think about more than one pixel at a time. The shader code above is ran once per pixel. There&rsquo;s no need to worry about how many sides your circle has. You don&rsquo;t refer to other information rendered in the same frame. This is what makes shaders so fast. Each pixel can be rendered simultaneously.</p>
 <p>Just like learning your first functional programming language after being introduced to C++ or Java, this paradigm shift puts you into a completely different mode of thinking. The dependence on math that you might otherwise toss aside once you&rsquo;ve left school is great. None of my web scrapers, APIs, or simulations require me to use 2D rotation matrices.</p>
 <p>When writing shaders I often find myself transfixed by how quickly changes can lead to visual results. The feedback loop is one of the tightest there is in programming. Quick compile times coupled with hot-reloading (shout out to <a href="https://github.com/patriciogonzalezvivo/glslViewer">glslViewer</a>) make for a happy programmer.</p>
@@ -329,7 +337,7 @@ Say you want to draw a circle in an imperative programming language. You need to
     
 
     <a class="post-hidden-url u-url" href="https://danangell.com/blog/posts/the-joy-of-writing-shaders/">https://danangell.com/blog/posts/the-joy-of-writing-shaders/</a>
-    <a href="https://danangell.com/blog" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
+    <a href="https://danangell.com/blog/" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
 
 
     <div class="post-taxonomies">
@@ -338,16 +346,16 @@ Say you want to draw a circle in an imperative programming language. You need to
                 <ul class="post-tags">
                     
                         
-                        <li><a href="https://danangell.com/blog/tags/programming/">#programming</a></li>
+                        <li><a href="https://danangell.com/blog/tags/programming/">#Programming</a></li>
                     
                         
-                        <li><a href="https://danangell.com/blog/tags/math/">#math</a></li>
+                        <li><a href="https://danangell.com/blog/tags/math/">#Math</a></li>
                     
                         
-                        <li><a href="https://danangell.com/blog/tags/graphics/">#graphics</a></li>
+                        <li><a href="https://danangell.com/blog/tags/graphics/">#Graphics</a></li>
                     
                         
-                        <li><a href="https://danangell.com/blog/tags/shaders/">#shaders</a></li>
+                        <li><a href="https://danangell.com/blog/tags/shaders/">#Shaders</a></li>
                     
                 </ul>
         
@@ -367,8 +375,6 @@ Say you want to draw a circle in an imperative programming language. You need to
 
 
 
-
-
     
 
         </main>
@@ -380,7 +386,7 @@ Say you want to draw a circle in an imperative programming language. You need to
     <div class="common-footer-bottom">
         
         <div class="copyright">
-            <p>© Daniel Angell, 2023<br>
+            <p>© Daniel Angell, 2025<br>
                 
             </p>
         </div>
@@ -388,7 +394,7 @@ Say you want to draw a circle in an imperative programming language. You need to
 
     <p class="h-card vcard">
 
-    <a href=https://danangell.com/blog class="p-name u-url url fn" rel="me">Daniel Angell</a> 
+    <a href=https://danangell.com/blog/ class="p-name u-url url fn" rel="me">Daniel Angell</a> 
 
     
 

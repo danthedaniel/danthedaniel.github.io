@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>graphics on danangell.com/blog</title>
+    <title>Graphics on danangell.com/blog</title>
     <link>https://danangell.com/blog/tags/graphics/</link>
-    <description>danangell.com/blog (graphics)</description>
+    <description>danangell.com/blog (Graphics)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Feb 2018 00:00:00 -0400</lastBuildDate>
@@ -22,27 +22,27 @@
 &lt;/div&gt;
 &lt;p&gt;Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.&lt;/p&gt;
 &lt;p&gt;Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the &lt;code&gt;sin&lt;/code&gt; and &lt;code&gt;cos&lt;/code&gt; of different angles until you have points all around the circumference of a circle.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;vertices &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []  
-&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; angle &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;360&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;):  
-    x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cos(angle) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; radius  
-    y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sin(angle) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; radius  
-    vertices&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append((x, y))
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then I would render lines sequentially connecting each point to the last. But this results in a circle that&amp;rsquo;s really just a regular polygon with a large number of sides. You could also try to use Bézier curves, but that feels a bit more removed from the definition of a circle.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vertices &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; angle &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;360&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;):  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cos(angle) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; radius  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sin(angle) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; radius  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    vertices&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append((x, y))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then I would render lines sequentially connecting each point to the last. But this results in a circle that&amp;rsquo;s really just a regular polygon with a large number of sides. You could also try to use Bézier curves, but that feels a bit more removed from the definition of a circle.&lt;/p&gt;
 &lt;p&gt;In a shader you&amp;rsquo;d use a more simplified definition of a circle. If you&amp;rsquo;re inside of the circle&amp;rsquo;s radius you draw the circle. If you&amp;rsquo;re outside of the radius you don&amp;rsquo;t.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-glsl&#34; data-lang=&#34;glsl&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;uniform&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;vec2&lt;/span&gt; u_resolution;
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; main() {
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt; radius &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.3&lt;/span&gt;;
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;vec2&lt;/span&gt; center &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;vec2&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;);
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;vec2&lt;/span&gt; pos &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; gl_FragCoord.xy &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; u_resolution.xy;
-
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (distance(pos, center) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; radius) {
-        gl_FragColor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;vec4&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;);
-    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
-        gl_FragColor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;vec4&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;vec3&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/shaders/circle_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-glsl&#34; data-lang=&#34;glsl&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;uniform&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;vec2&lt;/span&gt; u_resolution;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; main() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt; radius &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.3&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;vec2&lt;/span&gt; center &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;vec2&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;vec2&lt;/span&gt; pos &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; gl_FragCoord.xy &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; u_resolution.xy;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (distance(pos, center) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; radius) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        gl_FragColor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;vec4&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        gl_FragColor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;vec4&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;vec3&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/shaders/circle_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The most interesting part is that you rarely think about more than one pixel at a time. The shader code above is ran once per pixel. There&amp;rsquo;s no need to worry about how many sides your circle has. You don&amp;rsquo;t refer to other information rendered in the same frame. This is what makes shaders so fast. Each pixel can be rendered simultaneously.&lt;/p&gt;
 &lt;p&gt;Just like learning your first functional programming language after being introduced to C++ or Java, this paradigm shift puts you into a completely different mode of thinking. The dependence on math that you might otherwise toss aside once you&amp;rsquo;ve left school is great. None of my web scrapers, APIs, or simulations require me to use 2D rotation matrices.&lt;/p&gt;
 &lt;p&gt;When writing shaders I often find myself transfixed by how quickly changes can lead to visual results. The feedback loop is one of the tightest there is in programming. Quick compile times coupled with hot-reloading (shout out to &lt;a href=&#34;https://github.com/patriciogonzalezvivo/glslViewer&#34;&gt;glslViewer&lt;/a&gt;) make for a happy programmer.&lt;/p&gt;

@@ -75,7 +75,7 @@
     
 
     
-        <script src="https://danangell.com/blog/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
+        <script src="https://danangell.com/blog/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
     
 
 
@@ -84,19 +84,22 @@
 
 
 
-<meta property="og:title" content="XOR Swap Explained Visually" />
-<meta property="og:description" content="A common riddle-like question for programmers asks them to swap the values of two integers without a temporary intermediate value. There are two common solutions that I&rsquo;m aware of, addition swap and XOR swap. Here&rsquo;s what each looks like in C:" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://danangell.com/blog/posts/xor-swap-explained-visually/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2018-11-04T00:00:00-04:00" />
-<meta property="article:modified_time" content="2018-11-04T00:00:00-04:00" />
+<meta property="og:url" content="https://danangell.com/blog/posts/xor-swap-explained-visually/">
+  <meta property="og:site_name" content="danangell.com/blog">
+  <meta property="og:title" content="XOR Swap Explained Visually">
+  <meta property="og:description" content="A common riddle-like question for programmers asks them to swap the values of two integers without a temporary intermediate value. There are two common solutions that I’m aware of, addition swap and XOR swap. Here’s what each looks like in C:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2018-11-04T00:00:00-04:00">
+    <meta property="article:modified_time" content="2018-11-04T00:00:00-04:00">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Math">
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="XOR Swap Explained Visually"/>
-<meta name="twitter:description" content="A common riddle-like question for programmers asks them to swap the values of two integers without a temporary intermediate value. There are two common solutions that I&rsquo;m aware of, addition swap and XOR swap. Here&rsquo;s what each looks like in C:"/>
-
-
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="XOR Swap Explained Visually">
+  <meta name="twitter:description" content="A common riddle-like question for programmers asks them to swap the values of two integers without a temporary intermediate value. There are two common solutions that I’m aware of, addition swap and XOR swap. Here’s what each looks like in C:">
 
 
 
@@ -286,101 +289,101 @@
         </div>
         <div class="content e-content">
             <p>A common riddle-like question for programmers asks them to swap the values of two integers <em>without</em> a temporary intermediate value. There are two common solutions that I&rsquo;m aware of, addition swap and XOR swap. Here&rsquo;s what each looks like in C:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addSwap</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {  
-    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">!=</span> b) {  
-        <span style="color:#f92672">*</span>a <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">+</span> <span style="color:#f92672">*</span>b;  
-        <span style="color:#f92672">*</span>b <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>b;  
-        <span style="color:#f92672">*</span>a <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>b;  
-    }  
-}
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">xorSwap</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {  
-    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">!=</span> b) {  
-        <span style="color:#f92672">*</span>a <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>b;  
-        <span style="color:#f92672">*</span>b <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>a;  
-        <span style="color:#f92672">*</span>a <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>b;  
-    }  
-}
-</code></pre></div><p><sup>Credit: <a href="https://en.wikipedia.org/wiki/XOR_swap_algorithm">https://en.wikipedia.org/wiki/XOR_swap_algorithm</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addSwap</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">!=</span> b) {  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>a <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">+</span> <span style="color:#f92672">*</span>b;  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>b <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>b;  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>a <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>b;  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">xorSwap</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">!=</span> b) {  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>a <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>b;  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>b <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>a;  
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>a <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>b;  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><sup>Credit: <a href="https://en.wikipedia.org/wiki/XOR_swap_algorithm">https://en.wikipedia.org/wiki/XOR_swap_algorithm</a></sup></p>
 <p>The more interesting of the two is XOR swap. It only uses a single operation, rather than addition <em>and</em> subtraction in addition swap. Wikipedia tries to explain this with bit vectors but I think 1 bit black and white images work better. In the images below, <strong>black</strong> corresponds to <code>0</code> and <strong>white</strong> corresponds to <code>1</code>.</p>
 <hr>
 <p><code>A ^ B = A'</code>:</p>
 <p>Here A becomes white anywhere A or B had a unique presence (only A or only B was black in that pixel). Everywhere else is black.</p>
 <table>
-<thead>
-<tr>
-<th>A</th>
-<th>B</th>
-<th>A'</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="/blog/image/xor/A.png" alt=""></td>
-<td><img src="/blog/image/xor/B.png" alt=""></td>
-<td><img src="/blog/image/xor/Ap.png" alt=""></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>A'</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="/blog/image/xor/A.png" alt=""></td>
+          <td><img src="/blog/image/xor/B.png" alt=""></td>
+          <td><img src="/blog/image/xor/Ap.png" alt=""></td>
+      </tr>
+  </tbody>
 </table>
 <p><code>A' ^ B = B'</code>:</p>
 <p>Now that A is a combination of what was unique in each of the original images, we can apply the same XOR operation to <em>remove</em> what was unique about B, leaving only what was unique about A. So at this point B has swapped and become the circle.</p>
 <table>
-<thead>
-<tr>
-<th>A'</th>
-<th>B</th>
-<th>B'</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="/blog/image/xor/Ap.png" alt=""></td>
-<td><img src="/blog/image/xor/B.png" alt=""></td>
-<td><img src="/blog/image/xor/A.png" alt=""></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>A'</th>
+          <th>B</th>
+          <th>B'</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="/blog/image/xor/Ap.png" alt=""></td>
+          <td><img src="/blog/image/xor/B.png" alt=""></td>
+          <td><img src="/blog/image/xor/A.png" alt=""></td>
+      </tr>
+  </tbody>
 </table>
 <p><code>A' ^ B' = A''</code>:</p>
 <p>We can perform the same operation as in the previous step to get back the original value of B. Since B holds the circle and we want the square, we remove what was unique about the circle, leaving just the square.</p>
 <table>
-<thead>
-<tr>
-<th>A'</th>
-<th>B'</th>
-<th>A''</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="/blog/image/xor/Ap.png" alt=""></td>
-<td><img src="/blog/image/xor/A.png" alt=""></td>
-<td><img src="/blog/image/xor/B.png" alt=""></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>A'</th>
+          <th>B'</th>
+          <th>A''</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="/blog/image/xor/Ap.png" alt=""></td>
+          <td><img src="/blog/image/xor/A.png" alt=""></td>
+          <td><img src="/blog/image/xor/B.png" alt=""></td>
+      </tr>
+  </tbody>
 </table>
 <hr>
 <p>Here&rsquo;s the code used to generate the images above:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys  
-<span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image  
-
-a <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;A.png&#34;</span>)  
-b <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;B.png&#34;</span>)  
-
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> a<span style="color:#f92672">.</span>size <span style="color:#f92672">==</span> b<span style="color:#f92672">.</span>size:  
-    print(<span style="color:#e6db74">&#34;Images must have the same dimensions&#34;</span>)  
-    sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)  
-
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> a<span style="color:#f92672">.</span>mode <span style="color:#f92672">==</span> b<span style="color:#f92672">.</span>mode:  
-    print(<span style="color:#e6db74">&#34;Images must be the same mode&#34;</span>)  
-    sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)  
-
-result <span style="color:#f92672">=</span> bytes([  
-    a<span style="color:#f92672">.</span>getpixel((x, y))[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">^</span> b<span style="color:#f92672">.</span>getpixel((x, y))[<span style="color:#ae81ff">0</span>]  
-    <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(a<span style="color:#f92672">.</span>size[<span style="color:#ae81ff">1</span>])  
-    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(a<span style="color:#f92672">.</span>size[<span style="color:#ae81ff">0</span>])  
-])  
-
-Image<span style="color:#f92672">.</span>frombytes(<span style="color:#e6db74">&#34;P&#34;</span>, a<span style="color:#f92672">.</span>size, result)<span style="color:#f92672">.</span>save(<span style="color:#e6db74">&#34;OUT.png&#34;</span>)
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sys  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;A.png&#34;</span>)  
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;B.png&#34;</span>)  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> a<span style="color:#f92672">.</span>size <span style="color:#f92672">==</span> b<span style="color:#f92672">.</span>size:  
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Images must have the same dimensions&#34;</span>)  
+</span></span><span style="display:flex;"><span>    sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> a<span style="color:#f92672">.</span>mode <span style="color:#f92672">==</span> b<span style="color:#f92672">.</span>mode:  
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Images must be the same mode&#34;</span>)  
+</span></span><span style="display:flex;"><span>    sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> bytes([  
+</span></span><span style="display:flex;"><span>    a<span style="color:#f92672">.</span>getpixel((x, y))[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">^</span> b<span style="color:#f92672">.</span>getpixel((x, y))[<span style="color:#ae81ff">0</span>]  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(a<span style="color:#f92672">.</span>size[<span style="color:#ae81ff">1</span>])  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(a<span style="color:#f92672">.</span>size[<span style="color:#ae81ff">0</span>])  
+</span></span><span style="display:flex;"><span>])  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Image<span style="color:#f92672">.</span>frombytes(<span style="color:#e6db74">&#34;P&#34;</span>, a<span style="color:#f92672">.</span>size, result)<span style="color:#f92672">.</span>save(<span style="color:#e6db74">&#34;OUT.png&#34;</span>)
+</span></span></code></pre></div>
         </div>
         
 
@@ -391,7 +394,7 @@ Image<span style="color:#f92672">.</span>frombytes(<span style="color:#e6db74">&
     
 
     <a class="post-hidden-url u-url" href="https://danangell.com/blog/posts/xor-swap-explained-visually/">https://danangell.com/blog/posts/xor-swap-explained-visually/</a>
-    <a href="https://danangell.com/blog" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
+    <a href="https://danangell.com/blog/" class="p-name p-author post-hidden-author h-card" rel="me">Daniel Angell</a>
 
 
     <div class="post-taxonomies">
@@ -400,10 +403,10 @@ Image<span style="color:#f92672">.</span>frombytes(<span style="color:#e6db74">&
                 <ul class="post-tags">
                     
                         
-                        <li><a href="https://danangell.com/blog/tags/programming/">#programming</a></li>
+                        <li><a href="https://danangell.com/blog/tags/programming/">#Programming</a></li>
                     
                         
-                        <li><a href="https://danangell.com/blog/tags/math/">#math</a></li>
+                        <li><a href="https://danangell.com/blog/tags/math/">#Math</a></li>
                     
                 </ul>
         
@@ -423,8 +426,6 @@ Image<span style="color:#f92672">.</span>frombytes(<span style="color:#e6db74">&
 
 
 
-
-
     
 
         </main>
@@ -436,7 +437,7 @@ Image<span style="color:#f92672">.</span>frombytes(<span style="color:#e6db74">&
     <div class="common-footer-bottom">
         
         <div class="copyright">
-            <p>© Daniel Angell, 2023<br>
+            <p>© Daniel Angell, 2025<br>
                 
             </p>
         </div>
@@ -444,7 +445,7 @@ Image<span style="color:#f92672">.</span>frombytes(<span style="color:#e6db74">&
 
     <p class="h-card vcard">
 
-    <a href=https://danangell.com/blog class="p-name u-url url fn" rel="me">Daniel Angell</a> 
+    <a href=https://danangell.com/blog/ class="p-name u-url url fn" rel="me">Daniel Angell</a> 
 
     
 

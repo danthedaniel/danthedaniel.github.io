@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>steam on danangell.com/blog</title>
+    <title>Steam on danangell.com/blog</title>
     <link>https://danangell.com/blog/tags/steam/</link>
-    <description>danangell.com/blog (steam)</description>
+    <description>danangell.com/blog (Steam)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 21 Jul 2023 16:33:25 -0700</lastBuildDate>
@@ -51,7 +51,7 @@
 &lt;/ol&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@ShutdownOnFailedCommand 1
 @NoPromptForPassword 1
-force_install_dir &amp;quot;C:\Program Files (x86)\Steam\steamapps\common\DayZ&amp;quot;
+force_install_dir &amp;#34;C:\Program Files (x86)\Steam\steamapps\common\DayZ&amp;#34;
 login &amp;lt;your username&amp;gt; &amp;lt;your password&amp;gt;
 app_update 221100 validate
 quit
@@ -62,10 +62,10 @@ quit
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Create a file called &lt;code&gt;update.bat&lt;/code&gt; in the same folder as &lt;code&gt;steamcmd.exe&lt;/code&gt;. Open it in a text editor and paste the following:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-batch&#34; data-lang=&#34;batch&#34;&gt;@&lt;span style=&#34;color:#66d9ef&#34;&gt;echo&lt;/span&gt; off
-
-&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Daniel\steamcmd-tutorial\steamcmd.exe&amp;#34;&lt;/span&gt; +runscript &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Daniel\steamcmd-tutorial\update_dayz.txt&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-batch&#34; data-lang=&#34;batch&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#66d9ef&#34;&gt;echo&lt;/span&gt; off
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Daniel\steamcmd-tutorial\steamcmd.exe&amp;#34;&lt;/span&gt; +runscript &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Daniel\steamcmd-tutorial\update_dayz.txt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;Again, replace the paths with the absolute paths to your &lt;code&gt;steamcmd.exe&lt;/code&gt; and &lt;code&gt;update_dayz.txt&lt;/code&gt; files.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Your final folder layout should look like this:&lt;/p&gt;
@@ -87,10 +87,10 @@ quit
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;If you &lt;em&gt;don&amp;rsquo;t&lt;/em&gt; have Steam Guard enabled, you can skip this section.&lt;/p&gt;
 &lt;p&gt;For those that do, if you tried to run this script now you&amp;rsquo;ll most likely see this:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Logging in user &#39;&amp;lt;your username&amp;gt;&#39; to Steam Public...
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Logging in user &amp;#39;&amp;lt;your username&amp;gt;&amp;#39; to Steam Public...
 This computer has not been authenticated for your account using Steam Guard.
 Please check your email for the message from Steam, and use
-the command &#39;set_steam_guard_code&#39; to enter the code here.
+the command &amp;#39;set_steam_guard_code&amp;#39; to enter the code here.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You&amp;rsquo;ll need to manually authenticate just one time to get this working.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Open a command prompt and navigate to the folder with &lt;code&gt;steamcmd.exe&lt;/code&gt; in it so you can run it.&lt;/li&gt;
@@ -98,11 +98,11 @@ the command &#39;set_steam_guard_code&#39; to enter the code here.
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;C:\Users\Daniel&amp;gt;cd steamcmd-tutorial
 
 C:\Users\Daniel\steamcmd-tutorial&amp;gt;steamcmd.exe
-Redirecting stderr to &#39;C:\Users\Daniel\steamcmd-tutorial\logs\stderr.txt&#39;
+Redirecting stderr to &amp;#39;C:\Users\Daniel\steamcmd-tutorial\logs\stderr.txt&amp;#39;
 [  0%] Checking for available updates...
 [----] Verifying installation...
 Steam Console Client (c) Valve Corporation - version 1689642531
--- type &#39;quit&#39; to exit --
+-- type &amp;#39;quit&amp;#39; to exit --
 Loading Steam API...OK
 
 Steam&amp;gt;
@@ -110,11 +110,11 @@ Steam&amp;gt;
 &lt;li&gt;Then log in using the &lt;code&gt;login &amp;lt;your username&amp;gt; &amp;lt;your password&amp;gt;&lt;/code&gt; command. You&amp;rsquo;ll be prompted for your Steam Guard code which you can get from your email inbox or the Steam mobile app.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Steam&amp;gt;login &amp;lt;your username&amp;gt; &amp;lt;your password&amp;gt;
-Logging in user &#39;&amp;lt;your username&amp;gt;&#39; to Steam Public...
+Logging in user &amp;#39;&amp;lt;your username&amp;gt;&amp;#39; to Steam Public...
 This computer has not been authenticated for your account using Steam Guard.
 Please check your email for the message from Steam, and enter the Steam Guard
  code from that message.
-You can also enter this code at any time using &#39;set_steam_guard_code&#39;
+You can also enter this code at any time using &amp;#39;set_steam_guard_code&amp;#39;
  at the console.
 Steam Guard code:ABCDE
 OK
