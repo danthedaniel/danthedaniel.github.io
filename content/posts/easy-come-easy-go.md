@@ -47,5 +47,3 @@ Some time between El Paso and El Centro, California I checked my portfolio. The 
 I'd made a contingency plan. You can tell your broker to automatically sell an asset if the price goes below a certain point. I set it so I would get back my initial investment. Honestly, I don't recall being more than mildly bummed. I'd gotten out what I put in and had fun in the process.
 
 I can now say I know what it feel like to make over $1,000 per hour. It's good! But that old hedonic treadmill is a bitch. It's been about 4 years since those days and they don't stick out nearly as well as my bike trips in the Sierra Nevadas or the meals with friends tucked into a cabin. Those experiences still come from a place of wealth and privilege, but the $80 per hour kind.
-
-All that is to say, when someone rips off their employees so they can earn just a little more money for themself they don't know where they are on the treadmill. They've passed peak happiness long ago.
