@@ -22,15 +22,28 @@ Work was slow, so I spent much of my time outside of cooking on my bike. From Ar
 
 One weekend afternoon I took my bike to the logging roads, working from Arnold to Camp Connell before coasting back down route 4. Another weekend I cycled all the way to Lake Alpine. That's 30 miles each way, 4100 feet of incline. Thankfully I didn't get a flat tire because I was too rookie of a cyclist to even think of packing a spare!
 
-I remember biking past a camp ground about 25 miles into the journey. A lone man stood by the entrance. He watched me pedal up the shoulder of the road. As I passed him he said "You've got the whole world to yourself!". I gave him a chuckle in response. On the way back I coasted down through 30 miles of redwoods. It's an experience I'll never forget. When I got back Wenyu had finished smoking a tri-tip. I ate about 3000 calories of beef, roasted potatoes, and veggies before passing out. In hindsight I had nearly bonked.
+I remember biking past a camp ground about 25 miles into the journey. A lone man stood by the entrance. He watched me pedal up the shoulder of the road. As I passed him he said "You've got the whole world to yourself!". I gave him a chuckle in response. On the way back I coasted down through 30 miles of redwoods. It's an experience I'll never forget. When I got back Wenyu had finished smoking a tri-tip. I ate about 2000 calories of beef, roasted potatoes, and veggies before passing out. In hindsight I had nearly bonked.
+
+![A meal of tri-tip, carrots and asparagus](/blog/image/easy-come-easy-go/tri-tip.jpeg)
+
+<center style="margin-top: -2rem; margin-bottom: 2rem"><i>The meal I came back to after my bike trip. I ate multiple plates!</i></center>
 
 The three of us spent the spring there in Arnold. We watched as snowfall turned to snowmelt. Eventually our lease was up and we all shuffled back to the Bay. But life in the Bay couldn't compare and we soon found ourselves planning for round 2.
 
 The second AirBnB was in Middletown - a little spot one ridge past Napa Valley. This time Garrett was out and Wenyu's cousin Lily was in. Lily is an amazing chef and put us all to shame with her meals. I spent my days lounging on a hammock, my evenings eating meals better than most, and nights in a hot tub. We would frequently look at each other and say "we're living our best lives". After two months there we had a couple months in north-eastern Oregon.
 
+![A dutch oven filled with rice, sausage, eggs and leafy greens](/blog/image/easy-come-easy-go/lilys-cooking.jpeg)
+
+<center style="margin-top: -2rem; margin-bottom: 2rem"><i>Lily's cooking</i></center>
+
+
 But the hedonic treadmill runs fast and we soon decided to end our travels. I packed my apartment into a storage unit and headed home for the holidays.
 
 Back in Pennsylvania I ended up buying my first car, a Chevy Volt. After New Years I planned to move back to the Bay Area. I took the opportunity to do my first road trip. 3,500 miles across the country. Starting in Philadelphia I visited a friend in Atlanta, dropped by New Orleans to eat the best shrimp of my life, and later found myself in San Antonio visiting a friend named Mike. Mike and I had been friends since High School.
+
+![Shrimp po-boy](/blog/image/easy-come-easy-go/po-boy.jpeg)
+
+<center style="margin-top: -2rem; margin-bottom: 2rem"><i>My shrimp po-boy from New Orleans</i></center>
 
 I arrived in San Antonio late in the day on January 25th, 2021. While he was setting up my makeshift bed on his couch, Mike couldn't stop talking about the GameStop stock. I'd been too busy driving the last 3 days to pay much attention to reddit so I had no clue what was going on. As Mike told it the stock price had been going crazy all day.
 
