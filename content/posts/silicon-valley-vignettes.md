@@ -7,6 +7,8 @@ tags: [life]
 
 Here are a few scenes I witnessed or participated in during my time in the Bay Area. They're mundane, but stick out for one reason or another. At some point I would like to compile every memorable vignette from my life and link them together.
 
+<!--more-->
+
 <hr style="background-color: #eee; height: 1px; margin: 2.5rem 0" />
 
 ### Redwood City, CA - 2022
