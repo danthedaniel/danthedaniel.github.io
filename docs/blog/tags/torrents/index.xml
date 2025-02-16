@@ -31,10 +31,9 @@ never recovered.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Our semi-airgapped database came up with the wrong system time. As in, with a date and time a few years behind&amp;hellip; while the appservers were running on the correct time. That means a bunch of torrents were being marked as last having been seeded &amp;ldquo;a few years ago&amp;rdquo;, while the appservers knew it was 2017.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s all fine and dandy except for the fact that we automatically prune torrents that haven&amp;rsquo;t been seeded for &amp;ldquo;2 weeks&amp;rdquo;. From now. The situation unfortunately went unnoticed for a while (12+h).&lt;/p&gt;
-&lt;p&gt;tl;dr we&amp;rsquo;ve lost about half our uploads.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;tl;dr we&amp;rsquo;ve lost about half our uploads.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;RIP bB. That&amp;rsquo;ll do.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/bb/bb.gif&#34; alt=&#34;An animated rainbow BaconBits logo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/bb/bb.gif&#34; alt=&#34;An animated rainbow BaconBits logo&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     

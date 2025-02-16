@@ -299,16 +299,13 @@
 </h2><p>There are some things that ChatGPT has seen enough times, and the humans prompting it are not divided over, which you can ask it about without much chance of failure.</p>
 <p>For example:</p>
 <blockquote>
-<p><strong>User</strong>: When was Abraham Lincoln born?</p>
-</blockquote>
+<p><strong>User</strong>: When was Abraham Lincoln born?</p></blockquote>
 <blockquote>
-<p><strong>ChatGPT</strong>: Abraham Lincoln was born on February 12, 1809.</p>
-</blockquote>
+<p><strong>ChatGPT</strong>: Abraham Lincoln was born on February 12, 1809.</p></blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Abraham_Lincoln">Checks out</a></p>
 <p>Or more on topic:</p>
 <blockquote>
-<p><strong>User</strong>: How do I copy a docker build argument into an environment variable within a Dockerfile?</p>
-</blockquote>
+<p><strong>User</strong>: How do I copy a docker build argument into an environment variable within a Dockerfile?</p></blockquote>
 <blockquote>
 <p><strong>ChatGPT</strong>: In a Dockerfile, you can copy a build argument into an environment variable using the <code>ARG</code> and <code>ENV</code> instructions. Here&rsquo;s how to do it:</p>
 <ol>
@@ -322,8 +319,7 @@
 </span></span></span></code></pre></div></blockquote>
 <p>I could have used the docker documentation or Stack Overflow to get the same result. But ChatGPT can also get this right, and most helpfully it can take your specific needs and customize the output to them:</p>
 <blockquote>
-<p><strong>User</strong>: How do I copy a docker build argument into an environment variable within a Dockerfile? My PaaS provides the argument COMMIT_ID and I need it to be exposed as GIT_COMMIT in my container, with &ldquo;unset&rdquo; as the fallback value.</p>
-</blockquote>
+<p><strong>User</strong>: How do I copy a docker build argument into an environment variable within a Dockerfile? My PaaS provides the argument COMMIT_ID and I need it to be exposed as GIT_COMMIT in my container, with &ldquo;unset&rdquo; as the fallback value.</p></blockquote>
 <blockquote>
 <p><strong>ChatGPT</strong>: To copy the <code>COMMIT_ID</code> build argument into the <code>GIT_COMMIT</code> environment variable with a fallback value of &ldquo;unset&rdquo;, you can use the <code>ARG</code> and <code>ENV</code> instructions in your Dockerfile. Here&rsquo;s an example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#75715e"># Define the build argument and set the fallback value</span><span style="color:#960050;background-color:#1e0010">
@@ -341,8 +337,7 @@
 </span>
 </h2><p>My favorite ChatGPT use case from the last month was in translating documentation into an enum. The Prisma NodeJS database ORM is generally pretty good, but it&rsquo;s not perfect. I&rsquo;d asked ChatGPT, as a search engine, how I can detect if a Postgres insert fails due to a uniqueness constraint on a specific column:</p>
 <blockquote>
-<p><strong>User</strong>: I have a prisma model WebhookEvent. How can I tell if an insert to the table failed because of the unique constraint on the <code>event_id</code> column?</p>
-</blockquote>
+<p><strong>User</strong>: I have a prisma model WebhookEvent. How can I tell if an insert to the table failed because of the unique constraint on the <code>event_id</code> column?</p></blockquote>
 <blockquote>
 <p><strong>ChatGPT</strong>: When you try to insert a record with a unique constraint violation in Prisma, it will throw a <code>PrismaClientKnownRequestError</code> with a specific error code. To check if the insert failed due to the unique constraint on the event_id column, you can catch the error and verify its code and related metadata.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
@@ -366,8 +361,7 @@
 <p>This also <a href="https://community.redwoodjs.com/t/how-to-handle-prisma-unique-constraints-with-a-friendly-error/4117">checks out</a> as of a few months ago. And it&rsquo;s nice that ChatGPT was able to tailor the solution to my code base.</p>
 <p>But that bit that says <code>error.code === &quot;P2002&quot;</code> seems lame. There should be some source of truth for these error codes, right?</p>
 <blockquote>
-<p><strong>User</strong>: Is there an enum in Prisma that I can reference instead of using <code>&quot;P2002&quot;</code>?</p>
-</blockquote>
+<p><strong>User</strong>: Is there an enum in Prisma that I can reference instead of using <code>&quot;P2002&quot;</code>?</p></blockquote>
 <blockquote>
 <p><strong>ChatGPT</strong>: Yes, Prisma has an enum called PrismaErrorCode that you can use to reference error codes instead of hardcoding them as strings. Here&rsquo;s how you can update the previous example to use the PrismaErrorCode enum:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">PrismaClient</span>, <span style="color:#a6e22e">Prisma</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;@prisma/client&#39;</span>);
@@ -384,12 +378,10 @@
 <p>Common</p>
 <p>P1000</p>
 <p>&ldquo;Authentication failed against database server at {database_host}, the provided database credentials for {database_user} are not valid. Please make sure to provide valid database credentials for the database server at {database_host}.&rdquo;</p>
-<p>P1001</p>
-</blockquote>
+<p>P1001</p></blockquote>
 <blockquote>
 <p>&ldquo;Can&rsquo;t reach database server at {database_host}:{database_port} Please make sure your database server is running at {database_host}:{database_port}.&rdquo;</p>
-<p>P1002</p>
-</blockquote>
+<p>P1002</p></blockquote>
 <p>etc.</p>
 <blockquote>
 <p><strong>ChatGPT</strong>: Here is an enum representing Prisma error codes:</p>

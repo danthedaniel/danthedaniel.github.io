@@ -28,16 +28,13 @@
 &lt;/h2&gt;&lt;p&gt;There are some things that ChatGPT has seen enough times, and the humans prompting it are not divided over, which you can ask it about without much chance of failure.&lt;/p&gt;
 &lt;p&gt;For example:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: When was Abraham Lincoln born?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: When was Abraham Lincoln born?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: Abraham Lincoln was born on February 12, 1809.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: Abraham Lincoln was born on February 12, 1809.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Abraham_Lincoln&#34;&gt;Checks out&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Or more on topic:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: How do I copy a docker build argument into an environment variable within a Dockerfile?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: How do I copy a docker build argument into an environment variable within a Dockerfile?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: In a Dockerfile, you can copy a build argument into an environment variable using the &lt;code&gt;ARG&lt;/code&gt; and &lt;code&gt;ENV&lt;/code&gt; instructions. Here&amp;rsquo;s how to do it:&lt;/p&gt;
 &lt;ol&gt;
@@ -51,8 +48,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
 &lt;p&gt;I could have used the docker documentation or Stack Overflow to get the same result. But ChatGPT can also get this right, and most helpfully it can take your specific needs and customize the output to them:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: How do I copy a docker build argument into an environment variable within a Dockerfile? My PaaS provides the argument COMMIT_ID and I need it to be exposed as GIT_COMMIT in my container, with &amp;ldquo;unset&amp;rdquo; as the fallback value.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: How do I copy a docker build argument into an environment variable within a Dockerfile? My PaaS provides the argument COMMIT_ID and I need it to be exposed as GIT_COMMIT in my container, with &amp;ldquo;unset&amp;rdquo; as the fallback value.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: To copy the &lt;code&gt;COMMIT_ID&lt;/code&gt; build argument into the &lt;code&gt;GIT_COMMIT&lt;/code&gt; environment variable with a fallback value of &amp;ldquo;unset&amp;rdquo;, you can use the &lt;code&gt;ARG&lt;/code&gt; and &lt;code&gt;ENV&lt;/code&gt; instructions in your Dockerfile. Here&amp;rsquo;s an example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-docker&#34; data-lang=&#34;docker&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define the build argument and set the fallback value&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
@@ -70,8 +66,7 @@
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;My favorite ChatGPT use case from the last month was in translating documentation into an enum. The Prisma NodeJS database ORM is generally pretty good, but it&amp;rsquo;s not perfect. I&amp;rsquo;d asked ChatGPT, as a search engine, how I can detect if a Postgres insert fails due to a uniqueness constraint on a specific column:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: I have a prisma model WebhookEvent. How can I tell if an insert to the table failed because of the unique constraint on the &lt;code&gt;event_id&lt;/code&gt; column?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: I have a prisma model WebhookEvent. How can I tell if an insert to the table failed because of the unique constraint on the &lt;code&gt;event_id&lt;/code&gt; column?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: When you try to insert a record with a unique constraint violation in Prisma, it will throw a &lt;code&gt;PrismaClientKnownRequestError&lt;/code&gt; with a specific error code. To check if the insert failed due to the unique constraint on the event_id column, you can catch the error and verify its code and related metadata.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
@@ -95,8 +90,7 @@
 &lt;p&gt;This also &lt;a href=&#34;https://community.redwoodjs.com/t/how-to-handle-prisma-unique-constraints-with-a-friendly-error/4117&#34;&gt;checks out&lt;/a&gt; as of a few months ago. And it&amp;rsquo;s nice that ChatGPT was able to tailor the solution to my code base.&lt;/p&gt;
 &lt;p&gt;But that bit that says &lt;code&gt;error.code === &amp;quot;P2002&amp;quot;&lt;/code&gt; seems lame. There should be some source of truth for these error codes, right?&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: Is there an enum in Prisma that I can reference instead of using &lt;code&gt;&amp;quot;P2002&amp;quot;&lt;/code&gt;?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: Is there an enum in Prisma that I can reference instead of using &lt;code&gt;&amp;quot;P2002&amp;quot;&lt;/code&gt;?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: Yes, Prisma has an enum called PrismaErrorCode that you can use to reference error codes instead of hardcoding them as strings. Here&amp;rsquo;s how you can update the previous example to use the PrismaErrorCode enum:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;PrismaClient&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;Prisma&lt;/span&gt; } &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;@prisma/client&amp;#39;&lt;/span&gt;);
@@ -113,12 +107,10 @@
 &lt;p&gt;Common&lt;/p&gt;
 &lt;p&gt;P1000&lt;/p&gt;
 &lt;p&gt;&amp;ldquo;Authentication failed against database server at {database_host}, the provided database credentials for {database_user} are not valid. Please make sure to provide valid database credentials for the database server at {database_host}.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;P1001&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;P1001&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;Can&amp;rsquo;t reach database server at {database_host}:{database_port} Please make sure your database server is running at {database_host}:{database_port}.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;P1002&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;P1002&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;etc.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: Here is an enum representing Prisma error codes:&lt;/p&gt;
@@ -734,9 +726,9 @@ only valid API requests can be made. This is done by locking down the &lt;code&g
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -752,9 +744,9 @@ only valid API requests can be made. This is done by locking down the &lt;code&g
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -770,9 +762,9 @@ only valid API requests can be made. This is done by locking down the &lt;code&g
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -833,7 +825,7 @@ only valid API requests can be made. This is done by locking down the &lt;code&g
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        gl_FragColor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;vec4&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;vec3&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/shaders/circle_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/shaders/circle_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The most interesting part is that you rarely think about more than one pixel at a time. The shader code above is ran once per pixel. There&amp;rsquo;s no need to worry about how many sides your circle has. You don&amp;rsquo;t refer to other information rendered in the same frame. This is what makes shaders so fast. Each pixel can be rendered simultaneously.&lt;/p&gt;
 &lt;p&gt;Just like learning your first functional programming language after being introduced to C++ or Java, this paradigm shift puts you into a completely different mode of thinking. The dependence on math that you might otherwise toss aside once you&amp;rsquo;ve left school is great. None of my web scrapers, APIs, or simulations require me to use 2D rotation matrices.&lt;/p&gt;
 &lt;p&gt;When writing shaders I often find myself transfixed by how quickly changes can lead to visual results. The feedback loop is one of the tightest there is in programming. Quick compile times coupled with hot-reloading (shout out to &lt;a href=&#34;https://github.com/patriciogonzalezvivo/glslViewer&#34;&gt;glslViewer&lt;/a&gt;) make for a happy programmer.&lt;/p&gt;
@@ -859,7 +851,7 @@ only valid API requests can be made. This is done by locking down the &lt;code&g
       <pubDate>Tue, 29 Aug 2017 00:00:00 -0400</pubDate>
       
       <guid>https://danangell.com/blog/posts/commit-language-visualizer/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/commit-viz/example.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/commit-viz/example.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/danthedaniel/Commit-Language-Visualizer&#34;&gt;Commit-Language-Visualizer&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;After a stroke of inspiration earlier this evening I hacked together this tool. It produces a stacked time-series graph of GitHub commit data. The commit data is organized by language and uses the same colors as GitHub for each corresponding language.&lt;/p&gt;
 </description>

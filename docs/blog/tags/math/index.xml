@@ -47,9 +47,9 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -65,9 +65,9 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -83,9 +83,9 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -146,7 +146,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        gl_FragColor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;vec4&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;vec3&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/shaders/circle_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/shaders/circle_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The most interesting part is that you rarely think about more than one pixel at a time. The shader code above is ran once per pixel. There&amp;rsquo;s no need to worry about how many sides your circle has. You don&amp;rsquo;t refer to other information rendered in the same frame. This is what makes shaders so fast. Each pixel can be rendered simultaneously.&lt;/p&gt;
 &lt;p&gt;Just like learning your first functional programming language after being introduced to C++ or Java, this paradigm shift puts you into a completely different mode of thinking. The dependence on math that you might otherwise toss aside once you&amp;rsquo;ve left school is great. None of my web scrapers, APIs, or simulations require me to use 2D rotation matrices.&lt;/p&gt;
 &lt;p&gt;When writing shaders I often find myself transfixed by how quickly changes can lead to visual results. The feedback loop is one of the tightest there is in programming. Quick compile times coupled with hot-reloading (shout out to &lt;a href=&#34;https://github.com/patriciogonzalezvivo/glslViewer&#34;&gt;glslViewer&lt;/a&gt;) make for a happy programmer.&lt;/p&gt;
@@ -179,10 +179,10 @@ seen the equation for a unit sphere:&lt;/p&gt;
 &lt;pre class=&#34;math&#34;&gt;x^2 = 1&lt;/pre&gt;
 &lt;p&gt;Also known as a 0-sphere&lt;/p&gt;
 &lt;p&gt;The above equation does not produce a shape - since the drawing space for a 1-D function is just a single line. Rather, the 0-sphere looks like two points. For the unit 0-sphere those points are 1 and -1 (as both equal 1 when squared).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/n-sphere/n-sphere-1.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/n-sphere/n-sphere-1.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The red dots above are the 0-sphere.&lt;/p&gt;
 &lt;p&gt;The 0-sphere might seem useless, but it actually shows up much more often than you might think. When two spheres intersect, the shape on their surfaces that intersects each other is a circle. And when two circles (A and B) intersect, their intersection is a 0-sphere C.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/n-sphere/n-sphere-2.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/n-sphere/n-sphere-2.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;references&#34; &gt;References
 &lt;span&gt;
     &lt;a href=&#34;#references&#34;&gt;

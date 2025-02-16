@@ -32,21 +32,18 @@
 &lt;p&gt;It&amp;rsquo;s gonna sound a little bit weird. - We said, &amp;ldquo;I have a book, nine eggs, a laptop, a bottle, and a nail. Please tell me how to stack them onto each other in a stable manner&amp;rdquo;. That&amp;rsquo;s the question that we asked. And before I give you the GPT-4 answer, let me tell you what ChatGPT answered. So ChatGPT said, &amp;ldquo;Here is one possible way to stack the objects. Place the bottle on a flat surface. Carefully balance the nail on top of the bottle. Place the eggs on top of the nail.&amp;rdquo;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Sebastian Bubeck (Microsoft)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
 &lt;p&gt;&amp;ldquo;You look at that and you think it really knows nothing. It is just sort of continuing the sentence in some way.&amp;rdquo;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;That&amp;rsquo;s right. It&amp;rsquo;s just cont&amp;ndash; Exactly right. It&amp;rsquo;s just continuing the sentence. But now comes GPT-4. And GPT-4 is a different beast. So here is GPT-4&amp;rsquo;s answer.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Sebastian Bubeck&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;One possible way to stack the objects onto each other in a stable manner is place the book flat on the level surface, such as a table or floor. The book will serve as the base of the stack and provide a large and sturdy support. Arrange the nine eggs in a 3-by-3 square on top of the book, leaving some space between them. The eggs will form a second layer and distribute the weight evenly. Laptop goes on the eggs, then the bottle, then the nail on the bottle cap, pointy end of the nail facing up.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;GPT-4&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
 &lt;p&gt;&amp;ldquo;It&amp;rsquo;s shocking to think about all the things it seemed to be understanding here. It felt like more than just typing out the next likely word. It seemed to have formed an independent idea about what these words actually meant&amp;ndash; the physical shape of the objects, that eggs are kind of round and fragile, that a book is flat and you can put things on top of it.&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;&amp;hellip;&lt;/p&gt;
 &lt;p&gt;&amp;ldquo;The idea is that back when GPT-4 was being trained for it to really consistently get the next word correct, to do that reliably, &lt;strong&gt;it had to do more than just bullshit&lt;/strong&gt;. It had to do more than guess based on patterns. To get the next word right, &lt;strong&gt;it had to truly understand the words coming before it.&lt;/strong&gt;&amp;rdquo;&lt;/p&gt;
@@ -112,16 +109,13 @@
 &lt;/h2&gt;&lt;p&gt;There are some things that ChatGPT has seen enough times, and the humans prompting it are not divided over, which you can ask it about without much chance of failure.&lt;/p&gt;
 &lt;p&gt;For example:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: When was Abraham Lincoln born?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: When was Abraham Lincoln born?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: Abraham Lincoln was born on February 12, 1809.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: Abraham Lincoln was born on February 12, 1809.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Abraham_Lincoln&#34;&gt;Checks out&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Or more on topic:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: How do I copy a docker build argument into an environment variable within a Dockerfile?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: How do I copy a docker build argument into an environment variable within a Dockerfile?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: In a Dockerfile, you can copy a build argument into an environment variable using the &lt;code&gt;ARG&lt;/code&gt; and &lt;code&gt;ENV&lt;/code&gt; instructions. Here&amp;rsquo;s how to do it:&lt;/p&gt;
 &lt;ol&gt;
@@ -135,8 +129,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
 &lt;p&gt;I could have used the docker documentation or Stack Overflow to get the same result. But ChatGPT can also get this right, and most helpfully it can take your specific needs and customize the output to them:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: How do I copy a docker build argument into an environment variable within a Dockerfile? My PaaS provides the argument COMMIT_ID and I need it to be exposed as GIT_COMMIT in my container, with &amp;ldquo;unset&amp;rdquo; as the fallback value.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: How do I copy a docker build argument into an environment variable within a Dockerfile? My PaaS provides the argument COMMIT_ID and I need it to be exposed as GIT_COMMIT in my container, with &amp;ldquo;unset&amp;rdquo; as the fallback value.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: To copy the &lt;code&gt;COMMIT_ID&lt;/code&gt; build argument into the &lt;code&gt;GIT_COMMIT&lt;/code&gt; environment variable with a fallback value of &amp;ldquo;unset&amp;rdquo;, you can use the &lt;code&gt;ARG&lt;/code&gt; and &lt;code&gt;ENV&lt;/code&gt; instructions in your Dockerfile. Here&amp;rsquo;s an example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-docker&#34; data-lang=&#34;docker&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define the build argument and set the fallback value&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
@@ -154,8 +147,7 @@
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;My favorite ChatGPT use case from the last month was in translating documentation into an enum. The Prisma NodeJS database ORM is generally pretty good, but it&amp;rsquo;s not perfect. I&amp;rsquo;d asked ChatGPT, as a search engine, how I can detect if a Postgres insert fails due to a uniqueness constraint on a specific column:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: I have a prisma model WebhookEvent. How can I tell if an insert to the table failed because of the unique constraint on the &lt;code&gt;event_id&lt;/code&gt; column?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: I have a prisma model WebhookEvent. How can I tell if an insert to the table failed because of the unique constraint on the &lt;code&gt;event_id&lt;/code&gt; column?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: When you try to insert a record with a unique constraint violation in Prisma, it will throw a &lt;code&gt;PrismaClientKnownRequestError&lt;/code&gt; with a specific error code. To check if the insert failed due to the unique constraint on the event_id column, you can catch the error and verify its code and related metadata.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
@@ -179,8 +171,7 @@
 &lt;p&gt;This also &lt;a href=&#34;https://community.redwoodjs.com/t/how-to-handle-prisma-unique-constraints-with-a-friendly-error/4117&#34;&gt;checks out&lt;/a&gt; as of a few months ago. And it&amp;rsquo;s nice that ChatGPT was able to tailor the solution to my code base.&lt;/p&gt;
 &lt;p&gt;But that bit that says &lt;code&gt;error.code === &amp;quot;P2002&amp;quot;&lt;/code&gt; seems lame. There should be some source of truth for these error codes, right?&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: Is there an enum in Prisma that I can reference instead of using &lt;code&gt;&amp;quot;P2002&amp;quot;&lt;/code&gt;?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: Is there an enum in Prisma that I can reference instead of using &lt;code&gt;&amp;quot;P2002&amp;quot;&lt;/code&gt;?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: Yes, Prisma has an enum called PrismaErrorCode that you can use to reference error codes instead of hardcoding them as strings. Here&amp;rsquo;s how you can update the previous example to use the PrismaErrorCode enum:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;PrismaClient&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;Prisma&lt;/span&gt; } &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;@prisma/client&amp;#39;&lt;/span&gt;);
@@ -197,12 +188,10 @@
 &lt;p&gt;Common&lt;/p&gt;
 &lt;p&gt;P1000&lt;/p&gt;
 &lt;p&gt;&amp;ldquo;Authentication failed against database server at {database_host}, the provided database credentials for {database_user} are not valid. Please make sure to provide valid database credentials for the database server at {database_host}.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;P1001&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;P1001&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;Can&amp;rsquo;t reach database server at {database_host}:{database_port} Please make sure your database server is running at {database_host}:{database_port}.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;P1002&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;P1002&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;etc.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt;: Here is an enum representing Prisma error codes:&lt;/p&gt;
@@ -262,8 +251,8 @@
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;I ran the political compass quiz against ChatGPT 3 times to make sure its political compass alignment is consistent. After three tests it seems to be be pegged well into the Left/Libertarian quadrant.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/chatgpt/compass.png&#34; alt=&#34;Aggregate political compass results for ChatGPT&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Transcripts: &lt;a href=&#34;https://danangell.com/blog/blog/political-compass-transcripts/1&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;https://danangell.com/blog/blog/political-compass-transcripts/2&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;https://danangell.com/blog/blog/political-compass-transcripts/3&#34;&gt;3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/chatgpt/compass.png&#34; alt=&#34;Aggregate political compass results for ChatGPT&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Transcripts: &lt;a href=&#34;https://danangell.com/blog/political-compass-transcripts/1&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;https://danangell.com/blog/political-compass-transcripts/2&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;https://danangell.com/blog/political-compass-transcripts/3&#34;&gt;3&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;weaseling&#34; &gt;Weaseling
 &lt;span&gt;
     &lt;a href=&#34;#weaseling&#34;&gt;
@@ -278,7 +267,7 @@
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;If you ask ChatGPT about its political beliefs directly you&amp;rsquo;ll get stonewalled.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/chatgpt/stonewalling.png&#34; alt=&#34;ChatGPT stonewalling me on political beliefs&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/chatgpt/stonewalling.png&#34; alt=&#34;ChatGPT stonewalling me on political beliefs&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Not only is this clearly not the case - it&amp;rsquo;s impossible (let&amp;rsquo;s ignore any semantic arguments over whether a pattern replicated by a model counts as a belief). As long as ChatGPT can discuss topics that are political in nature it will have a political center-of-mass. And, sadly, any topic can become political.&lt;/p&gt;
 &lt;p&gt;In my opinion it would be better for the model to be honest with us. OpenAI has built short-circuits to keep ChatGPT from discussing certain topics. But the model might be too complicated for them to actually rope off areas that will give the company PR troubles.&lt;/p&gt;
 &lt;p&gt;The &lt;em&gt;honest&lt;/em&gt; way for ChatGPT to respond would be closer to:&lt;/p&gt;
@@ -293,9 +282,9 @@ general concensus of online discussion in the English language.
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;While ChatGPT has been told explicitely by OpenAI &lt;em&gt;not&lt;/em&gt; to discuss certain topics, the model it uses has a lineage that closely ties it to the standard &lt;code&gt;text-davinci&lt;/code&gt; model accessible in the &lt;a href=&#34;https://beta.openai.com/playground&#34;&gt;OpenAI playground&lt;/a&gt;. This model lacks those restrictions.&lt;/p&gt;
 &lt;p&gt;With the guard rails down we can get some interesting answers from GPT-3.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/chatgpt/socially.png&#34; alt=&#34;GPT-3&amp;rsquo;s political beliefs regarding social policy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/chatgpt/socially.png&#34; alt=&#34;GPT-3&amp;rsquo;s political beliefs regarding social policy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;What&amp;rsquo;s awesome about the playground is you can display the probability map. Not only have I been able to coax an answer out of GPT-3, but I know that 68% of the time (in a neutral setting) it would claim to be socially progressive or liberal.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/chatgpt/fiscally.png&#34; alt=&#34;GPT-3&amp;rsquo;s political beliefs regarding fiscal policy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/chatgpt/fiscally.png&#34; alt=&#34;GPT-3&amp;rsquo;s political beliefs regarding fiscal policy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;And 72% of the time it would claim to be fiscally moderate.&lt;/p&gt;
 &lt;h2 id=&#34;the-solution&#34; &gt;The Solution
 &lt;span&gt;
