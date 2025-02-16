@@ -107,7 +107,7 @@ He stops typing and lets the poncho flow downwards.
 
 ### Mountain View, CA - 2023
 
-On one of my last days at Google I happened to be eating lunch outside of Googleplex. At this point in time the Googleplex is the headquarters for Google's AI efforts. ChatGPT is about 8 months old.
+On one of my last days at Google I happened to be eating lunch outside of the Googleplex. At this point in time the Googleplex is the headquarters for Google's AI efforts. ChatGPT is about 8 months old.
 
 Two white men are talking loudly a couple of tables away.
 
