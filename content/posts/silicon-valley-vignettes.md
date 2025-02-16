@@ -5,6 +5,8 @@ draft: false
 tags: [life]
 ---
 
+![A United States Postal Service label sticker upside down on a light post with the text "DEEPSEEK EATS OPENAI 4 BREKKY" on it](/blog/image/vignettes/silicon-valley.jpg)
+
 Here are a few scenes I witnessed or participated in during my time in the Bay Area. They're mundane, but stick out for one reason or another. At some point I would like to compile every memorable vignette from my life and link them together.
 
 <!--more-->
