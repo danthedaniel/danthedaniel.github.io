@@ -1,7 +1,7 @@
 ---
 title: "I Skipped to the Ending"
 date: 2023-11-09T10:44:53-08:00
-draft: false
+draft: true
 tags: ["google", "work", "life"]
 ---
 
