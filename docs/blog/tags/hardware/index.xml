@@ -6,10 +6,102 @@
     <description>danangell.com/blog (Hardware)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Apr 2023 11:25:48 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2026 12:00:00 -0800</lastBuildDate>
     
     <atom:link href="https://danangell.com/blog/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My T430</title>
+      <link>https://danangell.com/blog/posts/my-t430/</link>
+      <pubDate>Tue, 03 Mar 2026 12:00:00 -0800</pubDate>
+      
+      <guid>https://danangell.com/blog/posts/my-t430/</guid>
+      <description>&lt;p&gt;13 years ago I got a Lenovo T430 ThinkPad to use for college. Over the years I&amp;rsquo;ve upgraded, replaced, and modded many parts of the laptop. At this point my friends joke it&amp;rsquo;s the &amp;ldquo;Laptop of Theseus&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Thanks to the upgrades it&amp;rsquo;s still a pretty capable machine even running the most up-to-date Debian and Firefox on modern websites like YouTube. I use this machine for programming or any tasks that require a Linux OS as my other laptop is a MacBook.&lt;/p&gt;
+&lt;br /&gt;
+&lt;video controls width=&#34;100%&#34;&gt;
+  &lt;source src=&#34;https://danangell.com/blog/blog/video/t430/youtubing.mp4&#34; type=&#34;video/mp4&#34;&gt;
+  Playing a YouTube video on the modded ThinkPad T430
+&lt;/video&gt;
+&lt;p&gt;Not the fastest. But cold-starting Firefox and launching YouTube is meant to highlight the age of the system.&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;Here are the specs:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Part&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Original&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Current&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;CPU&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;i5-3230M&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;i7-3840QM (OC&amp;rsquo;d to 4GHz)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;RAM&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;4 GB DDR3 1333MHz&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;16 GB DDR3 1600MHz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Storage&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;250 GB HDD&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;500 GB SSD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Display&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1600x900 TN&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1920x1080 IPS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;BIOS&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Lenovo UEFI&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Coreboot + SeaBIOS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;WLAN&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Up to 802.11n&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;802.11ac + BT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Charging&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Barrel Jack&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;USB-C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Battery&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;6 cell OEM&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;9 cell OEM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br /&gt;
+&lt;p&gt;Here&amp;rsquo;s what it looks like today.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/t430/closed.jpeg&#34; alt=&#34;Lenovo ThinkPad T430 closed, showing the lid with ThinkPad and Lenovo branding&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I just replaced the top lid with new-old stock from eBay so it looks great.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/t430/seabios.jpeg&#34; alt=&#34;SeaBIOS boot screen on the T430 showing Coreboot firmware replacement&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I replaced the stock Lenovo firmware with CoreBoot which removes all of the artificial locks on hardware capabilities. This enabled me to install an improved WiFi module. Properly configured, CoreBoot will have a neutered &lt;a href=&#34;https://en.wikipedia.org/wiki/Intel_Management_Engine#Assertions_that_ME_is_a_backdoor&#34;&gt;Intel Management Engine&lt;/a&gt;. Intel ME is a system that exists below the kernel and can respond to commands over the network even if the computer is powered off. It&amp;rsquo;s not a feature I use so I figure I&amp;rsquo;m better off without it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/t430/chip-flashing.jpeg&#34; alt=&#34;Flashing the ROM chips&#34;&gt;&lt;/p&gt;
+&lt;p&gt;There are two ways to flash the firmware. Through software or with an SPI programmer. I figured if I screwed up the software approach I&amp;rsquo;d need an SPI programmer anyway and went with the fun option. You need to completely disassemble the computer to get at the chips which makes the process a hassle.&lt;/p&gt;
+&lt;p&gt;You can see a Pi Pico 2W at the top of the image, flashed to behave as a chip programmer and driven by my other laptop.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/t430/usb-pd-installation.jpeg&#34; alt=&#34;First power-on with USB-PD charging&#34;&gt;&lt;/p&gt;
+&lt;p&gt;One of the most impactful upgrades was the installation of a USB-PD board where the old barrel connector used to be. This mod is fairly simple because the original power supply outputs 20 volts, and that is one of the voltages supported by the USB power-delivery spec. You just need to solder it right into the original wires running from the barrel connector into the motherboard. The board can handle up to 5 amps, so with a good enough USB-C power supply you can pump 100W into the computer, well above the original power supply&amp;rsquo;s 65W.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/t430/usb-pd-chip-highlight.jpeg&#34; alt=&#34;Highlighted USB-PD chip&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Here I have the chip highlighted in red although it&amp;rsquo;s hard to see. I 3D printed &lt;a href=&#34;https://www.thingiverse.com/thing:4363602&#34;&gt;a small part&lt;/a&gt; to keep the USB-C port in position.&lt;/p&gt;
+&lt;p&gt;You might also notice that the screen looks pretty decent. I upgraded the screen from the stock 1600x900 TN to a 1080p IPS. This improves not just the resolution but also the colors and viewing angles. I believe it is possible to upgrade further to a 1440p panel but I&amp;rsquo;d be worried about pushing the integrated GPU too hard.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/t430/usb-port.jpeg&#34; alt=&#34;Close-up of the USB-C charging port mod replacing the original barrel jack, labeled 20V&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/t430/charging.jpeg&#34; alt=&#34;T430 charging via USB-C cable with green indicator LEDs lit&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The charging LED still works just fine.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/t430/neofetch.png&#34; alt=&#34;Neofetch output showing Debian 13 trixie, i7-3840QM CPU, 16GB RAM, 1920x1080 display, and GNOME 48.7&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The CPU is really a huge upgrade over the original. Thankfully that&amp;rsquo;s a very easy upgrade to make as this laptop has a socketed CPU. 4 cores/8 threads instead of 2 cores/4 threads, +800MHz boost clocks, and +5MB of L3 cache. I needed to upgrade the heatsink and fan to keep the higher wattage chip from overheating. For that I purchased the cooling system from a T430 sold with a discrete GPU which has a faster (and louder) fan and a second heatpipe.&lt;/p&gt;
+&lt;p&gt;As far as RAM goes, 16GB is still plenty even in 2026. And with the way RAM prices are going I suspect software publishers will be targeting that amount for a few extra years. But sadly it is not possible to upgrade further.&lt;/p&gt;
+&lt;p&gt;The last major upgrade left is the installation of the classic 7-row T420 keyboard. I have one sitting next to me right now. But the tooling available to patch the motherboard&amp;rsquo;s firmware to properly support it only works on the original Lenovo firmware. So it looks like I&amp;rsquo;ll have to break out the old SPI programmer and do two cycles of firmware flashing (back to stock, patch with legacy keyboard support, reinstall CoreBoot).&lt;/p&gt;
+&lt;p&gt;I might also try to do a cell replacement on the battery. The battery life isn&amp;rsquo;t great - maybe 3 hours of browsing the web at max brightness. Fresh 18650s at the highest capacity I can find from a reputable brand should meaningfully improve that.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>10 Gb/s Router - For fun!</title>
@@ -25,7 +117,7 @@
 &lt;li&gt;1x 2.5 Gb/s LAN&lt;/li&gt;
 &lt;li&gt;4x 1 Gb/s LAN&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/router/AXE16000-rear.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/AXE16000-rear.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s $500. But the feature set isn&amp;rsquo;t quite what I&amp;rsquo;m looking for. The WiFi is over-spec&amp;rsquo;d and switch under-spec&amp;rsquo;d.&lt;/p&gt;
 &lt;h2 id=&#34;building-my-own&#34; &gt;Building My Own
 &lt;span&gt;
@@ -34,52 +126,52 @@
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Part&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Model&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Price&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;PC&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Dell Optiplex 7020&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;$50 (Craigslist)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Switch&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://www.trendnet.com/products/10g-switch/5-port-10g-switch-TEG-S750-v1&#34;&gt;TEG-S750&lt;/a&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;$310&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;NIC&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://www.amazon.com/dp/B01IR7T7PG&#34;&gt;X540-BT2 (Offbrand)&lt;/a&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;$125&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;6 inch Cat6A&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;N/A&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;$3&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;AP&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://www.netgear.com/home/wifi/routers/r6700/&#34;&gt;R6700&lt;/a&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;$0 (My old router)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;SATA Y-Splitter&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;N/A&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;$0 (From cable bin)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;$488&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Part&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Model&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Price&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;PC&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Dell Optiplex 7020&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$50 (Craigslist)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Switch&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://www.trendnet.com/products/10g-switch/5-port-10g-switch-TEG-S750-v1&#34;&gt;TEG-S750&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$310&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;NIC&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://www.amazon.com/dp/B01IR7T7PG&#34;&gt;X540-BT2 (Offbrand)&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$125&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;6 inch Cat6A&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;N/A&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;AP&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://www.netgear.com/home/wifi/routers/r6700/&#34;&gt;R6700&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$0 (My old router)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SATA Y-Splitter&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;N/A&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$0 (From cable bin)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;$488&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/router/homebrew-rear.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-rear.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;pc&#34; &gt;PC
 &lt;span&gt;
     &lt;a href=&#34;#pc&#34;&gt;
@@ -87,35 +179,35 @@
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Part&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Model&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;CPU&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;i5-4590 @ 3.3 GHz&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;RAM&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2x4 GiB DDR3&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;PCIe Slot&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;3.0 x16&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;PCIe Slot&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2.0 x4&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Part&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Model&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;CPU&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;i5-4590 @ 3.3 GHz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;RAM&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2x4 GiB DDR3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;PCIe Slot&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;3.0 x16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;PCIe Slot&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2.0 x4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;I got a nice deal on this old Haswell Dell small-form-factor PC. It&amp;rsquo;s got 4 cores and 8GiB of RAM, which is more than enough for a router. The 3.0 x16 PCIe slot will handle the NIC, which leaves one x4 slot for future expansion needs.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/router/homebrew-front.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-front.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The only downside is the x16 PCIe slot is right up against the power supply. This means cooling is a bit of an issue for the NIC.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/router/homebrew-open.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-open.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;nic&#34; &gt;NIC
 &lt;span&gt;
     &lt;a href=&#34;#nic&#34;&gt;
@@ -124,7 +216,7 @@
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;I needed a network card that was all RJ45. My ISP-provided fiber modem only outputs via an RJ45 and nothing on my LAN uses SFP+. The old Intel X540-BT2 looked like the best solution. I bought an off-brand version (still uses the original silicon) that includes a fan. The original X540 was known for overheating, and given the limited airflow in the Dell I think the fan is necessary.&lt;/p&gt;
 &lt;p&gt;There&amp;rsquo;s a &lt;a href=&#34;https://youtu.be/_IzyJTcnPu8?t=184&#34;&gt;LTT video&lt;/a&gt; that came out a few months after I built this router that recommends almost all of the same parts. They&amp;rsquo;ve modded their X540 to include a Noctua fan and mention it offhand, but that fan is &lt;em&gt;really&lt;/em&gt; necessary because these NICs get &lt;strong&gt;hot&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/router/homebrew-nic.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-nic.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;switch&#34; &gt;Switch
 &lt;span&gt;
     &lt;a href=&#34;#switch&#34;&gt;
@@ -133,9 +225,9 @@
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;So one thing to keep in mind is that because the NIC is using such an &lt;a href=&#34;https://ark.intel.com/content/www/us/en/ark/products/60021/intel-ethernet-controller-x540bt2.html&#34;&gt;ancient chip&lt;/a&gt; (released Q4 2012) it does not support 2.5 Gb/s or 5 Gb/s ethernet. It can only do 10M/100M/1G/10G. If you decide to save a buck and use a 2.5 Gb/s or 5 Gb/s switch then the NIC will drop down to 1 Gb/s as that will be the highest common speed between the NIC and switch. But because &lt;em&gt;this&lt;/em&gt; switch can communicate with the NIC at 10 Gb/s it works fine. The switch handles translating between 10G-baseT and lower speeds that devices might speak.&lt;/p&gt;
 &lt;p&gt;What I love about this switch is that it runs on 12V and only consumes 1.5A. That allowed me to very easily wire it right into the PC&amp;rsquo;s internal power supply.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/router/homebrew-switch.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-switch.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Amazingly each 12V wire (the yellow wires) in a SATA cable can deliver &lt;a href=&#34;https://www.playtool.com/pages/psuconnectors/connectors.html#sata&#34;&gt;up to 1.5A&lt;/a&gt;! The Dell PC only expects you to have one SATA powered device, so I needed a Y-splitter cable to power both the switch and the storage device (a low power SSD in my case). Thankfully I already had one lying around. It&amp;rsquo;s definitely within spec, and I&amp;rsquo;ve had this running for almost a year without trouble. Just &lt;strong&gt;make sure&lt;/strong&gt; you&amp;rsquo;ve got the right wires soldered to each other - ground to ground, +V to +V.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/router/homebrew-cable.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-cable.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;What I&amp;rsquo;ve got in the end is a single power outlet solution for my router and switch combo. And with a little velcro it all feels like a single unit.&lt;/p&gt;
 &lt;h3 id=&#34;ap&#34; &gt;AP
 &lt;span&gt;
@@ -144,7 +236,7 @@
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;While I clearly don&amp;rsquo;t prioritize it, I still want good WiFi. For me that means good enough to stream HD video to a couple of devices simultaneously. WiFi 802.11ac can handle that perfectly. My old router has functionality to put it into &amp;ldquo;AP Mode&amp;rdquo; where it no longer acts as a firewall or DHCP server. With &amp;ldquo;AP Mode&amp;rdquo; enabled the old router is nothing more than a WiFi to ethernet translator.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/router/homebrew-ap-mode.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-ap-mode.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This router requires 12V at 2.5A. I could pull that out of the spare PCIe slot, but for now it&amp;rsquo;s running off of a separate power supply.&lt;/p&gt;
 &lt;h3 id=&#34;operating-system&#34; &gt;Operating System
 &lt;span&gt;
@@ -160,7 +252,7 @@
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;It&amp;rsquo;s not 10 Gb/s. But my ISP claims they provide &amp;ldquo;up to&amp;rdquo; 10 Gb/s. I&amp;rsquo;ve only ever seen as much as 2.5 Gb/s when downloading Steam games. That&amp;rsquo;s still pretty cool.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/router/homebrew-speedtest.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/blog/image/router/homebrew-speedtest.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Was it worth the effort? For me, definitely. I had a ton of fun and learned a few things along the way. But I think if you&amp;rsquo;re not &lt;em&gt;really&lt;/em&gt; into computer hardware the consumer products available like the AXE16000 will get you to a similar result for a similar price.&lt;/p&gt;
 </description>
     </item>

@@ -309,56 +309,56 @@
 <p><code>A ^ B = A'</code>:</p>
 <p>Here A becomes white anywhere A or B had a unique presence (only A or only B was black in that pixel). Everywhere else is black.</p>
 <table>
-  <thead>
-      <tr>
-          <th>A</th>
-          <th>B</th>
-          <th>A'</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><img src="/blog/image/xor/A.png" alt=""></td>
-          <td><img src="/blog/image/xor/B.png" alt=""></td>
-          <td><img src="/blog/image/xor/Ap.png" alt=""></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A'</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/blog/image/xor/A.png" alt=""></td>
+<td><img src="/blog/image/xor/B.png" alt=""></td>
+<td><img src="/blog/image/xor/Ap.png" alt=""></td>
+</tr>
+</tbody>
 </table>
 <p><code>A' ^ B = B'</code>:</p>
 <p>Now that A is a combination of what was unique in each of the original images, we can apply the same XOR operation to <em>remove</em> what was unique about B, leaving only what was unique about A. So at this point B has swapped and become the circle.</p>
 <table>
-  <thead>
-      <tr>
-          <th>A'</th>
-          <th>B</th>
-          <th>B'</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><img src="/blog/image/xor/Ap.png" alt=""></td>
-          <td><img src="/blog/image/xor/B.png" alt=""></td>
-          <td><img src="/blog/image/xor/A.png" alt=""></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>A'</th>
+<th>B</th>
+<th>B'</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/blog/image/xor/Ap.png" alt=""></td>
+<td><img src="/blog/image/xor/B.png" alt=""></td>
+<td><img src="/blog/image/xor/A.png" alt=""></td>
+</tr>
+</tbody>
 </table>
 <p><code>A' ^ B' = A''</code>:</p>
 <p>We can perform the same operation as in the previous step to get back the original value of B. Since B holds the circle and we want the square, we remove what was unique about the circle, leaving just the square.</p>
 <table>
-  <thead>
-      <tr>
-          <th>A'</th>
-          <th>B'</th>
-          <th>A''</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><img src="/blog/image/xor/Ap.png" alt=""></td>
-          <td><img src="/blog/image/xor/A.png" alt=""></td>
-          <td><img src="/blog/image/xor/B.png" alt=""></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>A'</th>
+<th>B'</th>
+<th>A''</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/blog/image/xor/Ap.png" alt=""></td>
+<td><img src="/blog/image/xor/A.png" alt=""></td>
+<td><img src="/blog/image/xor/B.png" alt=""></td>
+</tr>
+</tbody>
 </table>
 <hr>
 <p>Here&rsquo;s the code used to generate the images above:</p>
@@ -437,7 +437,7 @@
     <div class="common-footer-bottom">
         
         <div class="copyright">
-            <p>© Daniel Angell, 2025<br>
+            <p>© Daniel Angell, 2026<br>
                 
             </p>
         </div>
