@@ -53,7 +53,7 @@
     
 
     
-        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.34ffddc6b7893fe893c7f82eb9e9c4ff581b4a1371974c04e0ddbe1a89760fe1.css" integrity="sha256-NP/dxreJP&#43;iTx/guuenE/1gbShNxl0wE4N2&#43;Gol2D&#43;E=">
+        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.23faa8a18ebba38e770cfd842454524c2a57e20c448a1ef30bf7f1d04b2cd01e.css" integrity="sha256-I/qooY67o453DP2EJFRSTCpX4gxEih7zC/fx0Ess0B4=">
     
 
 
@@ -289,14 +289,14 @@
         </div>
         <div class="content e-content">
             <p>A common riddle-like question for programmers asks them to swap the values of two integers <em>without</em> a temporary intermediate value. There are two common solutions that I&rsquo;m aware of, addition swap and XOR swap. Here&rsquo;s what each looks like in C:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addSwap</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addSwap</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {  
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">!=</span> b) {  
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>a <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">+</span> <span style="color:#f92672">*</span>b;  
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>b <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>b;  
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>a <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>b;  
 </span></span><span style="display:flex;"><span>    }  
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">xorSwap</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {  
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">xorSwap</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {  
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">!=</span> b) {  
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>a <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>b;  
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>b <span style="color:#f92672">^=</span> <span style="color:#f92672">*</span>a;  
@@ -309,60 +309,60 @@
 <p><code>A ^ B = A'</code>:</p>
 <p>Here A becomes white anywhere A or B had a unique presence (only A or only B was black in that pixel). Everywhere else is black.</p>
 <table>
-<thead>
-<tr>
-<th>A</th>
-<th>B</th>
-<th>A'</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="/blog/image/xor/A.png" alt=""></td>
-<td><img src="/blog/image/xor/B.png" alt=""></td>
-<td><img src="/blog/image/xor/Ap.png" alt=""></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>A'</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="/blog/image/xor/A.png" alt=""></td>
+          <td><img src="/blog/image/xor/B.png" alt=""></td>
+          <td><img src="/blog/image/xor/Ap.png" alt=""></td>
+      </tr>
+  </tbody>
 </table>
 <p><code>A' ^ B = B'</code>:</p>
 <p>Now that A is a combination of what was unique in each of the original images, we can apply the same XOR operation to <em>remove</em> what was unique about B, leaving only what was unique about A. So at this point B has swapped and become the circle.</p>
 <table>
-<thead>
-<tr>
-<th>A'</th>
-<th>B</th>
-<th>B'</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="/blog/image/xor/Ap.png" alt=""></td>
-<td><img src="/blog/image/xor/B.png" alt=""></td>
-<td><img src="/blog/image/xor/A.png" alt=""></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>A'</th>
+          <th>B</th>
+          <th>B'</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="/blog/image/xor/Ap.png" alt=""></td>
+          <td><img src="/blog/image/xor/B.png" alt=""></td>
+          <td><img src="/blog/image/xor/A.png" alt=""></td>
+      </tr>
+  </tbody>
 </table>
 <p><code>A' ^ B' = A''</code>:</p>
 <p>We can perform the same operation as in the previous step to get back the original value of B. Since B holds the circle and we want the square, we remove what was unique about the circle, leaving just the square.</p>
 <table>
-<thead>
-<tr>
-<th>A'</th>
-<th>B'</th>
-<th>A''</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="/blog/image/xor/Ap.png" alt=""></td>
-<td><img src="/blog/image/xor/A.png" alt=""></td>
-<td><img src="/blog/image/xor/B.png" alt=""></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>A'</th>
+          <th>B'</th>
+          <th>A''</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="/blog/image/xor/Ap.png" alt=""></td>
+          <td><img src="/blog/image/xor/A.png" alt=""></td>
+          <td><img src="/blog/image/xor/B.png" alt=""></td>
+      </tr>
+  </tbody>
 </table>
 <hr>
 <p>Here&rsquo;s the code used to generate the images above:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sys  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sys  
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image  
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;A.png&#34;</span>)  

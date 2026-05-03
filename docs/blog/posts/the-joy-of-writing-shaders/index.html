@@ -12,7 +12,10 @@
 
 <title>The Joy of Writing Shaders - danangell.com/blog</title>
 
-<meta name="description" content="Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
+<meta name="description" content="
+    
+
+Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.
 Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the sin and cos of different angles until you have points all around the circumference of a circle.">
 
 
@@ -54,7 +57,7 @@ Say you want to draw a circle in an imperative programming language. You need to
     
 
     
-        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.34ffddc6b7893fe893c7f82eb9e9c4ff581b4a1371974c04e0ddbe1a89760fe1.css" integrity="sha256-NP/dxreJP&#43;iTx/guuenE/1gbShNxl0wE4N2&#43;Gol2D&#43;E=">
+        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.23faa8a18ebba38e770cfd842454524c2a57e20c448a1ef30bf7f1d04b2cd01e.css" integrity="sha256-I/qooY67o453DP2EJFRSTCpX4gxEih7zC/fx0Ess0B4=">
     
 
 
@@ -298,14 +301,14 @@ Say you want to draw a circle in an imperative programming language. You need to
 </div>
 <p>Shaders provide programmers with a beautiful combination of art and math. Most other throwaway projects are devoid of any artistic value. In less than a dozen lines of code you can draw fractals. A few more and you can start creating intricate animations. The most interesting part is the unique perspective they force you into.</p>
 <p>Say you want to draw a circle in an imperative programming language. You need to break out a for loop and calculate the <code>sin</code> and <code>cos</code> of different angles until you have points all around the circumference of a circle.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>vertices <span style="color:#f92672">=</span> []  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>vertices <span style="color:#f92672">=</span> []  
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> angle <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">360</span>, <span style="color:#ae81ff">6</span>):  
 </span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> cos(angle) <span style="color:#f92672">/</span> radius  
 </span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> sin(angle) <span style="color:#f92672">/</span> radius  
 </span></span><span style="display:flex;"><span>    vertices<span style="color:#f92672">.</span>append((x, y))
 </span></span></code></pre></div><p>Then I would render lines sequentially connecting each point to the last. But this results in a circle that&rsquo;s really just a regular polygon with a large number of sides. You could also try to use Bézier curves, but that feels a bit more removed from the definition of a circle.</p>
 <p>In a shader you&rsquo;d use a more simplified definition of a circle. If you&rsquo;re inside of the circle&rsquo;s radius you draw the circle. If you&rsquo;re outside of the radius you don&rsquo;t.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#66d9ef">uniform</span> <span style="color:#66d9ef">vec2</span> u_resolution;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#66d9ef">uniform</span> <span style="color:#66d9ef">vec2</span> u_resolution;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> main() {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> radius <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.3</span>;

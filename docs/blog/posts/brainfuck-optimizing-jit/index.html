@@ -53,7 +53,7 @@
     
 
     
-        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.34ffddc6b7893fe893c7f82eb9e9c4ff581b4a1371974c04e0ddbe1a89760fe1.css" integrity="sha256-NP/dxreJP&#43;iTx/guuenE/1gbShNxl0wE4N2&#43;Gol2D&#43;E=">
+        <link rel="stylesheet" href="https://danangell.com/blog/css/style.min.23faa8a18ebba38e770cfd842454524c2a57e20c448a1ef30bf7f1d04b2cd01e.css" integrity="sha256-I/qooY67o453DP2EJFRSTCpX4gxEih7zC/fx0Ess0B4=">
     
 
 
@@ -328,7 +328,7 @@
     </a>
 </span>
 </h3><p>The lowest hanging fruit here is to perform run-length encoding on the instructions. Sequential <code>+</code>, <code>-</code>, <code>&gt;</code> and <code>&lt;</code> commands can be combined before they are executed. Internally this is done by compiling to an intermediate language - which is stored as a vector of <code>Instr</code>s:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Program</span> {  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Program</span> {  
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pub</span> data: Vec<span style="color:#f92672">&lt;</span>Instr<span style="color:#f92672">&gt;</span>,  
 </span></span><span style="display:flex;"><span>}  
 </span></span><span style="display:flex;"><span>
@@ -370,26 +370,26 @@
 <p><code>Print</code> and <code>Read</code> are slightly more complex but don&rsquo;t require us to do any control flow ourselves.</p>
 <hr>
 <p>Where we start to get into trouble is with <code>[</code> and <code>]</code>. To avoid the difficulty of tracking labels and linking them together before execution, all instructions&rsquo; x86-64 machine code is padded with <code>nop</code>s.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> bytes.len() <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">BF_INSTR_SIZE</span> <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">usize</span> {  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> bytes.len() <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">BF_INSTR_SIZE</span> <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">usize</span> {  
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// nop  
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    bytes.push(<span style="color:#ae81ff">0x90</span>);  
+</span></span></span><span style="display:flex;"><span>    bytes.push(<span style="color:#ae81ff">0x90</span>);  
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This means that the jump targets can be easily found as long as you know the target position (in the <code>Program</code> data vector), current position, and unpadded size of the current instruction:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> begin_loop_size: <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">// Bytes  
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> begin_loop_size: <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">// Bytes  
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> offset <span style="color:#f92672">=</span> (<span style="color:#f92672">*</span>pos <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">i32</span> <span style="color:#f92672">-</span> this_pos <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">i32</span>) <span style="color:#f92672">*</span> <span style="color:#66d9ef">BF_INSTR_SIZE</span> <span style="color:#f92672">-</span> begin_loop_size;  
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> offset_bytes: [<span style="color:#66d9ef">u8</span>; mem::size_of::<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>()] <span style="color:#f92672">=</span> <span style="color:#66d9ef">unsafe</span> { mem::transmute(offset) };  
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Check if the current memory cell equals zero.  
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// cmp    BYTE PTR [r10],0x0  
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>bytes.push(<span style="color:#ae81ff">0x41</span>);  
+</span></span></span><span style="display:flex;"><span>bytes.push(<span style="color:#ae81ff">0x41</span>);  
 </span></span><span style="display:flex;"><span>bytes.push(<span style="color:#ae81ff">0x80</span>);  
 </span></span><span style="display:flex;"><span>bytes.push(<span style="color:#ae81ff">0x3a</span>);  
 </span></span><span style="display:flex;"><span>bytes.push(<span style="color:#ae81ff">0x00</span>);  
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Jump to the end of the loop if equal.  
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// je    offset  
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>bytes.push(<span style="color:#ae81ff">0x0f</span>);  
+</span></span></span><span style="display:flex;"><span>bytes.push(<span style="color:#ae81ff">0x0f</span>);  
 </span></span><span style="display:flex;"><span>bytes.push(<span style="color:#ae81ff">0x84</span>);  
 </span></span><span style="display:flex;"><span>bytes.push(offset_bytes[<span style="color:#ae81ff">0</span>]);  
 </span></span><span style="display:flex;"><span>bytes.push(offset_bytes[<span style="color:#ae81ff">1</span>]);  
@@ -403,26 +403,26 @@
 </span>
 </h2><p>Ran on <a href="https://github.com/erikdubbelboer/brainfuck-jit/blob/919df502dc8a0441572180700de86be405387fcc/mandelbrot.bf">mandelbrot.bf</a></p>
 <table>
-<thead>
-<tr>
-<th>Version</th>
-<th>Runtime</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Naive Interpreter</td>
-<td>56.824s</td>
-</tr>
-<tr>
-<td>Optimized Interpreter</td>
-<td>19.055s</td>
-</tr>
-<tr>
-<td>Optimized JIT</td>
-<td>5.484s</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Version</th>
+          <th>Runtime</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Naive Interpreter</td>
+          <td>56.824s</td>
+      </tr>
+      <tr>
+          <td>Optimized Interpreter</td>
+          <td>19.055s</td>
+      </tr>
+      <tr>
+          <td>Optimized JIT</td>
+          <td>5.484s</td>
+      </tr>
+  </tbody>
 </table>
         </div>
         
