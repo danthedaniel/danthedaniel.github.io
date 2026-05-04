@@ -5,6 +5,8 @@ draft: false
 tags: ["programming", "volunteering", "fundraising"]
 ---
 
+<img src="/blog/image/twitch-donations-irl/teaser.jpeg" style="object-fit:contain;border-radius:1rem;width:100%;" alt="A cropped image of a display showing just the top with a rainbow colored $69.00 donation amount" />
+
 In the last couple of years I've spent a lot of time volunteering at a local hackerspace called Noisebridge. It works differently from most other places. We do not require anyone to pay dues to be in the space. We let anyone use any of our materials or tools (with some exceptions for safety or claimed works in progress) even if they just walked in off the street for the first time. This can cause confusion to the occasional newcomer asking to become a member. I'll say "You already are!". But what they want is a traditional quid-pro-quo. They give us money, and in return are entitled to our resources. The trick then is getting people to give us money for things they already get for free.
 
 <!--more-->
@@ -27,8 +29,8 @@ I had been upset with our Stripe page. I used it to create a recurring donation,
 
 I wanted us to support Apple Pay and Google Pay. Digital terminals were out of the question. Who'd trust a random machine in a space as anarchist as this? I decided to stick QR codes around the building. Paper wasn't cool enough, so I wrote some OpenSCAD code and 3D printed multi-color QR codes. There's a little red logo in the middle to catch your eye. The design makes it easy to pattern-match on what is a donation prompt. I have to assume the complexity of 3D printing a QR code also provides some proof of authenticity.
 
-<img src="/blog/image/twitch-donations-irl/laser-cutter.jpeg" width="50%" style="object-fit:contain;border-radius:1rem;" alt="A QR code on a large laser cutting machine" />
-<img src="/blog/image/twitch-donations-irl/donation-screenshot.jpeg" width="50%" style="object-fit:contain;" alt="A donation prompt screenshot" />
+<img src="/blog/image/twitch-donations-irl/laser-cutter.jpeg" style="object-fit:contain;border-radius:1rem;width:calc(max(300px, 60%));" alt="A QR code on a large laser cutting machine" />
+<img src="/blog/image/twitch-donations-irl/donation-screenshot.jpeg" style="object-fit:contain;width:calc(max(300px, 60%));" alt="A donation prompt screenshot" />
 
 I've also placed around 20 other QR codes in the space, following the Disney World principle of trash cans. Place them so that no matter where you are you can see one.
 
