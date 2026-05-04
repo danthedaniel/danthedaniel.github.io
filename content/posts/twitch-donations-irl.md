@@ -40,7 +40,11 @@ Making it easier to give us money helps. But I also wanted to add some social pr
   <video src="/blog/video/twitch-donations-irl/header.webm" loop controls width="80%" style="border-radius:1rem;"></video>
 </div>
 
-You can see above the special effect used for an amount that is the highest in the list. The list is a log of the previous 20 donations.
+<div style="width:100%;display:flex;flex-direction:row;justify-content:space-around;">
+  <div style="background:rgba(255,255,255,0.05);border-left:4px solid #44e;padding:1rem 1.5rem;margin:0 0 1.5rem 0;border-radius:0.5rem;font-size:0.9em;width:calc(80% - 3rem);">
+    You can see above the special effect used for an amount that is the highest in the list. The list is a log of the previous 20 donations.
+  </div>
+</div>
 
 I added a border of RGB NeoPixels to each display, with 3D printed diffusers glued to each pixel. This helps make the display feel more real. We have all grown numb to the magic of millions of pixels that can each display millions of colors 60 times per second. Displays show a portal into the digital world. What's on a display is deemed less real than its surroundings. But adding just a little novelty helps bleed the digital domain into meatspace.
 
@@ -48,7 +52,7 @@ I added a border of RGB NeoPixels to each display, with 3D printed diffusers glu
 
 <div style="width:100%;display:flex;flex-direction:row;justify-content:space-around;">
   <div style="background:rgba(255,255,255,0.05);border-left:4px solid #44e;padding:1rem 1.5rem;margin:0 0 1.5rem 0;border-radius:0.5rem;font-size:0.9em;width:calc(80% - 3rem);">
-    <strong>Side note:</strong> The way the LEDs work is kind of fun. Each display is driven by a Raspberry Pi 5 (2GB model). What you see on the screen is a web page hosted on the same server hosting all of the other donation related functionality. The Pi hosts a web server that provides an API to control the LEDs which the web page connects to in a cross-origin request to localhost:3000. In order to simplify deployments the LED API receives what are essentially 1-dimensional shader functions written in JavaScript. I take functions right out of the front-end JS, <a href="https://github.com/noisebridge/donate-portal/blob/5a5c560bf6355bc7957d1159200ebccd25df32aa/src/assets/js/effects/led_effects.mjs#L89" target="_blank">call <code>toString()</code> on them</a> and ship them off to the Pi <a href="https://github.com/noisebridge/alert-kiosks/blob/b4c33492f700a3f2f09db39193ce9aca1f0d8fe9/rgb-server/index.ts#L141" target="_blank">where they are <code>eval()</code>'d</a> :D
+    The way the LEDs work is kind of fun. Each display is driven by a Raspberry Pi 5 (2GB model). What you see on the screen is a web page hosted on the same server hosting all of the other donation related functionality. The Pi also hosts a web server that provides an API to control the LEDs which the web page connects to in a cross-origin request to localhost:3000. In order to simplify deployments the LED API receives what are essentially 1-dimensional shader functions written in JavaScript. I take functions right out of the front-end, <a href="https://github.com/noisebridge/donate-portal/blob/5a5c560bf6355bc7957d1159200ebccd25df32aa/src/assets/js/effects/led_effects.mjs#L89" target="_blank">call <code>toString()</code> on them</a> and ship them off to the Pi <a href="https://github.com/noisebridge/alert-kiosks/blob/b4c33492f700a3f2f09db39193ce9aca1f0d8fe9/rgb-server/index.ts#L141" target="_blank">where they are <code>eval()</code>'d</a> :D
   </div>
 </div>
 
