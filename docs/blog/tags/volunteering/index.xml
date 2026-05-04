@@ -52,6 +52,7 @@
     You can see above the special effect used for an amount that is the highest in the list. The list is a log of the previous 20 donations.
   &lt;/div&gt;
 &lt;/div&gt;
+&lt;p&gt;Beyond social proof, people get rewarded with various animations to celebrate their donation. Surprisingly, a lot of people find joy in these effects. I&amp;rsquo;ve also seen many more instance where people say something like &amp;ldquo;Do this for me and I&amp;rsquo;ll donate to Noisebridge&amp;rdquo;. Because everyone will see it the statement holds more weight.&lt;/p&gt;
 &lt;p&gt;I added a border of RGB NeoPixels to each display, with 3D printed diffusers glued to each pixel. This helps make the display feel more real. We have all grown numb to the magic of millions of pixels that can each display millions of colors 60 times per second. Displays show a portal into the digital world. What&amp;rsquo;s on a display is deemed less real than its surroundings. But adding just a little novelty helps bleed the digital domain into meatspace.&lt;/p&gt;
 &lt;img src=&#34;https://danangell.com/blog/image/twitch-donations-irl/matrix-display.jpeg&#34; width=&#34;80%&#34; alt=&#34;Image of a screen mounted to a wall showing a log of donation amounts&#34; /&gt;
 &lt;div style=&#34;width:100%;display:flex;flex-direction:row;justify-content:space-around;&#34;&gt;

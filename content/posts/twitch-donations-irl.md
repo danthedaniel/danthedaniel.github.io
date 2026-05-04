@@ -46,6 +46,8 @@ Making it easier to give us money helps. But I also wanted to add some social pr
   </div>
 </div>
 
+Beyond social proof, people get rewarded with various animations to celebrate their donation. Surprisingly, a lot of people find joy in these effects. I've also seen many more instance where people say something like "Do this for me and I'll donate to Noisebridge". Because everyone will see it the statement holds more weight.
+
 I added a border of RGB NeoPixels to each display, with 3D printed diffusers glued to each pixel. This helps make the display feel more real. We have all grown numb to the magic of millions of pixels that can each display millions of colors 60 times per second. Displays show a portal into the digital world. What's on a display is deemed less real than its surroundings. But adding just a little novelty helps bleed the digital domain into meatspace.
 
 <img src="/blog/image/twitch-donations-irl/matrix-display.jpeg" width="80%" alt="Image of a screen mounted to a wall showing a log of donation amounts" />
