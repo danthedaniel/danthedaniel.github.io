@@ -1,6 +1,6 @@
 ---
 title: "Twitch Donations IRL"
-date: 2026-05-02T18:54:39-07:00
+date: 2026-05-04T15:17:39-07:00
 draft: false
 tags: ["programming", "volunteering", "fundraising"]
 ---
@@ -13,13 +13,13 @@ tags: ["programming", "volunteering", "fundraising"]
 
 <br />
 
-I volunteer at Noisebridge, a hackerspace in San Francisco. Anyone can walk in off the street and use our 3D printers, sewing machines and electronics lab. No dues required. Newcomers sometimes ask how to become a member. I tell them "You already are!" What they're really asking is how to formalize the relationship: give money, get access. But they already have access. The trick is getting people to pay for something they get for free.
+I volunteer at Noisebridge, a hackerspace in San Francisco. Anyone can walk in off the street and use our 3D printers, sewing machines and electronics lab. No dues are required. Newcomers sometimes ask how to become a member. I'll tell them "You already are!" but what they're really asking is how to formalize the relationship: give money, get access. They already have access. So the trick is getting people to pay for something they get for free.
 
 <!--more-->
 
 ## The Problem
 
-Our building is rented, so we need some way to come up with $11k every month. Thankfully the organization is 100% volunteer-run so our total monthly expenses are only around $14k. To get recurring revenue there are some membership tiers that grant 24/7 access. However these tiers also come with the responsibility to sweep people out when you leave. Many people aren't interested in that. There are people that give us money every month without anything extra in return. But this system isn't particularly lucrative. Before the pandemic the community had a monthly surplus. But shutting the space down for a year and a half killed a lot of momentum. Members left San Francisco, or the country entirely.
+Our building is rented, so we need some way to come up with $11k every month. Thankfully the organization is 100% volunteer-run so our total monthly expenses are only around $14k. To get recurring revenue there are some membership tiers that grant 24/7 access. However, these tiers also come with the responsibility to sweep people out when you leave. Many people aren't interested in that. There are people that give us money every month without anything extra in return. But this system isn't particularly lucrative. Before the pandemic the community had a monthly surplus. But shutting the space down for a year and a half killed a lot of momentum. Members left San Francisco, or the country entirely.
 
 The organization has periodically reached a crisis state where we are months from bankruptcy. Thankfully we have so far managed to fundraise our way out of these moments. With such a vast network that includes both high paid tech employees and early adopters of Bitcoin it's not uncommon for a $100k donation to come into our accounts. But we only need to fail this game once for the organization to die. It's better for us to become self-sufficient by building financial fitness rather than be dependent on generous crypto-millionaires.
 
@@ -31,7 +31,7 @@ Before I started this project we had a few different ways to donate.
 * PayPal
 * A Stripe-powered page where you needed to type in your credit card number
 
-I had been upset with our Stripe page. I used it to create a recurring donation, but it provided no means to *increase* the amount during our last fundraising panic. People occasionally contacted the treasurer to adjust or cancel their recurring donations which was always a slow process. I decided to rebuild the site to provide the bare minimum for managing your recurring donation (cancellation, amount changes, payment method updates). But why stop there?
+I had been upset with our Stripe page. I used it to create a recurring donation, but it provided no means to *increase* the amount during our last fundraising panic. People occasionally contacted the treasurer to adjust or cancel their recurring donations, which was always a slow process. I decided to rebuild the site to provide the bare minimum for managing your recurring donation (cancellation, amount changes, payment method updates). But why stop there?
 
 I wanted us to support Apple Pay and Google Pay. Digital terminals were out of the question. Who'd trust a random machine in a space as anarchist as this? I decided to stick QR codes around the building. They link to a web page which offers the new payment methods. I wrote some OpenSCAD code and 3D printed multi-color QR codes. There's a little red logo in the middle to catch your eye. The design makes it easy to pattern-match on what is a donation prompt. The complexity of 3D printing a QR code also provides some proof of authenticity.
 
@@ -44,7 +44,7 @@ Making it easier to give us money helps. But I also wanted to add some social pr
 
 ## The Displays
 
-<div style="display:flex;flex-direction:row;justify-content:space-around;padding:2rem 0;">
+<div style="display:flex;flex-direction:row;justify-content:space-around;padding:0.5rem 0;">
   <video src="/blog/video/twitch-donations-irl/header.webm" loop controls width="80%" style="border-radius:1rem;"></video>
 </div>
 
@@ -58,7 +58,7 @@ Beyond social proof, people get rewarded with various animations to celebrate th
 
 I added a border of RGB NeoPixels to each display, with 3D printed diffusers glued to each pixel. This helps make the display feel more real. We have all grown numb to the magic of millions of pixels that can each display millions of colors 60 times per second. Displays show a portal into the digital world. What's on a display is deemed less real than its surroundings. But adding just a little novelty helps bleed the digital domain into meatspace.
 
-<img src="/blog/image/twitch-donations-irl/matrix-display.jpeg" width="80%" alt="Image of a screen mounted to a wall showing a log of donation amounts" />
+<img src="/blog/image/twitch-donations-irl/matrix-display.jpeg" width="80%" style="margin-bottom:0.5rem;" alt="Image of a screen mounted to a wall showing a log of donation amounts" />
 
 <div style="width:100%;display:flex;flex-direction:row;justify-content:space-around;">
   <div style="background:rgba(255,255,255,0.05);border-left:4px solid #44e;padding:1rem 1.5rem;margin:0 0 1.5rem 0;border-radius:0.5rem;font-size:0.9em;width:calc(80% - 3rem);">
@@ -78,16 +78,18 @@ I have noticed that we raise more through the QR codes and displays when I'm aro
 
 Often I see people donate just to test out the display on their first visit. The default donation amount for the QR code shown on the displays is $100. This is adjustable, but periodically someone accepts that default.
 
-While this project has not completely closed our funding gap, it has meaningfully helped. More importantly, everyone in our anarchist organization now has their eyes on the finances. Last year's fundraising would have happened earlier if we were paying attention.
+## The Data
 
-All of the code is available [on GitHub](https://github.com/noisebridge/donate-portal). You can visit the live site at [donate.noisebridge.net](https://donate.noisebridge.net).
-
-<hr />
-
-<img src="/blog/image/twitch-donations-irl/flaschen-taschen.jpeg" width="80%" alt="A large wall-scale display made from beer bottles in stacked bottle cases" />
+<img src="/blog/image/twitch-donations-irl/finances.png" width="80%" alt="Stacked bar chart showing subscription vs. one-off donation income on a monthly basis." style="margin-bottom:0.5rem;" />
 
 <div style="width:100%;display:flex;flex-direction:row;justify-content:space-around;">
   <div style="background:rgba(255,255,255,0.05);border-left:4px solid #44e;padding:1rem 1.5rem;margin:0 0 1.5rem 0;border-radius:0.5rem;font-size:0.9em;width:calc(80% - 3rem);">
-    It's perfectly on brand for Noisebridge to have a custom made wacky RGB LED system. We famously also have a giant display made out of LED illuminated beer bottles.
+    Stripe income. The data for May 2026 is incomplete as of the time of posting.
   </div>
 </div>
+
+You can see a huge spike from when I launched this system. We had a number of very large and celebratory donations initially. But so far it looks like we've leveled off at a net increase of $2,000 per month. Our budget shortfall had been about $5,000 per month. This project has cut that by 40%. Keep in mind we have other income streams and Stripe started off well behind PayPal given the previous UX issues.
+
+Now everyone in our anarchist organization has their eyes on the finances. This might be more important than the extra income. I plan to create a new dashboard in our building showing membership stats (number of monthly donors, total recurring income). When your organization is primarily based in a physical location, you should use this fact to your advantage. You can avoid looking at a digital dashboard. It's much harder to avoid a bright flashing display.
+
+All of the code is available [on GitHub](https://github.com/noisebridge/donate-portal). You can visit the live site at [donate.noisebridge.net](https://donate.noisebridge.net).
