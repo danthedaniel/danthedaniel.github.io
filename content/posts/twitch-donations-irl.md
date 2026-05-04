@@ -5,9 +5,13 @@ draft: false
 tags: ["programming", "volunteering", "fundraising"]
 ---
 
-<img src="/blog/image/twitch-donations-irl/teaser.jpeg" style="object-fit:contain;border-radius:1rem;width:100%;" alt="A cropped image of a display showing just the top with a rainbow colored $69.00 donation amount" />
+<img src="/blog/image/twitch-donations-irl/teaser.jpeg" style="object-fit:contain;border-radius:1rem;width:100%;margin-bottom:1rem;" alt="A cropped image of a display showing just the top with a rainbow colored $69.00 donation amount" />
 
-I gamified donations in an organization that gives everything away for free.
+<div style="text-align:center;width:100%;font-size:1.25rem;">
+  I gamified donations in an organization that gives everything away for free.
+</div>
+
+<br />
 
 I volunteer at Noisebridge, a hackerspace in San Francisco. Anyone can walk in off the street and use our 3D printers, sewing machines and electronics lab. No dues required. Newcomers sometimes ask how to become a member. I tell them "You already are!" What they're really asking is how to formalize the relationship: give money, get access. But they already have access. The trick is getting people to pay for something they get for free.
 
