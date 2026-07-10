@@ -6,10 +6,20 @@
     <description>danangell.com/blog (Programming)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 May 2026 15:17:39 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 13:00:00 -0700</lastBuildDate>
     
     <atom:link href="https://danangell.com/blog/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Double Pendulums</title>
+      <link>https://danangell.com/blog/posts/double-pendulums/</link>
+      <pubDate>Fri, 10 Jul 2026 13:00:00 -0700</pubDate>
+      <guid>https://danangell.com/blog/posts/double-pendulums/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://danangell.com/blog/image/double-pendulums/doublethefun.jpeg&#34; alt=&#34;Screenshot from doublethe.fun&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A year ago I watched &lt;a href=&#34;https://www.youtube.com/watch?v=dtjb2OhEQcU&#34;&gt;this video&lt;/a&gt; about how double pendulums aren&amp;rsquo;t always chaotic.&lt;/p&gt;
+&lt;p&gt;Depending on the initial conditions they can be surprisingly non-chaotic. Even more interesting, there are little islands of stability in otherwise chaotic regions of the parameter space. I wanted more control to explore the 2D map shown in the video, so I built my own tool. It&amp;rsquo;s hosted at &lt;a href=&#34;https://doublethe.fun&#34;&gt;doublethe.fun&lt;/a&gt; and is &lt;a href=&#34;https://github.com/danthedaniel/doublethe.fun&#34;&gt;open source&lt;/a&gt;. The core was written last year. I finally got around to adding an explanation and a major optimization thanks to Fable 5.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Twitch Donations IRL</title>
@@ -760,26 +770,26 @@ only valid API requests can be made. This is done by locking down the &lt;code&g
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;Ran on &lt;a href=&#34;https://github.com/erikdubbelboer/brainfuck-jit/blob/919df502dc8a0441572180700de86be405387fcc/mandelbrot.bf&#34;&gt;mandelbrot.bf&lt;/a&gt;&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Version&lt;/th&gt;
-          &lt;th&gt;Runtime&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Naive Interpreter&lt;/td&gt;
-          &lt;td&gt;56.824s&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Optimized Interpreter&lt;/td&gt;
-          &lt;td&gt;19.055s&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Optimized JIT&lt;/td&gt;
-          &lt;td&gt;5.484s&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Version&lt;/th&gt;
+					&lt;th&gt;Runtime&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Naive Interpreter&lt;/td&gt;
+					&lt;td&gt;56.824s&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Optimized Interpreter&lt;/td&gt;
+					&lt;td&gt;19.055s&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Optimized JIT&lt;/td&gt;
+					&lt;td&gt;5.484s&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;</description>
     </item>
     
@@ -809,56 +819,56 @@ only valid API requests can be made. This is done by locking down the &lt;code&g
 &lt;p&gt;&lt;code&gt;A ^ B = A&#39;&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;Here A becomes white anywhere A or B had a unique presence (only A or only B was black in that pixel). Everywhere else is black.&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;A&lt;/th&gt;
-          &lt;th&gt;B&lt;/th&gt;
-          &lt;th&gt;A&#39;&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;A&lt;/th&gt;
+					&lt;th&gt;B&lt;/th&gt;
+					&lt;th&gt;A&#39;&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;code&gt;A&#39; ^ B = B&#39;&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;Now that A is a combination of what was unique in each of the original images, we can apply the same XOR operation to &lt;em&gt;remove&lt;/em&gt; what was unique about B, leaving only what was unique about A. So at this point B has swapped and become the circle.&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;A&#39;&lt;/th&gt;
-          &lt;th&gt;B&lt;/th&gt;
-          &lt;th&gt;B&#39;&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;A&#39;&lt;/th&gt;
+					&lt;th&gt;B&lt;/th&gt;
+					&lt;th&gt;B&#39;&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;code&gt;A&#39; ^ B&#39; = A&#39;&#39;&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;We can perform the same operation as in the previous step to get back the original value of B. Since B holds the circle and we want the square, we remove what was unique about the circle, leaving just the square.&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;A&#39;&lt;/th&gt;
-          &lt;th&gt;B&#39;&lt;/th&gt;
-          &lt;th&gt;A&#39;&#39;&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;A&#39;&lt;/th&gt;
+					&lt;th&gt;B&#39;&lt;/th&gt;
+					&lt;th&gt;A&#39;&#39;&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/Ap.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/A.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;img src=&#34;https://danangell.com/blog/image/xor/B.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
 &lt;p&gt;Here&amp;rsquo;s the code used to generate the images above:&lt;/p&gt;
