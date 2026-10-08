@@ -6,10 +6,21 @@
     <description>danangell.com/blog (Posts)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jul 2026 15:40:00 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 23:48:00 -0700</lastBuildDate>
     
     <atom:link href="https://danangell.com/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Claude gave the BrainFuck Ray Tracer a 9000x Speedup</title>
+      <link>https://danangell.com/blog/posts/brainfuck-ray-tracer-optimization/</link>
+      <pubDate>Wed, 07 Oct 2026 23:48:00 -0700</pubDate>
+      <guid>https://danangell.com/blog/posts/brainfuck-ray-tracer-optimization/</guid>
+      <description>&lt;p&gt;A few weeks ago someone published a blog post about a &lt;a href=&#34;https://epestr.com/blog/writing-a-ray-tracer-in-brainfuck/&#34;&gt;brainfuck ray tracer&lt;/a&gt;. The file is 23MB of brainfuck instructions and runs around 1 pixel per minute (when rendering the sky, which is the fastest part of the image). That means it takes &lt;em&gt;months&lt;/em&gt; to render the complete image.&lt;/p&gt;
+&lt;p&gt;I wanted to see how my own &lt;a href=&#34;https://github.com/danthedaniel/BF-JIT&#34;&gt;brainfuck JIT&lt;/a&gt; handled the problem. Unsurprisingly, it produces about 1 pixel per minute. I had been gifted &amp;ldquo;unlimited&amp;rdquo; Claude tokens for an evening for an unrelated hackathon. After I finished the main project I pointed Claude Opus 5.5 at the compiler and told it to optimize &lt;code&gt;ray.bf&lt;/code&gt; - &amp;ldquo;no cheating!&amp;rdquo;. After 1 hour and 45 minutes Claude had the image rendering so much faster that a full image would only take &lt;em&gt;minutes&lt;/em&gt;! &lt;a href=&#34;https://github.com/danthedaniel/BF-JIT/tree/optimizer&#34;&gt;Here&lt;/a&gt; is the branch with Claude&amp;rsquo;s changes.&lt;/p&gt;
+&lt;p&gt;I post this not to brag about work I didn&amp;rsquo;t do. But you may find yourself in the position to loop Claude over an easily evaluated problem. Give it a shot. Given the net ~1,500 extra lines of code I think the 9000x speedup is justified. If we use these tools appropriately the future of software is bright.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Claude Code is the ceiling on vibe-coded software</title>

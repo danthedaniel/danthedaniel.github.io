@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://danangell.com/blog/posts/brainfuck-ray-tracer-optimization/</loc>
+    <lastmod>2026-10-07T23:48:00-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/</loc>
+    <lastmod>2026-10-07T23:48:00-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/posts/</loc>
+    <lastmod>2026-10-07T23:48:00-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/</loc>
+    <lastmod>2026-10-07T23:48:00-07:00</lastmod>
+  </url><url>
+    <loc>https://danangell.com/blog/tags/vibe-coding/</loc>
+    <lastmod>2026-10-07T23:48:00-07:00</lastmod>
+  </url><url>
     <loc>https://danangell.com/blog/posts/claude-code/</loc>
     <lastmod>2026-07-16T15:40:00-07:00</lastmod>
   </url><url>
-    <loc>https://danangell.com/blog/</loc>
-    <lastmod>2026-07-16T15:40:00-07:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/posts/</loc>
-    <lastmod>2026-07-16T15:40:00-07:00</lastmod>
-  </url><url>
     <loc>https://danangell.com/blog/tags/programming/</loc>
-    <lastmod>2026-07-16T15:40:00-07:00</lastmod>
-  </url><url>
-    <loc>https://danangell.com/blog/tags/</loc>
     <lastmod>2026-07-16T15:40:00-07:00</lastmod>
   </url><url>
     <loc>https://danangell.com/blog/posts/double-pendulums/</loc>
